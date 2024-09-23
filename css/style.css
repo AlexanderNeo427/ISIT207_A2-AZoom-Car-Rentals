@@ -1,10 +1,15 @@
 :root {
-   --primary-color: #C4BBB8;   /* Black */
-   --secondary-color: #F5B0CB; /* Black */
-   --background-color:#DC6ACF; /* Black */
-   --text-color: #745C97;      /* White */
-   --accent-color: #39375B;    /* White */
-   
+   /* Black */
+   --primary-color: #C4BBB8;
+   /* Black */
+   --secondary-color: #F5B0CB;
+   /* Black */
+   --background-color: #DC6ACF;
+   /* White */
+   --text-color: #745C97;
+   /* White */
+   --accent-color: #39375B;
+
    --width-sm: 640px;
    --width-md: 768px;
    --width-lg: 1024px;
@@ -19,6 +24,9 @@ body {
    margin: 0;
 }
 
+/* =============================== */
+/* ============ HEADER =========== */
+/* =============================== */
 .index .header {
    display: flex;
    flex-direction: row;
@@ -29,30 +37,51 @@ body {
    background: var(--secondary-color);
 }
 
-/* ======== MENU ITEMS ========== */
-.index .menu-items {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 1rem;
+/* =============================== */
+/* ===== HEADER + MENU ITEMS ===== */
+/* =============================== */
+.index .header h1 {
+   margin-left: 1rem;
 }
 
-/* .index .menu-items a:last-child {
-      padding-right: 10rem;
-   } */
-
-.index .menu-items a {
+.index .menu-items-large {
+   display: none;
+}
+.index .menu-items-large a {
    text-decoration: none;
    font-size: large;
    color: black;
 }
-
-.index .menu-items a:hover {
+.index .menu-items-large a:hover {
    color: var(--accent-color)
 }
+@media (min-width: 1024px) {
+   .index .menu-items-large {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+   }
+}
 
+
+.index .menu-items-small {
+}
+@media screen and (min-width: 1024px) {
+   .index .menu-items-small {
+      display: none;
+   }
+}
+
+/* ================================ */
 /* ======== LOGIN BUTTON ========== */
+/* ================================ */
 .index .login-btn {
    background: none;
+   margin-right: 1rem;
    outline: var(--text-color);
+}
+
+.index .login-btn:hover {
+   cursor: pointer;
 }
