@@ -4,6 +4,7 @@ const NAV_LINKS = {
 
 function makeTestimonial(testimonialData) {
     const divNode = document.createElement("div")
+    divNode.classList.add("carousel-item")
 
     const h1Node = document.createElement("h1")
     h1Node.innerHTML = testimonialData.reviewer
