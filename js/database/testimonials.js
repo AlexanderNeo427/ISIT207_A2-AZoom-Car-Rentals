@@ -1,4 +1,4 @@
-[
+const allTestimonialData = [
     {
         "id": 1,
         "reviewer": "Jionggo Sapit",
