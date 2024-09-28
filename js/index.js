@@ -3,16 +3,23 @@ const NAV_LINKS = {
 }
 
 function makeTestimonial(testimonialData) {
-    const divNode = document.createElement("div")
-    divNode.classList.add("carousel-item")
+    const containerNode = document.createElement("div")
+    containerNode.classList.add("carousel-item")
 
-    const h1Node = document.createElement("h1")
-    h1Node.innerHTML = testimonialData.reviewer
-    divNode.appendChild(h1Node)
+    const contentNode = document.createElement("span")
+    contentNode.innerHTML = testimonialData.reviewer
+    containerNode.appendChild(contentNode)
 
-    const spanNode = document.createElement("span")
-    spanNode.innerHTML = testimonialData.content
-    divNode.appendChild(spanNode)
+    const NUM_STARS = 5
+    const filledStars = Math.min(testimonialData.rating, NUM_STARS)
+    const emptyStars = NUM_STARS - filledStars
+
+    const starContainer = document.createElement("div")
+    
+
+    const nameNode = document.createElement("h3")
+    nameNode.innerHTML = testimonialData.content
+    containerNode.appendChild(nameNode)
 
     return divNode
 }
