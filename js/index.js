@@ -51,9 +51,6 @@ function makeTestimonial(testimonialDatum) {
 }
 
 window.onload = function () {
-    // const data = allTestimonialData; 
-    // console.log("Data: ", allTestimonialData)
-
     const testimonialCarousel = document.getElementsByClassName("testimonial-carousel")[0]
     allTestimonialData.forEach(testimonialData => {
         testimonialCarousel.appendChild(

@@ -1,2 +1,176 @@
-@import url(colorPalette.css);
+@import url(globalVars.css);
 
+@font-face {
+   font-family: 'Inter';
+   src: url('/assets/fonts/Inter/Inter-Regular.ttf') format('truetype');
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Inter';
+   src: url('/assets/fonts/Inter/Inter-Bold.ttf') format('truetype');
+   font-weight: 700;
+   font-style: normal;
+}
+
+body {
+   background: var(--background-50);
+   color: var(--text-950);
+
+   margin: 0;
+   padding: 0;
+
+   font-family: 'Inter', sans-serif;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4 {
+   margin: 0;
+}
+
+/* =============================================== */
+/* ==================== HEADER =================== */
+/* =============================================== */
+.login .header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+
+   color: black;
+   background: var(--background-50);
+   box-shadow: 0px 0.5px 4px gray;
+
+   width: 100%;
+}
+
+.login .header .header-left {
+   margin-left: var(--header-xpad);
+   margin-left: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.login .header .header-left .burger-menu {
+   width: 4rem;
+   height: 3rem;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 0.3333rem;
+
+   cursor: pointer;
+}
+
+.login .header .header-left .burger-menu>span {
+   height: 2.5px;
+   width: 33px;
+   background-color: rgb(20, 20, 20);
+}
+
+/* Hide burger menu over certain size */
+@media (min-width: 991px) {
+   .login .header .header-left .burger-menu {
+      display: none;
+   }
+}
+
+.login .header img {
+   height: 3rem;
+}
+
+.login .header .menu-items-large {
+   display: none;
+}
+
+.login .header .menu-items-large a {
+   text-decoration: none;
+   font-size: medium;
+   color: black;
+}
+
+.login .header .menu-items-large a:hover {
+   color: var(--accent)
+}
+
+.login .header .menu-items-small {
+   display: flex;
+   gap: 0.5rem;
+   margin-right: 1.5rem;
+}
+
+@media (min-width: 991px) {
+   .login .header .menu-items-large {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-right: 1.5rem;
+   }
+
+   .login .header .menu-items-small {
+      display: none;
+   }
+}
+
+/* ================================================ */
+/* ================ LOGIN BUTTON ================== */
+/* ================================================ */
+.login .header .login-btn {
+   background: none;
+   border: none;
+   padding: 0;
+   font: inherit;
+
+   padding-left: 1.2rem;
+   padding-right: 1.2rem;
+   padding-top: 0.2rem;
+   padding-bottom: 0.2rem;
+
+   outline: 1.5px solid var(--text-950);
+   border-radius: 0.5rem;
+
+   margin-right: var(--header-xpad);
+
+   text-decoration: none;
+   color: black;
+}
+
+.login .header .login-btn:hover {
+   cursor: pointer;
+}
+
+/* ================================================ */
+/* ================ LOGIN BODY ==================== */
+/* ================================================ */
+.login .body {
+   flex-grow: 1;
+
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(
+      120deg,
+      var(--primary-200), 
+      var(--primary-400)   
+   );
+}
+
+/* ================================================ */
+/* ================== FOOTER ====================== */
+/* ================================================ */
+.login >footer {
+   width: 100%;
+   height: 3rem;
+   background: red;
+}

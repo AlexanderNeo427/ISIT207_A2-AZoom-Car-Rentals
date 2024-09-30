@@ -29,7 +29,10 @@ body {
    font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
    margin: 0;
 }
 
@@ -67,7 +70,7 @@ h1, h2, h3, h4 {
    cursor: pointer;
 }
 
-.index .header .header-left .burger-menu >span {
+.index .header .header-left .burger-menu>span {
    height: 2.5px;
    width: 33px;
    /* border-radius: 0.1rem; */
@@ -138,6 +141,9 @@ h1, h2, h3, h4 {
    border-radius: 0.5rem;
 
    margin-right: var(--header-xpad);
+
+   text-decoration: none;
+   color: black;
 }
 
 .index .header .login-btn:hover {
@@ -160,6 +166,7 @@ h1, h2, h3, h4 {
    0% {
       opacity: 0%;
    }
+
    100% {
       opacity: 50%;
    }
@@ -169,7 +176,8 @@ h1, h2, h3, h4 {
    0% {
       opacity: 0%;
       transform: translateX(-100px);
-   } 
+   }
+
    100% {
       opacity: 100%;
       transform: translateX(0px);
@@ -187,7 +195,7 @@ h1, h2, h3, h4 {
    height: 100%;
    object-fit: cover;
    overflow: hidden;
-   opacity: 50%;   
+   opacity: 50%;
    animation: hero-img-fade-in 0.5s ease-in-out;
 }
 
@@ -211,7 +219,7 @@ h1, h2, h3, h4 {
    animation: hero-text-fade-in 0.5s ease;
 }
 
-.index .sections-container .hero-container .hero >h1 {
+.index .sections-container .hero-container .hero>h1 {
    font-size: clamp(2.7rem, 4.5rem, calc(4vw * 1.8));
    font-weight: 700;
 }
@@ -228,7 +236,7 @@ h1, h2, h3, h4 {
    margin-right: var(--xpad);
 }
 
-.index .sections-container .why-azoom >h1 {
+.index .sections-container .why-azoom>h1 {
    font-size: xx-large;
    font-weight: 700;
    padding: 1rem;
@@ -273,7 +281,8 @@ h1, h2, h3, h4 {
    0% {
       opacity: 0%;
       transform: translateY(50px);
-   } 
+   }
+
    100% {
       opacity: 100%;
       transform: translateY(0px);
@@ -314,10 +323,8 @@ h1, h2, h3, h4 {
 /* ================= TESTIMONIALS ================= */
 /* ================================================ */
 .index .sections-container .testimonials {
-   background: linear-gradient(
-      110deg,#1b1b1b, 
-      #200a22 65%,#2f0b2c 
-   );
+   background: linear-gradient(110deg, #1b1b1b,
+         #200a22 65%, #2f0b2c);
 
    display: flex;
    flex-direction: column;
@@ -341,12 +348,12 @@ h1, h2, h3, h4 {
 .index .sections-container .testimonials .top .left {
    display: flex;
    flex-direction: column;
-   justify-content: center; 
+   justify-content: center;
    align-items: start;
    gap: 1rem;
 }
 
-.index .sections-container .testimonials .top .left >h1 {
+.index .sections-container .testimonials .top .left>h1 {
    font-size: 3rem;
 }
 
@@ -357,7 +364,7 @@ h1, h2, h3, h4 {
    gap: 0.5rem;
 }
 
-.index .sections-container .testimonials .top .right >button {
+.index .sections-container .testimonials .top .right>button {
    color: white;
    font-size: 1.25rem;
    width: 3.3rem;
@@ -397,34 +404,30 @@ h1, h2, h3, h4 {
    background: rgba(255, 255, 255, 0.1);
 }
 
-.index .sections-container .testimonials 
-.testimonial-carousel .carousel-item .star-container {
+.index .sections-container .testimonials .testimonial-carousel .carousel-item .star-container {
    display: flex;
-   justify-content: center; 
+   justify-content: center;
    align-items: center;
    color: #ffd001;
 }
 
-.index .sections-container .testimonials 
-.testimonial-carousel .carousel-item .content {
+.index .sections-container .testimonials .testimonial-carousel .carousel-item .content {
    font-style: italic;
 }
 
-.index .sections-container .testimonials 
-.testimonial-carousel .carousel-item .name {
+.index .sections-container .testimonials .testimonial-carousel .carousel-item .name {
    font-weight: bold;
    font-size: 1.1rem;
 }
 
-.index .sections-container .testimonials 
-.testimonial-carousel .carousel-item .title {
+.index .sections-container .testimonials .testimonial-carousel .carousel-item .title {
    font-size: 0.9rem;
 }
+
 /* ============================================= */
 /* =============== MAILING LIST ================ */
 /* ============================================= */
-.index .sections-container .signup {
-}
+.index .sections-container .signup {}
 
 /* ============================================= */
 /* ================== FOOTER =================== */
@@ -436,7 +439,7 @@ h1, h2, h3, h4 {
    align-items: center;
 
    color: white;
-   background: black;   
+   background: black;
 }
 
 .index .sections-container footer .separator {
@@ -449,14 +452,14 @@ h1, h2, h3, h4 {
 
 .index .sections-container footer .top {
    display: flex;
-   justify-content: center;
+   justify-content: space-between;
    align-items: center;
 
    padding-top: 1rem;
    padding-bottom: 1rem;
 
    /* height: 5rem; */
-   gap: 7rem;
+   gap: 20rem;
 }
 
 .index .sections-container footer .top input {
@@ -487,7 +490,7 @@ h1, h2, h3, h4 {
    padding-bottom: 1rem;
 }
 
-.index .sections-container footer .middle >h3 {
+.index .sections-container footer .middle>h3 {
    font-weight: bold;
 }
 
@@ -501,7 +504,7 @@ h1, h2, h3, h4 {
 
 .index .sections-container footer .middle .footer-object a {
    color: lightgray;
-   text-decoration: none;  
+   text-decoration: none;
 }
 
 .index .sections-container footer .middle .footer-object a:hover {
@@ -518,4 +521,3 @@ h1, h2, h3, h4 {
    padding-top: 1rem;
    padding-bottom: 1rem;
 }
-
