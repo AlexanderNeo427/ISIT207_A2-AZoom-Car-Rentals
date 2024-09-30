@@ -61,6 +61,16 @@ h4 {
    align-items: center;
 }
 
+.login .header .header-left >a {
+   margin: 0;
+   padding: 0;
+}
+
+.login .header .header-left >a img {
+   display: block;
+   height: 3rem;
+}
+
 .login .header .header-left .burger-menu {
    width: 4rem;
    height: 3rem;
@@ -74,7 +84,7 @@ h4 {
    cursor: pointer;
 }
 
-.login .header .header-left .burger-menu>span {
+.login .header .header-left .burger-menu >span {
    height: 2.5px;
    width: 33px;
    background-color: rgb(20, 20, 20);

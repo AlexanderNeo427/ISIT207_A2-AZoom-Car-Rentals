@@ -57,6 +57,16 @@ h4 {
    align-items: center;
 }
 
+.index .header .header-left >a {
+   margin: 0;
+   padding: 0;
+}
+
+.index .header .header-left >a img {
+   display: block;
+   height: 3rem;
+}
+
 .index .header .header-left .burger-menu {
    width: 4rem;
    height: 3rem;
@@ -82,11 +92,6 @@ h4 {
    .index .header .header-left .burger-menu {
       display: none;
    }
-}
-
-.index .header img {
-   /* margin-left: 1.5rem; */
-   height: 3rem;
 }
 
 .index .header .menu-items-large {
@@ -266,6 +271,7 @@ h4 {
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   gap: 0.5rem;
 
    border-radius: 0.8rem;
    padding-top: 2rem;

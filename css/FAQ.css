@@ -1,0 +1,196 @@
+@import url(globalVars.css);
+
+
+
+@font-face {
+   font-family: 'Inter';
+   src: url('/assets/fonts/Inter/Inter-Regular.ttf') format('truetype');
+   font-weight: 400;
+   font-style: normal;
+}
+
+@font-face {
+   font-family: 'Inter';
+   src: url('/assets/fonts/Inter/Inter-Bold.ttf') format('truetype');
+   font-weight: 700;
+   font-style: normal;
+}
+
+body {
+   background: var(--background-50);
+   color: var(--text-950);
+
+   margin: 0;
+   padding: 0;
+
+   font-family: 'Inter', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+   margin: 0;
+}
+
+/* =============================================== */
+/* ==================== HEADER =================== */
+/* =============================================== */
+.FAQ .header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+
+   color: black;
+   background: var(--background-50);
+   box-shadow: 0px 0.5px 4px gray;
+}
+
+.FAQ .header .header-left {
+   margin-left: var(--header-xpad);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.FAQ .header .header-left >a {
+   margin: 0;
+   padding: 0;
+}
+
+.FAQ .header .header-left >a img {
+   display: block;
+   height: 3rem;
+}
+
+.FAQ .header .header-left .burger-menu {
+   width: 4rem;
+   height: 3rem;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 0.3333rem;
+
+   cursor: pointer;
+}
+
+.FAQ .header .header-left .burger-menu >span {
+   height: 2.5px;
+   width: 33px;
+   /* border-radius: 0.1rem; */
+   background-color: rgb(20, 20, 20);
+}
+
+/* Hide burger menu over certain size */
+@media (min-width: 991px) {
+   .FAQ .header .header-left .burger-menu {
+      display: none;
+   }
+}
+
+.FAQ .header .menu-items-large {
+   display: none;
+}
+
+.FAQ .header .menu-items-large a {
+   text-decoration: none;
+   font-size: medium;
+   color: black;
+}
+
+.FAQ .header .menu-items-large a:hover {
+   color: var(--accent)
+}
+
+.FAQ .header .menu-items-small {
+   display: flex;
+   gap: 0.5rem;
+   margin-right: 1.5rem;
+}
+
+@media (min-width: 991px) {
+   .FAQ .header .menu-items-large {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-right: 1.5rem;
+   }
+
+   .FAQ .header .menu-items-small {
+      display: none;
+   }
+}
+
+/* ================================================ */
+/* ================ LOGIN BUTTON ================== */
+/* ================================================ */
+.FAQ .header .login-btn {
+   background: none;
+   border: none;
+   padding: 0;
+   font: inherit;
+
+   padding-left: 1.2rem;
+   padding-right: 1.2rem;
+   padding-top: 0.2rem;
+   padding-bottom: 0.2rem;
+
+   outline: 1.5px solid var(--text-950);
+   border-radius: 0.5rem;
+
+   margin-right: var(--header-xpad);
+
+   text-decoration: none;
+   color: black;
+}
+
+.FAQ .header .login-btn:hover {
+   cursor: pointer;
+}
+
+/* ================================================ */
+/* ============== DROPDOWN OBJECT ================= */
+/* ================================================ */
+.FAQ .all-dropdowns {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+}
+
+.FAQ .all-dropdowns .dropdown-object {
+   outline: 1px solid red;
+
+   max-width: 40rem;
+   /* max-height: var(--FAQ-header-height); */
+   overflow: hidden;
+}
+
+.FAQ .all-dropdowns .dropdown-object .dropdown-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   padding-left: 1rem;
+   padding-right: 1rem;
+
+   /* width: 100%; */
+   /* min-height: var(--FAQ-header-height); */
+}
+
+/* .FAQ .all-dropdowns .dropdown-object .dropdown-content {
+   display: none;
+} */
+
+/* .FAQ .all-dropdowns .dropdown-object .dropdown-content {
+
+} */
+
+/* ---- DEBUG ---- */
+* {
+   /* outline: 1px dotted rgb(205, 71, 71); */
+}
