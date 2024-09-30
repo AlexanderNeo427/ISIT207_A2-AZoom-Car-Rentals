@@ -31,18 +31,33 @@
 
    <!---------- BODY ----------->
    <div class="body">
-      <h1>LOGIN</h1>
+      <form class="login-form">
 
-      <input type="text" placeholder="Username">
-      <input type="text" placeholder="Password">
-      <a href="">Forgot your password?</a>
+         <!--------- LEFT --------->
+         <div class="form-left"></div>
 
-      <button>Sign in</button>
-      <a href="">Create account</a>
+         <!----------- RIGHT ----------->
+         <div class="form-right">
+            <h1>LOGIN</h1>
+
+            <input type="text" placeholder="Username">
+            <input type="text" placeholder="Password">
+            <button class="login-btn">Login</button>
+            <div class="input-options">
+               <label>
+                  <input type="checkbox" name="remember-me-checkbox">
+                  Remember Me
+               </label>
+               <a href="">Forgot your password?</a>
+            </div>
+
+            <span>
+               Don't have an account yet?
+               <strong><a href="">Register</a></strong>
+            </span>
+         </div>
+      </form>
    </div>
-
-   <!---------- FOOTER ---------->
-   <footer>FOOTER</footer>
 </body>
 
 </html>

@@ -20,6 +20,7 @@ body {
 
    margin: 0;
    padding: 0;
+   height: 100vh;
 
    font-family: 'Inter', sans-serif;
 
@@ -159,18 +160,128 @@ h4 {
 
    width: 100%;
    height: 100%;
-   background: linear-gradient(
+   /* background: linear-gradient(
       120deg,
-      var(--primary-200), 
-      var(--primary-400)   
-   );
+      var(--secondary-200) 20%, 
+      var(--primary-200)   
+   ); */
+   background: var(--background-100);
+   /* background-image: url('../assets/images/black-maserati.jpg'); */
+   /* background-size: contain; */
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+/* ================================================ */
+/* ================ LOGIN FORM ==================== */
+/* ================================================ */
+.login .body .login-form {
+   background: var(--primary-400);
+   border-radius: 1rem;
+   box-shadow: 0px 3px 10px gray;
+
+   min-width: 40rem;
+   min-height: 45rem;
+
+   display: grid;
+   grid-template-columns: 0% 100%;
+}
+
+@media (min-width: 991px) {
+   .login .body .login-form {
+      min-width: 60rem;
+      grid-template-columns: 57% 43%;
+   }
+}
+
+.login .body .login-form .form-left {
+   /* background: var(--primary-400); */
+   background-image: url(../assets/images/black-and-yellow.jpg);
+   background-size: cover;
+   background-position: -220px;
+}
+
+.login .body .login-form .form-right {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 2rem;
+
+   background: white;
+}
+
+.login .body .login-form .form-right >h1 {
+   font-size: 2.5rem;
+   margin-bottom: 1rem;
+}
+
+.login .body .login-form .form-right input[type=text] {
+   border: none;
+   min-height: 1.5rem;
+   min-width: 20rem;
+   border-bottom: 0.8px solid rgb(80, 80, 80);
+   outline: none;
+}
+
+/* .login .body .login-form .form-right input[type=text]:focus {
+
+} */
+/* .login .body .login-form .form-right input[type=text] {
+} */
+
+.login .body .login-form .form-right .input-options {
+   display: flex;
+   justify-content: space-between;
+   min-width: 20rem;
+
+   font-size: small;
+}
+
+.login .body .login-form .form-right a {
+   color: var(--text-950);
+   text-decoration: none;
+}
+
+.login .body .login-form .form-right a:hover {
+   text-decoration: underline;
+}
+
+.login .body .login-form .form-right .login-btn {
+   border: none;
+   min-width: 20rem;
+   min-height: 2.5rem;
+   font-weight: bold;
+   background: var(--accent-300);
+
+   cursor: pointer;
+   transition: background 0.25s;
+}
+
+.login .body .login-form .form-right .login-btn:hover {
+   background: var(--accent-500);
+}
+
+.login .body .login-form .form-right span {
+   font-size: small;
+}
+
+/* .login .body .login-form .form-right >span >a {
+   
+} */
+
+/* ---- DEBUG ---- */
+* {
+   /* outline: 1px dotted rgb(205, 71, 71); */
 }
 
 /* ================================================ */
 /* ================== FOOTER ====================== */
 /* ================================================ */
-.login >footer {
+/* .login>footer {
    width: 100%;
    height: 3rem;
    background: red;
-}
+} */
