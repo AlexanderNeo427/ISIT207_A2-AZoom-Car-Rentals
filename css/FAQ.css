@@ -163,11 +163,13 @@ h4 {
 }
 
 .FAQ .all-dropdowns .dropdown-object {
-   outline: 1px solid red;
+   /* outline: 1px solid red; */
 
    max-width: 40rem;
-   /* max-height: var(--FAQ-header-height); */
+   max-height: var(--FAQ-header-height);
    overflow: hidden;
+
+   transition: max-height 1s ease-in-out;
 }
 
 .FAQ .all-dropdowns .dropdown-object .dropdown-header {
@@ -179,12 +181,13 @@ h4 {
    padding-right: 1rem;
 
    /* width: 100%; */
-   /* min-height: var(--FAQ-header-height); */
+   min-height: var(--FAQ-header-height);
 }
 
-/* .FAQ .all-dropdowns .dropdown-object .dropdown-content {
-   display: none;
-} */
+.FAQ .all-dropdowns .dropdown-object .dropdown-content {
+   padding: 1rem;
+   padding-top: 0;
+}
 
 /* .FAQ .all-dropdowns .dropdown-object .dropdown-content {
 
@@ -192,5 +195,5 @@ h4 {
 
 /* ---- DEBUG ---- */
 * {
-   /* outline: 1px dotted rgb(205, 71, 71); */
+   outline: 1px dotted rgb(205, 71, 71);
 }
