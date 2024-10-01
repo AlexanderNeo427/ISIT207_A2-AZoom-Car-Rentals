@@ -80,7 +80,6 @@ h4 {
 .FAQ .header .header-left .burger-menu >span {
    height: 2.5px;
    width: 33px;
-   /* border-radius: 0.1rem; */
    background-color: rgb(20, 20, 20);
 }
 
@@ -155,21 +154,37 @@ h4 {
 /* ================================================ */
 /* ============== DROPDOWN OBJECT ================= */
 /* ================================================ */
+.FAQ .dropdown-section >h1 {
+   text-align: center;
+   font-size: 2.3rem;
+
+   padding-top: 4rem;
+   padding-bottom: 4rem;
+}
+
 .FAQ .all-dropdowns {
    display: flex;
    flex-direction: column;
    justify-content: start;
    align-items: center;
+
+   gap: 1rem;
 }
 
 .FAQ .all-dropdowns .dropdown-object {
-   /* outline: 1px solid red; */
-
    max-width: 40rem;
    max-height: var(--FAQ-header-height);
    overflow: hidden;
 
-   transition: max-height 1s ease-in-out;
+   transition: max-height 0.7s ease-in-out, background-color 0.333s;
+
+   text-align: center;
+   background-color: var(--primary-200);
+   border-radius: 1rem;
+}
+
+.FAQ .all-dropdowns .dropdown-object:hover {
+   background-color: var(--secondary-200);
 }
 
 .FAQ .all-dropdowns .dropdown-object .dropdown-header {
@@ -177,23 +192,30 @@ h4 {
    justify-content: space-between;
    align-items: center;
 
-   padding-left: 1rem;
-   padding-right: 1rem;
-
-   /* width: 100%; */
+   padding-left: 2rem;
+   padding-right: 1.5rem;
    min-height: var(--FAQ-header-height);
 }
 
-.FAQ .all-dropdowns .dropdown-object .dropdown-content {
-   padding: 1rem;
-   padding-top: 0;
+.FAQ .all-dropdowns .dropdown-object .dropdown-header >h3 {
+   font-size: x-large;
+   font-weight: bold;
 }
 
-/* .FAQ .all-dropdowns .dropdown-object .dropdown-content {
+.FAQ .all-dropdowns .dropdown-object .dropdown-header .updown-arrow {
+   font-size: xx-large;
+   text-align: center;
+}
 
-} */
+.FAQ .all-dropdowns .dropdown-object .dropdown-content {
+   padding-left: 2rem;
+   padding-right: 1.5rem;
+
+   font-size: larger;
+   text-align: left;
+}
 
 /* ---- DEBUG ---- */
 * {
-   outline: 1px dotted rgb(205, 71, 71);
+   /* outline: 1px dotted rgb(205, 71, 71); */
 }

@@ -14,7 +14,7 @@ function appendChild(parent, child) {
 // div: dropdown-object
 //     div: dropdown-header
 //         h3
-//         button
+//         span: updown-arrow 
 //     p: dropdown-content
 function makeDropdownObject(faqDatum) {
     const dropdownObject = document.createElement("div")
@@ -30,10 +30,11 @@ function makeDropdownObject(faqDatum) {
     )
     h3Node.innerHTML = faqDatum.question
 
-    const buttonNode = appendChild(
-        dropdownHeader, document.createElement("button")
+    const spanNode = appendChild(
+        dropdownHeader, document.createElement("span")
     )
-    buttonNode.innerHTML = "Toggle"
+    spanNode.classList.add("updown-arrow")
+    spanNode.innerHTML = "🢃"
 
     const paragraphNode = appendChild(
         dropdownObject, document.createElement("p")
@@ -45,21 +46,25 @@ function makeDropdownObject(faqDatum) {
 }
 
 window.onload = function () {
+    const MAX_HEIGHT = "45rem"
+
     console.log("START of the FAQ main function()")
     const dropdownContainerNode = document.getElementsByClassName("all-dropdowns")[0]
-    console.log("FAQ Data: ", database.frequentlyAskedQuestions)
-
     database.frequentlyAskedQuestions.forEach(faqDatum => {
         const newDropdownElem = appendChild(
             dropdownContainerNode,
             makeDropdownObject(faqDatum)
         )
+        newDropdownElem.style.maxHeight = ""
+        const arrowNode = newDropdownElem.getElementsByClassName("updown-arrow")[0]
         const dropdownState = new DropdownState(faqDatum.id)
 
         // Register click handler
         newDropdownElem.onclick = function() {
             dropdownState.isOpen = !dropdownState.isOpen     
-            newDropdownElem.style.maxHeight = dropdownState.isOpen ? "" : "40rem" 
+            newDropdownElem.style.maxHeight = dropdownState.isOpen ? MAX_HEIGHT : "" 
+            arrowNode.innerHTML = dropdownState.isOpen ? "🢁" : "🢃"
+            console.log(dropdownState.id, " ", dropdownState.isOpen)
         }
     })
 
