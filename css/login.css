@@ -1,40 +1,8 @@
 @import url(globalVars.css);
 
-@font-face {
-   font-family: 'Inter';
-   src: url('/assets/fonts/Inter/Inter-Regular.ttf') format('truetype');
-   font-weight: 400;
-   font-style: normal;
-}
-
-@font-face {
-   font-family: 'Inter';
-   src: url('/assets/fonts/Inter/Inter-Bold.ttf') format('truetype');
-   font-weight: 700;
-   font-style: normal;
-}
-
-body {
-   background: var(--background-50);
-   color: var(--text-950);
-
-   margin: 0;
-   padding: 0;
-   height: 100vh;
-
-   font-family: 'Inter', sans-serif;
-
+.login {
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   align-items: center;
-}
-
-h1,
-h2,
-h3,
-h4 {
-   margin: 0;
 }
 
 /* =============================================== */
@@ -169,15 +137,9 @@ h4 {
    flex-grow: 1;
 
    width: 100%;
-   height: 100%;
-   /* background: linear-gradient(
-      120deg,
-      var(--secondary-200) 20%, 
-      var(--primary-200)   
-   ); */
+   /* height: 100%; */
    background: var(--background-100);
-   /* background-image: url('../assets/images/black-maserati.jpg'); */
-   /* background-size: contain; */
+   /* outline: 5px solid red; */
 
    display: flex;
    justify-content: center;
@@ -197,6 +159,8 @@ h4 {
 
    display: grid;
    grid-template-columns: 0% 100%;
+
+   margin-bottom: 3rem;
 }
 
 @media (min-width: 991px) {
