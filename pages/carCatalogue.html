@@ -16,15 +16,56 @@
       Welcome to the AZoom Rental page! <br />
       View our collection of cars here!
    </h1>
+
+   <!--------- CAR LISTINGS ----------->
    <ul class="car-listings">
-      <div class="car-card-container">
+
+      <div class="car-card">
+         <!----- CARD HEADER ------>
          <div class="card-header">
-            <div class="rating"></div>
-            <div class="heart"></div>
+            <div class="rating-container">
+               <span>★</span>
+               <span class="rating">
+                  <strong>4.7</strong>(109)
+               </span>
+            </div>
+            <img src="../assets/svg/Heart.svg" alt="Heart Icon">
+            <!-- <div class="heart"></div> -->
          </div>
-         <img src="" alt="car-img">
-         <details>
-         </details>
+
+         <!----- CAR CARD PICTURE ------->
+         <div class="image-container">
+            <img src="../assets/images/red-car.jpg" alt="car-img">
+         </div>
+
+         <!------ ADDITIONAL CAR DATA -------->
+         <div class="car-data">
+            <div class="data-left">
+               <span class="car-make">NISSAN</span>
+               <span class="car-model">SENTRA</span>
+            </div>
+            <div class="hourly-rate">
+               <span><strong>$420</strong> /hr</span>
+            </div>
+         </div>
+
+         <span class="separator"></span>
+
+         <!------- MISC CAR STATS ------->
+         <div class="car-stats">
+            <div class="driving-range">
+               <img src="../assets/svg/Distance.svg" alt="">
+               <span>12km</span>
+            </div>
+            <div class="battery-capacity">
+               <img src="../assets/svg/Battery.svg" alt="">
+               <span>12h</span>
+            </div>
+            <div class="passenger-capcity">
+               <img src="../assets/svg/Person.svg" alt="">
+               <span>5</span>
+            </div>
+         </div>
       </div>
       <!-- JS will use this -->
    </ul>
