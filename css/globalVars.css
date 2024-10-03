@@ -1,10 +1,41 @@
 :root {
-   --gap-xs: 0.128em;
-   --gap-s: 0.272em;
-   --gap-m: 0.618em;
-   --gap-1: 0.1em;
-   --gap-x1: 1.618em;
-   --gap-xx1: 2.618em;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   font-smooth: never;
+
+   --margin-xxs: 0.236em;
+   --margin-xs: 0.382em;
+   --margin-s: 0.618em;
+   --margin-m: 0.1em;
+   --margin-l: 1.618em;
+   --margin-xl: 2.618em;
+   --margin-xxl: 4.236em;
+
+   --d1-margin-xxs: 0.266em;
+   --d1-margin-xs: 0.431em;
+   --d1-margin-s: 0.697em;
+   --d1-margin-m: 1.128em;
+   --d1-margin-l: 1.825em;
+   --d1-margin-xl: 2.953em;
+   --d1-margin-xxl: 4.778em;
+
+   --body-margin-xxs: 0.382em;
+   --body-margin-xs: 0.618em;
+   --body-margin-s: 0.1em;
+   --body-margin-m: 1.618em;
+   --body-margin-l: 2.618em;
+   --body-margin-xl: 4.236em;
+   --body-margin-xxl: 6.854em;
+
+   --text-margin-xxs: 0.3em;
+   --text-margin-xs: 0.486em;
+   --text-margin-s: 0.7862em;
+   --text-margin-m: 1.272em;
+   --text-margin-l: 2.058em;
+   --text-margin-xl: 3.330em;
+   --text-margin-xl: 5.388em;
+
+   --DEFAULT_LINE_HEIGHT: 1.2;
 
    --header-xpad: 2.7rem;
    --xpad: 2rem;
@@ -147,7 +178,8 @@
    font-style: normal;
 }
 
-html, body {
+html,
+body {
    background: var(--background-50);
    color: var(--text-950);
 
