@@ -37,7 +37,7 @@
 
    --DEFAULT_LINE_HEIGHT: 1.2;
 
-   --header-xpad: 2.7rem;
+   --header-xpad: 2rem;
    --xpad: 2rem;
    --FAQ-header-height: 4rem;
 
@@ -196,4 +196,9 @@ h2,
 h3,
 h4 {
    margin: 0;
+}
+
+img {
+   display: block;
+   width: 100%;
 }

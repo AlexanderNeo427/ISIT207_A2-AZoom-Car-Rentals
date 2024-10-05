@@ -2,7 +2,7 @@
 
 /* ---- DEBUG ---- */
 * {
-   /* outline: 1px dotted rgb(205, 71, 71); */
+   outline: 1px dotted rgb(205, 71, 71);
 }
 
 /* =============================================== */
@@ -20,7 +20,6 @@
 }
 
 .index .header .header-left {
-   margin-left: var(--header-xpad);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -54,6 +53,12 @@
    width: 33px;
    /* border-radius: 0.1rem; */
    background-color: rgb(20, 20, 20);
+}
+
+@media screen and (min-width: 767px) {
+   .index .header .header-left {
+      margin-left: var(--header-xpad);
+   }
 }
 
 /* Hide burger menu over certain size */
@@ -175,7 +180,7 @@
 
 .index .sections-container .hero-container .hero {
    grid-area: hero-grid-overlay;
-   max-width: calc(20vw * 2);
+   max-width: calc(20vw * 1.8);
    max-height: 100%;
    opacity: 100%;
 
@@ -210,7 +215,7 @@
    margin-right: var(--xpad);
 }
 
-.index .sections-container .why-azoom>h1 {
+.index .sections-container .why-azoom>h2 {
    font-size: xx-large;
    font-weight: 700;
    padding: 1rem;
@@ -222,7 +227,6 @@
    justify-content: start;
    align-items: center;
    gap: 1rem;
-   border-radius: 1rem;
 }
 
 @media screen and (min-width: 991px) {
@@ -498,7 +502,6 @@
 }
 
 .index .sections-container footer .bottom {
-   /* outline: 1px solid blue; */
    padding-top: 1rem;
    padding-bottom: 1rem;
 }

@@ -8,70 +8,45 @@
    <link rel="stylesheet" href="../css/globalVars.css">
    <link rel="stylesheet" href="../css/carCatalogue.css">
    <script src="../database/cars.js"></script>
+   <script src="../js/Constants.js"></script>
    <script src="../js/Utils.js"></script>
    <script src="../js/carCatalogue.js"></script>
 </head>
 
 <body class="car-catalogue">
-   <a href="../index.html">Temp link to the home page</a>
-   <h1 class="heading">
-      Welcome to the AZoom Rental page! <br />
-      View our collection of cars here!
-   </h1>
 
-   <!--------- CAR LISTINGS ----------->
-   <main class="car-listings">
-
-      <div class="car-card">
-
-         <!----- CARD HEADER ------>
-         <div class="card-header">
-            <div class="rating-container">
-               <span>★</span>
-               <span class="rating">
-                  <strong>4.7</strong>(109)
-               </span>
-            </div>
-            <img src="../assets/svg/Heart.svg" alt="Heart Icon">
+   <!---------- HEADER ---------->
+   <header class="header">
+      <div class="header-left">
+         <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
          </div>
-
-         <!----- CAR CARD PICTURE ------->
-         <div class="image-container">
-            <img src="../assets/images/red-car.jpg" alt="car-img">
-         </div>
-
-         <!------ ADDITIONAL CAR DATA -------->
-         <div class="car-data">
-            <div class="data-left">
-               <span class="car-make">NISSAN</span>
-               <span class="car-model"><strong>SENTRA</strong></span>
-            </div>
-            <div class="hourly-rate">
-               <span><strong>$420</strong> /hr</span>
-            </div>
-         </div>
-
-         <span class="separator"></span>
-
-         <!------- MISC CAR STATS ------->
-         <div class="car-stats">
-            <div class="body-style">
-               <img src="../assets/svg/Car.svg" alt="">
-               <span>Hatchback</span>
-            </div>
-            <div class="battery-life">
-               <img src="../assets/svg/Battery.svg" alt="">
-               <span>12h</span>
-            </div>
-            <div class="passenger-capacity">
-               <img src="../assets/svg/Person.svg" alt="">
-               <span>5</span>
-            </div>
-         </div>
+         <a href="../index.html">
+            <img src="../assets/images/AZoom-Logo.png" alt="">
+         </a>
       </div>
-      
-      <!-- JS will use this -->
+      <div class="menu-items-large">
+         <a href="carCatalogue.html">Rent a Car</a>
+         <a href="">About Us</a>
+         <a href="FAQ.html">FAQ</a>
+         <a href="">Contact Us</a>
+      </div>
+      <a href="login.html" class="login-btn">Login</a>
+   </header>
+
+   <main>
+      <section class="car-filter">
+
+      </section>
+
+      <!--------- CAR LISTINGS ----------->
+      <section class="car-listings">
+         <!-- To be filled dynamically via Javascript -->
+      </section>
    </main>
+
 </body>
 
 </html>

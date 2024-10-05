@@ -10,10 +10,11 @@ function makeCardHeader(rating, numRatings) {
     return `
         <div class="card-header">
             <div class="rating-container">
-               <span>★</span>
-               <span class="rating">
-                  <strong>${rating.toFixed(1)}</strong>(${numRatings})
-               </span>
+                <span class="star">★</span>
+                <span class="">
+                    <strong>${rating.toFixed(1)}</strong>
+                </span>
+                <span class="rating-count">(${numRatings})</span>
             </div>
             <img src="../assets/svg/Heart.svg" alt="Heart Icon">
         </div> 
@@ -96,10 +97,14 @@ window.onload = function () {
     console.log("START of the carCatalogue.js")
 
     const carListings = document.getElementsByClassName("car-listings")[0]
-    database.cars.forEach((carDatum, id)=> {
-        carListings.appendChild(
-            makeCard(carDatum)
-        )
+    database.cars.forEach(carDatum => {
+        const cardNode = makeCard(carDatum)
+        cardNode.onclick = function() {
+            localStorage.setItem(LocalStorageKeys.RESERVED_CAR_ID, carDatum.id)
+            location.href = "carCheckout.html"
+        }
+        carListings.appendChild(cardNode)
     });
+
     console.log("END of the carCatalogue.js")
 }

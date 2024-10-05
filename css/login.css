@@ -200,12 +200,6 @@
    outline: none;
 }
 
-/* .login .body .login-form .form-right input[type=text]:focus {
-
-} */
-/* .login .body .login-form .form-right input[type=text] {
-} */
-
 .login .body .login-form .form-right .input-options {
    display: flex;
    justify-content: space-between;

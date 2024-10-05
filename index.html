@@ -5,9 +5,12 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>AZoom Car Rentals</title>
+   <!-- <link rel="stylesheet" href="css/style.css"> -->
+
    <link rel="stylesheet" href="css/globalVars.css">
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/index.css">
    <script src="database/testimonials.js"></script>
+   <link rel="stylesheet" href="css/TEMP.css">
    <script src="js/index.js"></script>
 </head>
 
@@ -15,6 +18,7 @@
 
    <!---------- HEADER ---------->
    <header class="header">
+      <!------ HEADER LEFT ------->
       <div class="header-left">
          <div class="burger-menu">
             <span></span>
@@ -22,47 +26,50 @@
             <span></span>
          </div>
          <a href="./index.html">
-            <img src="../assets/images/AZoom-Logo.png" alt="">
+            <img class="logo" src="../assets/images/AZoom-Logo.png" alt="">
          </a>
       </div>
-      <div class="menu-items-large">
+
+      <!--- MENU ITEMS LARGE (only show on larger devices) --->
+      <nav class="menu-items-large">
          <a href="./pages/carCatalogue.html">Rent a Car</a>
          <a href="">About Us</a>
          <a href="./pages/FAQ.html">FAQ</a>
          <a href="">Contact Us</a>
-      </div>
+      </nav>
+
       <a href="./pages/login.html" class="login-btn">Login</a>
    </header>
 
    <!--------- SECTIONS CONTAINER ---------->
-   <div class="sections-container">
+   <main class="sections-container">
 
       <!---------- HERO CONTAINER ----------->
       <section class="hero-container">
          <img src="./assets/images/Hero-2.png" alt="">
          <div class="hero">
             <h1>Start Driving in minutes with AZoom</h1>
-            <h4><a href="./pages/carCatalogue.html">Rent a car</a> in minutes from Singapore's largest car rental service with no deposit or membership fees</h4>
+            <h2><a href="./pages/carCatalogue.html">Rent a car</a> in minutes from Singapore's largest car rental service with no deposit or membership fees</h2>
          </div>
       </section>
 
       <!---------- WHY AZOOM ------------>
       <section class="why-azoom">
-         <h1>Why AZoom?</h1>
+         <h2>Why AZoom?</h2>
 
          <!--------- REASONS CONTAINER ----------->
          <div class="reasons-container">
             <div class="reason">
-               <h2>Get verified instantly</h2>
-               <span>Registration is fast and easy</span>
+               <h3>Get verified instantly</h3>
+               <p>Registration is fast and easy</p>
             </div>
             <div class="reason">
-               <h2>No deposit or membership fees</h2>
-               <span>You only need to pay for the hours and mileage used. That's it!</span>
+               <h3>No deposit or membership fees</h3>
+               <p>You only need to pay for the hours and mileage used. That's it!</p>
             </div>
             <div class="reason">
-               <h2>Rent a car in minutes</h2>
-               <span>With cars across 1,600+ locations, it's possible to find and book a car near you in minutes</span>
+               <h3>Rent a car in minutes</h3>
+               <p>With cars across 1,600+ locations, it's possible to find and book a car near you in minutes</p>
             </div>
          </div>
       </section>
@@ -76,8 +83,8 @@
       <section class="testimonials">
          <div class="top">
             <div class="left">
-               <h1>TESTIMONIALS</h1>
-               <h3>Don't take our word for it - see what our users have to say!</h3>
+               <h2>TESTIMONIALS</h2>
+               <span>Don't take our word for it - see what our users have to say!</span>
             </div>
             <div class="right">
                <button>&#60;</button>
@@ -91,7 +98,7 @@
       <footer>
          <div class="top">
             <div>
-               <h1>Stay Informed</h1>
+               <h2>Stay Informed</h2>
                <span>Sign up for our newsletter!</span>
             </div>
             <form action="#">
@@ -102,10 +109,10 @@
          <div class="separator"></div>
          <div class="middle">
             <div class="footer-object">
-               <h1>AZoom</h1>
+               <h2>AZoom</h2>
             </div>
             <div class="footer-object">
-               <h3>QUICK LINKS</h3>
+               <h2>QUICK LINKS</h2>
                <a href="">Home</a>
                <a href="">About Us</a>
                <a href="">Services</a>
@@ -113,7 +120,7 @@
                <a href="">Contact Us</a>
             </div>
             <div class="footer-object">
-               <h3>OFFICE HOURS</h3>
+               <h2>OFFICE HOURS</h2>
                <span>Mon-Fri</span>
                <span>9am - 5pm</span>
                <span>Weekend</span>
@@ -128,7 +135,7 @@
             <span>© 2024 AZoom Pte Ltd. All Rights Reserved<span>
          </div>
       </footer>
-   </div>
+   </main>
 </body>
 
 </html>
