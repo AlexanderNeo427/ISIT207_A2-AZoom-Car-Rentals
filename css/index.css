@@ -1,11 +1,6 @@
 @import url(globalVars.css);
 @import url(header.css);
 
-/* ---- DEBUG ---- */
-* {
-   /* outline: 2px dotted rgb(0, 8, 65); */
-}
-
 .index {
    --hero-leftpad: 1rem;
 }
@@ -23,7 +18,6 @@
    0% {
       opacity: 0%;
    }
-
    100% {
       opacity: 40%;
    }
@@ -112,12 +106,31 @@
    align-items: center;
 }
 
+.why-azoom >h2 {
+   font-size: xx-large;
+   margin-top: 1.4rem;
+   margin-bottom: 1.1rem;
+}
+
 .reasons-container {
    display: flex;
    flex-direction: column;
    justify-content: start;
    align-items: center;
+   width: 100%;
    gap: 1rem;
+}
+
+.reasons-container .reason:nth-child(1) {
+   background-color: var(--secondary-400);
+}
+
+.reasons-container .reason:nth-child(2) {
+   background-color: var(--primary-300);
+}
+
+.reasons-container .reason:nth-child(3) {
+   background-color: var(--accent-400);
 }
 
 .reason {
@@ -125,25 +138,35 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-
-   border-radius: 0.8rem;
-
-   width: 100%;
-   min-height: 3rem;
-
-   padding-top: calc(1.875rem / 1.2);
-   padding-left: 1.875rem;
-   padding-right: 1.875rem;
-   padding-bottom: 1.875rem;
-
+   border-radius: 1rem;
+   width: 90%;
+   min-height: 7rem;
    text-align: center;
 }
 
+.reason >p {
+   width: 80%;
+}
+
 @media screen and (min-width: 767px) {
-   .why-azoom {
-      margin-left: 1rem;
-      margin-right: 1rem;
+   .reason {
+      width: 80%;
    }
 }
 
-@media screen and (min-width: 991px) {}
+@media screen and (min-width: 991px) {
+   .reasons-container {
+      flex-direction: row;
+      justify-content: center;
+      width: 95%;
+   }
+   .reason {
+      height: 8rem;
+      max-width: 28rem;
+   }
+}
+
+/* ---- DEBUG ---- */
+* {
+   outline: 2px dotted rgb(0, 8, 65);
+}
