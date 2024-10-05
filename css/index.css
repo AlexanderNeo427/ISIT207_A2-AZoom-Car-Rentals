@@ -1,93 +1,13 @@
 @import url(globalVars.css);
+@import url(header.css);
 
 /* ---- DEBUG ---- */
 * {
-   outline: 1px dotted rgb(205, 71, 71);
+   /* outline: 2px dotted rgb(0, 8, 65); */
 }
 
-/* ============================================ */
-/* ================== HEADER ================== */
-/* ============================================ */
-.header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-
-   color: var(--text-950);
-   background: var(--background-50);
-   box-shadow: 0px 0.5px 4px var(--text-800);
-}
-
-.header-left {
-   display: flex;
-}
-
-.header-left .logo {
-   height: 3rem;
-}
-
-.burger-menu {
-   width: 3rem;
-   height: 3rem;
-
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   gap: 0.3rem;
-
-   cursor: pointer;
-}
-
-.burger-menu>span {
-   height: 2px;
-   width: 25px;
-   background-color: var(--background-950);
-}
-
-.menu-items-large {
-   display: none;
-}
-
-.login-btn {
-   padding-left: 1.2rem;
-   padding-right: 1.2rem;
-   padding-top: 0.2rem;
-   padding-bottom: 0.2rem;
-
-   outline: 1.5px solid var(--text-950);
-   border-radius: 0.5rem;
-
-   text-decoration: none;
-   color: var(--text-950);
-
-   margin-right: 1rem;
-}
-
-.login-btn:hover {
-   cursor: pointer;
-}
-
-@media screen and (min-width: 767px) {
-   .header {
-      padding-left: var(--header-xpad);
-      padding-right: var(--header-xpad);
-   }
-
-   .login-btn {
-      margin-right: 0;
-   }
-}
-
-@media screen and (min-width: 991px) {
-   .burger-menu {
-      display: none;
-   }
-
-   .menu-items-large {
-      display: flex;
-      gap: 2rem;
-   }
+.index {
+   --hero-leftpad: 1rem;
 }
 
 /* ============================================= */
@@ -103,15 +23,16 @@
    0% {
       opacity: 0%;
    }
+
    100% {
-      opacity: 50%;
+      opacity: 40%;
    }
 }
 
 @keyframes hero-text-fade-in {
    0% {
       opacity: 0%;
-      transform: translateX(-100px);
+      transform: translateX(-8rem);
    }
    100% {
       opacity: 100%;
@@ -122,8 +43,8 @@
 .hero-container {
    display: grid;
    grid-template-areas: "hero-grid-overlay";
-
-   min-height: 18rem;
+   min-height: 20rem;
+   max-height: 45rem;
 }
 
 .hero-container img {
@@ -131,45 +52,56 @@
    height: 100%;
    object-fit: cover;
    overflow: hidden;
-   opacity: 40%;
-   animation: hero-img-fade-in 0.5s ease-in-out;
+   animation: hero-img-fade-in 0.8s ease-in-out 0s 1 normal forwards;
 }
 
 .hero {
    grid-area: hero-grid-overlay;
-   opacity: 100%;
-
-   padding-left: 0.5rem;
-   padding-right: 0.5rem;
-
-   z-index: 3;
-
+   z-index: 1;
+   padding-left: 1.5rem;
    display: flex;
    flex-direction: column;
-   justify-content: space-around;
+   justify-content: center;
    align-items: start;
-
-   animation: hero-text-fade-in 0.5s ease;
+   animation: hero-text-fade-in 1s ease-in-out;
 }
 
-.hero h1 {
-   /* font-size: min(10vw, 2.5rem); */
-   font-size: max(calc(8vw * 0.8), 1.2rem);
+.hero >h1 {
+   /* max-width: 58rem; */
+   width: 75vw;
+   font-size: clamp(2rem, calc(5vw), 5rem);
+   margin-bottom: var(--margin-xs);
 }
 
-.hero h2 {
-   /* font-size: min(4vw, 1rem); */
-   font-size: max(calc(3vw * 0.8), 0.9rem);
+.hero >h2 {
+   font-weight: normal;
+   max-width: 47rem;
+   width: 60vw;
+   font-size: clamp(0.8rem, calc(2vw), 1.875rem);
+   margin-bottom: var(--margin-l); 
 }
 
-@media screen and (min-width: 767px) {
-   .hero {
-      max-width: 70vw;
-   }
+.hero >button {
+   border: none;
+   border-radius: 1rem;
+   padding: 1rem 3rem;
+   font-size: x-large;
+   font-weight: bold;
+   background-color: var(--primary-300);
+   transition: all 0.2s ease-in-out;
+}
+
+.hero >button:hover {
+   cursor: pointer;
+   background-color: var(--primary-400);
+   box-shadow: 0px 0px 3px var(--text-800);
 }
 
 @media screen and (min-width: 991px) {
-}
+   .hero {
+      padding-left: 5rem;
+   }
+} 
 
 /* ========================================== */
 /* ================ WHY AZOOM =============== */
@@ -208,12 +140,10 @@
 }
 
 @media screen and (min-width: 767px) {
-   .why-azoom{
+   .why-azoom {
       margin-left: 1rem;
       margin-right: 1rem;
-   }  
+   }
 }
 
-@media screen and (min-width: 991px) {
-}
-
+@media screen and (min-width: 991px) {}

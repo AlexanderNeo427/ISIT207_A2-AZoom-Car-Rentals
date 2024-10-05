@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- <html lang="en" data-theme="dark"> -->
 
 <head>
    <meta charset="UTF-8">
@@ -18,27 +19,25 @@
 
    <!---------- HEADER ---------->
    <header class="header">
-      <!------ HEADER LEFT ------->
-      <div class="header-left">
-         <div class="burger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-         </div>
-         <a href="./index.html">
-            <img class="logo" src="../assets/images/AZoom-Logo.png" alt="">
-         </a>
-      </div>
+      <a href="./index.html">
+         <img class="logo" src="../assets/images/AZoom-Logo.png" alt="">
+      </a>
 
       <!--- MENU ITEMS LARGE (only show on larger devices) --->
       <nav class="menu-items-large">
          <a href="./pages/carCatalogue.html">Rent a Car</a>
-         <a href="">About Us</a>
+         <a id="leCurrent" href="">About Us</a>
          <a href="./pages/FAQ.html">FAQ</a>
          <a href="">Contact Us</a>
       </nav>
 
-      <a href="./pages/login.html" class="login-btn">Login</a>
+      <!-- <nav class="menu-items-small"></nav> -->
+      <button class="login-btn">Login</button>
+      <div class="burger-menu">
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
    </header>
 
    <!--------- SECTIONS CONTAINER ---------->
@@ -46,10 +45,12 @@
 
       <!---------- HERO CONTAINER ----------->
       <section class="hero-container">
-         <img src="./assets/images/Hero-2.png" alt="">
+         <img src="./assets/images/Hero.png" alt="Row of cars">
          <div class="hero">
             <h1>Start Driving in minutes with AZoom</h1>
-            <h2><a href="./pages/carCatalogue.html">Rent a car</a> in minutes from Singapore's largest car rental service with no deposit or membership fees</h2>
+            <h2><a href="./pages/carCatalogue.html">Rent a car</a> in minutes from Singapore's largest car rental
+               service with no deposit or membership fees</h2>
+            <button>Get Started →</button>
          </div>
       </section>
 
@@ -78,7 +79,7 @@
       <section class="get-started-container">
          <!-- <div class="get-started"></div> -->
       </section>
-      
+
       <!--------- TESTIMONIALS --------->
       <section class="testimonials">
          <div class="top">
