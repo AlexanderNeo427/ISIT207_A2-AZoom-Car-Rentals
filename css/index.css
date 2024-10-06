@@ -315,7 +315,119 @@
    font-size: small;
 }
 
+/* ============================================= */
+/* ================= FOOTER ==================== */
+/* ============================================= */
+footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   color: var(--text-50);
+   background: black;
+}
+
+.footer-content {
+   width: 90%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   margin: 2rem 0rem;
+   gap: 1rem;
+}
+
+.footer-section {
+   width: 95%;
+}
+
+.footer-separator {
+   width: 100%;
+   background: var(--background-50);
+   height: 1px;
+}
+
+@media screen and (min-width: 767px) {
+   .footer-content { 
+      width: 80%;
+      max-width: 63rem;
+      align-items: center;
+   }
+}
+/* ============================================= */
+/* =============== FOOTER - TOP ================ */
+/* ============================================= */
+.footer-top {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: start;
+   gap: 1rem;
+}
+
+.footer-top h3 {
+   font-size: x-large;
+   margin-bottom: var(--margin-xxs);
+}
+
+.footer-top input {
+   border: none;
+   height: 2rem;
+   width: 14rem;
+   padding-left: 1.5rem;
+   border-radius: 1.5rem;
+}
+
+.footer-top button {
+   border: none;
+   height: 2.3rem;
+   padding-left: 1rem;
+   padding-right: 1rem;
+   border-radius: 2rem;
+   font-weight: bold;
+   background: var(--accent-500);
+}
+
+@media screen and (min-width: 767px) {
+   .footer-top {
+      flex-direction: row;
+      align-items: center;
+   }
+}
+/* ============================================= */
+/* ============== FOOTER - MIDDLE ============== */
+/* ============================================= */
+.footer-middle {
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   justify-content: space-around;
+   gap: 2.5rem;
+}
+
+.footer-object {
+   display: flex;
+   flex-direction: column;
+   gap: 0.333rem;
+}
+
+.footer-middle .footer-object a {
+   color: lightgray;
+   text-decoration: none;
+}
+
+.footer-middle .footer-object a:hover {
+   color: white;
+   text-decoration: underline;
+}
+
+@media screen and (min-width: 767px) {
+   .footer-middle {
+      flex-direction: row;
+   }
+}
+
 /* ---- DEBUG ---- */
 * {
-   /* outline: 1px dotted rgb(223, 223, 223); */
+   /* outline: 1px dotted rgb(138, 138, 138); */
 }
