@@ -31,7 +31,15 @@
 
    display: flex;
    flex-direction: column;
-   gap: 1.5rem;
+   gap: 0.8rem;
+
+   min-width: 16rem;
+}
+
+.booking-details .separator {
+   width: 100%;
+   height: 1px;
+   background-color: gray;
 }
 
 .booking-header {
@@ -90,10 +98,6 @@
    color: var(--text-600);
 }
 
-.pickup-return-details .details .pickup-return-location {
-   font-size: large;
-}
-
 .pickup-return-details .details .pickup-return-date {
    font-size: medium;
 }
@@ -107,16 +111,42 @@
    height: 88%;
 }
 
-.pickup-return-graphic >img {
+.pickup-return-graphic>img {
    max-width: 2rem;
 }
 
-.pickup-return-graphic >span {
+.pickup-return-graphic>span {
    height: 58%;
    width: 1px;
    background-color: var(--text-950);
 }
 
+.booking-overview {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 0.4rem;
+}
+
+.booking-overview .payment-summary {
+   font-size: large;
+   font-weight: bold;
+}
+
+.booking-overview .cost-breakdown {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.booking-overview .cost-breakdown .cost-final {
+   font-size: 1.1rem;
+   color: var(--primary-500);
+}
+
+/* =============================================== */
+/* =============== CHECKOUT DATA ================= */
+/* =============================================== */
 .checkout-data {
    display: flex;
    flex-direction: column;
@@ -125,10 +155,29 @@
    gap: var(--card-gap);
 }
 
-/* ================================================ */
-/* =============== BOOKING DETAILS ================ */
-/* ================================================ */
+.input-form {
+   padding: 2rem;
+   border-radius: 1rem;
+   box-shadow: 0px 0px 3px lightgray;
+   outline: 1px solid lightgray;
+   background-color: white;
+}
 
+.payment-info {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.input-form input[type="text"],
+input[type="number"],
+input[type="tel"] {
+
+   border: none;
+   outline: 1px solid lightgray;
+   padding: 1rem 2rem;
+   border-radius: 0.3rem;
+}
 
 @media (min-width: 767px) {
    .car-checkout {

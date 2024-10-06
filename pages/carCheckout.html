@@ -51,7 +51,9 @@
                <span class="rent-duration">6 rental days</span>
             </div>
          </div>
-         
+
+         <span class="separator"></span>
+
          <!----- PICKUP/RETURN INFO ----->
          <div class="pickup-return-container">
             <div class="pickup-return-graphic">
@@ -64,25 +66,54 @@
                   <span class="pickup-return-type">Pickup</span>
                   <span class="pickup-return-location"><strong>Frankfurt Airport</strong></span>
                   <span class="pickup-return-date">Tue, 08 Oct, 2024 | 12:30pm</span>
-               </div>  
+               </div>
                <div class="details">
                   <span class="pickup-return-type">Return</span>
                   <span class="pickup-return-location"><strong>Singapore Airport</strong></span>
                   <span class="pickup-return-date">Sat, 12 Oct, 2024 | 08:30am</span>
                </div>
-            </div>         
+            </div>
          </div>
 
-         <!-- <div class="booking-overview">
-         </div> -->
+         <span class="separator"></span>
+
+         <div class="booking-overview">
+            <span class="payment-summary">Payment Summary</span>
+            <div class="cost-breakdown">
+               <span>Rental Fee</span>
+               <span><strong>SGD 18.30</strong></span>
+            </div>
+            <div class="cost-breakdown">
+               <span>Add-Ons</span>
+               <span><strong>SGD 2.10</strong></span>
+            </div>
+            <div class="cost-breakdown">
+               <span>Insurance</span>
+               <span><strong>SGD 28.90</strong></span>
+            </div>
+            <span class="separator"></span>
+            <div class="cost-breakdown">
+               <span>Total Payable</span>
+               <span class="cost-final"><strong>SGD 410.58</strong></span>
+            </div>
+         </div>
       </section>
 
+      <!----------- CHECKOUT DATA ------------>
       <section class="checkout-data">
-         <article class="car-details"></article>
-         <form class="driver-info"></form>
-         <form class="payment-info"></form>
-         <form action="contact-info"></form>
+         <form class="input-form driver-info">
+         </form>
+         <form class="input-form payment-info">
+            <h2>Credit Card</h2>
+            <input type="text" placeholder="Name on Credit Card">
+            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
+            <input type="text" name="month" placeholder="MM" maxlength="2" size="2" />
+            <input type="text" name="year" placeholder="YY" maxlength="2" size="2" />
+            <button>Finish Booking -></button>
+         </form>
+         <form action="input-form contact-info"></form>
       </section>
+
    </main>
 </body>
 
