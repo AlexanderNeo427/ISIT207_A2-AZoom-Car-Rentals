@@ -51,7 +51,7 @@ function makeTestimonial(testimonialDatum) {
 }
 
 window.onload = function () {
-    const testimonialCarousel = document.getElementsByClassName("testimonial-carousel")[0]
+    const testimonialCarousel = document.getElementsByClassName("testimonials-carousel")[0]
     database.testimonials.forEach(testimonialData => {
         testimonialCarousel.appendChild(
             makeTestimonial(testimonialData)

@@ -10,8 +10,9 @@
 
    <link rel="stylesheet" href="css/globalVars.css">
    <link rel="stylesheet" href="css/index.css">
-   <script src="database/testimonials.js"></script>
    <link rel="stylesheet" href="css/TEMP.css">
+
+   <script src="database/testimonials.js"></script>
    <script src="js/index.js"></script>
 </head>
 
@@ -48,8 +49,8 @@
          <img src="./assets/images/Hero.png" alt="Row of cars">
          <div class="hero">
             <h1>Start Driving in minutes with AZoom</h1>
-            <h2><a href="./pages/carCatalogue.html">Rent a car</a> in minutes from Singapore's largest car rental
-               service with no deposit or membership fees</h2>
+            <p><a href="./pages/carCatalogue.html">Rent a car</a> in minutes from Singapore's largest car rental
+               service with no deposit or membership fees</p>
             <button>Get Started →</button>
          </div>
       </section>
@@ -62,15 +63,15 @@
          <div class="reasons-container">
             <div class="reason">
                <h3>Get verified instantly</h3>
-               <p>Registration is fast and easy</p>
+               <span>Registration is fast and easy</span>
             </div>
             <div class="reason">
                <h3>No deposit or membership fees</h3>
-               <p>You only need to pay for the hours and mileage used. That's it!</p>
+               <span>You only need to pay for the hours and mileage used. That's it!</span>
             </div>
             <div class="reason">
                <h3>Rent a car in minutes</h3>
-               <p>With cars across 1,600+ locations, it's possible to find and book a car near you in minutes</p>
+               <span>With cars across 1,600+ locations, it's possible to find and book a car near you in minutes</span>
             </div>
          </div>
       </section>
@@ -82,20 +83,27 @@
 
       <!--------- TESTIMONIALS --------->
       <section class="testimonials">
-         <div class="top">
-            <div class="left">
-               <h2>TESTIMONIALS</h2>
-               <span>Don't take our word for it - see what our users have to say!</span>
-            </div>
-            <div class="right">
-               <button>&#60;</button>
-               <button>&#62;</button>
-            </div>
+         <div class="testimonials-top">
+            <h2>TESTIMONIALS</h2>
+            <span>Don't take our word for it - see what our users have to say!</span>
          </div>
-         <div class="testimonial-carousel">
+
+         <div class="testimonials-buttons">
+            <button>&#60;</button>
+            <button>&#62;</button>
+         </div>
+         <div class="testimonials-buttons-backdrop">
+            <div class="backdrop"></div>
+            <div class="backdrop"></div>
+         </div>
+
+         <!-- To be filled dynamically via Javascript -->
+         <div class="testimonials-carousel">
          </div>
       </section>
       <section class="signup">Sign up for Mailing List</section>
+
+      <!------- FOOTER ------->
       <footer>
          <div class="top">
             <div>
