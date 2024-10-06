@@ -11,35 +11,37 @@
 
 <body class="login">
 
-   <!--------- HEADER ---------->
+   <!---------- HEADER ---------->
    <header class="header">
-      <div class="header-left">
-         <div class="burger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-         </div>
-         <a href="../index.html">
-            <img src="../assets/images/AZoom-Logo.png" alt="">
-         </a>
-      </div>
-      <div class="menu-items-large">
-         <a href="">Rent a Car</a>
-         <a href="">About Us</a>
-         <a href="./FAQ.html">FAQ</a>
+      <a href="./index.html">
+         <img class="logo" src="../assets/images/AZoom-Logo.png" alt="">
+      </a>
+
+      <!--- MENU ITEMS LARGE (only show on larger devices) --->
+      <nav class="menu-items-large">
+         <a href="./pages/carCatalogue.html">Rent a Car</a>
+         <a id="leCurrent" href="">About Us</a>
+         <a href="./pages/FAQ.html">FAQ</a>
          <a href="">Contact Us</a>
+      </nav>
+
+      <!-- <nav class="menu-items-small"></nav> -->
+      <button 
+         onclick="window.location.href = './pages/login.html'" 
+         class="login-btn">
+            Login
+      </button>
+      <div class="burger-menu">
+         <span></span>
+         <span></span>
+         <span></span>
       </div>
-      <a href="./pages/login.html" class="login-btn">Login</a>
    </header>
 
    <!---------- BODY ----------->
-   <div class="body">
+   <main class="login-body">
       <form class="login-form">
-
-         <!--------- LEFT --------->
          <div class="form-left"></div>
-
-         <!----------- RIGHT ----------->
          <div class="form-right">
             <h1>LOGIN</h1>
 
@@ -60,7 +62,7 @@
             </span>
          </div>
       </form>
-   </div>
+   </main>
 </body>
 
 </html>
