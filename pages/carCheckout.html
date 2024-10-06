@@ -11,15 +11,78 @@
    <script src="../js/carCheckout.js"></script>
 </head>
 
-<body class="car-checkout">
-   <a href="../index.html">TEMP Link to HomePage</a>
+<body>
+   <!---------- HEADER ---------->
+   <header class="header">
+      <a href="../index.html">
+         <img class="logo" src="../assets/images/AZoom-Logo.png" alt="">
+      </a>
 
-   <main>
-      <div class="grid-layout">
-         <section class="grid-top-left"></section>
-         <section class="grid-bottom-left"></section>
-         <section class="grid-right"></section>
+      <!--- MENU ITEMS LARGE (only show on larger devices) --->
+      <nav class="menu-items-large">
+         <a href="carCatalogue.html">Rent a Car</a>
+         <a href="">About Us</a>
+         <a href="FAQ.html">FAQ</a>
+         <a href="">Contact Us</a>
+      </nav>
+
+      <!-- <nav class="menu-items-small"></nav> -->
+      <button onclick="window.location.href = 'login.html'" class="login-btn">
+         Login
+      </button>
+      <div class="burger-menu">
+         <span></span>
+         <span></span>
+         <span></span>
       </div>
+   </header>
+
+   <!------- MAIN -------->
+   <main class="car-checkout">
+
+      <!----- BOOKING DETAILS ----->
+      <section class="booking-details">
+
+         <!------ HEADER ------>
+         <div class="booking-header">
+            <img class="car-img" src="../assets/images/white-jeep.jpg" alt="">
+            <div class="car-details">
+               <span class="car-make-model"><strong>BMW 3 Series Touring</strong></span>
+               <span class="rent-duration">6 rental days</span>
+            </div>
+         </div>
+         
+         <!----- PICKUP/RETURN INFO ----->
+         <div class="pickup-return-container">
+            <div class="pickup-return-graphic">
+               <img src="../assets/svg/Car.svg" alt="">
+               <span></span>
+               <img src="../assets/svg/Car.svg" alt="">
+            </div>
+            <div class="pickup-return-details">
+               <div class="details">
+                  <span class="pickup-return-type">Pickup</span>
+                  <span class="pickup-return-location"><strong>Frankfurt Airport</strong></span>
+                  <span class="pickup-return-date">Tue, 08 Oct, 2024 | 12:30pm</span>
+               </div>  
+               <div class="details">
+                  <span class="pickup-return-type">Return</span>
+                  <span class="pickup-return-location"><strong>Singapore Airport</strong></span>
+                  <span class="pickup-return-date">Sat, 12 Oct, 2024 | 08:30am</span>
+               </div>
+            </div>         
+         </div>
+
+         <!-- <div class="booking-overview">
+         </div> -->
+      </section>
+
+      <section class="checkout-data">
+         <article class="car-details"></article>
+         <form class="driver-info"></form>
+         <form class="payment-info"></form>
+         <form action="contact-info"></form>
+      </section>
    </main>
 </body>
 

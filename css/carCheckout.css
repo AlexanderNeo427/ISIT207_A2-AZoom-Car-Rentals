@@ -1,62 +1,141 @@
 @import url(globalVars.css);
+@import url(header.css);
 
 /* ---- DEBUG ---- */
 * {
-   outline: 1px dotted rgb(205, 71, 71);
+   /* outline: 1.5px dotted rgb(14, 14, 14); */
 }
 
-.car-checkout .grid-layout {
-   display: grid;
-   grid-template-rows: 15rem 1fr 1fr;
+/* ================================================ */
+/* =============== BOOKING DETAILS ================ */
+/* ================================================ */
+.car-checkout {
+   --card-gap: 1rem;
+   --img-size: 4rem;
 
-   margin-top: 3rem;
-   margin-left: 4rem;
-   margin-right: 4rem;
+   width: 100%;
 
-   min-width: 35rem;
-   height: 100vh;
-   gap: 3rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+
+   margin-top: var(--card-gap);
+   gap: var(--card-gap);
 }
 
-.car-checkout .grid-layout .grid-top-left {
-   grid-row: 1;
-   background-color: red;
+.booking-details {
+   background-color: var(--accent-300);
+   border-radius: 1rem;
+   padding: 2rem 2rem;
+
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
 }
 
-.car-checkout .grid-layout .grid-bottom-left {
-   grid-row: 2;
-   background-color: blue;
+.booking-header {
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   gap: 0.8rem;
+   height: var(--img-size);
 }
 
-.car-checkout .grid-layout .grid-right {
-   grid-row: 3;
-   background-color: green;
+.car-img {
+   border-radius: 0.7rem;
+   width: calc(var(--img-size) * (16 / 9));
+   height: var(--img-size);
+   height: 100%;
+   object-fit: cover;
 }
 
-@media (min-width: 991px) {
-   .car-checkout .grid-layout {
-      grid-template-columns: 5fr 3fr;
-      grid-template-rows: 15rem 1fr;
+.car-details {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: start;
+   height: 100%;
+}
 
-      margin-left: 7rem;
-      margin-right: 7rem;
+.car-make-model {
+   font-size: large;
+}
+
+.pickup-return-container {
+   display: flex;
+   justify-content: start;
+   align-items: center;
+
+   gap: 1rem;
+   height: 10rem;
+}
+
+.pickup-return-details {
+   height: 100%;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: start;
+}
+
+.pickup-return-details .details {
+   display: flex;
+   flex-direction: column;
+}
+
+.pickup-return-details .details .pickup-return-type {
+   font-size: small;
+   color: var(--text-600);
+}
+
+.pickup-return-details .details .pickup-return-location {
+   font-size: large;
+}
+
+.pickup-return-details .details .pickup-return-date {
+   font-size: medium;
+}
+
+.pickup-return-graphic {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+
+   height: 88%;
+}
+
+.pickup-return-graphic >img {
+   max-width: 2rem;
+}
+
+.pickup-return-graphic >span {
+   height: 58%;
+   width: 1px;
+   background-color: var(--text-950);
+}
+
+.checkout-data {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+   gap: var(--card-gap);
+}
+
+/* ================================================ */
+/* =============== BOOKING DETAILS ================ */
+/* ================================================ */
+
+
+@media (min-width: 767px) {
+   .car-checkout {
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: start;
    }
-
-   .car-checkout .grid-layout .grid-top-left {
-      grid-column: 1;
-      grid-row: 1;
-      background-color: red;
-   }
-
-   .car-checkout .grid-layout .grid-bottom-left {
-      grid-column: 1;
-      grid-row: 2;
-      background-color: blue;
-   }
-
-   .car-checkout .grid-layout .grid-right {
-      grid-column: 2;
-      grid-row: 1 / -1;
-      background-color: green;
-   }
 }
+
+@media (min-width: 991px) {}

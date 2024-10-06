@@ -376,6 +376,11 @@ footer {
    border-radius: 1.5rem;
 }
 
+.footer-top input:focus {
+   outline: none;
+   border: none;
+}
+
 .footer-top button {
    border: none;
    height: 2.3rem;
