@@ -2,7 +2,61 @@
 @import url(header.css);
 
 html, body {
-   background-color: var(--background-100);
+   background-color: var(--background-50);
+}
+
+.car-catalogue {
+   --width-percentage: 90%;
+}
+
+/* ================================================ */
+/* ============ PICKUP/RETURN DETAILS ============= */
+/* ================================================ */
+.pickup-return-details-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   color: white;
+   background: linear-gradient(110deg, #1b1b1b,#200a22 65%, #2f0b2c);
+   margin-top: 0.25rem;
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+   margin-bottom: 1rem;
+}
+
+.pickup-return-details {
+   width: var(--width-percentage);
+
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+}
+
+.pickup-details, .return-details {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.pickup-return-details input[type="date"],
+input[type="time"],
+input[type="text"] {
+   border: 1px solid darkgray;
+   border-radius: 0.333rem;
+   background: none;
+   color: white;
+   padding: 0.8rem 1rem;
+}
+
+@media screen and (min-width: 640px) {
+   .pickup-return-details {
+      flex-direction: row;
+      max-width: 53rem;
+   }
+   .pickup-details, .return-details {
+      width: 100%;
+   }
 }
 
 /* ================================================ */
@@ -15,21 +69,38 @@ html, body {
    margin-bottom: var(--margin-l);
 }
 
-.car-listings {
+.car-listings-container {
    display: flex;
+   flex-direction: column;
    justify-content: start;
    align-items: center;
-   flex-wrap: wrap; 
-   gap: 3rem;
+}
 
-   margin: 2rem;
+.car-listings {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 1.2rem;
+   width: var(--width-percentage);
+   max-width: 75rem;
+}
+
+@media screen and (min-width: 550px) {
+   .car-listings {
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+@media screen and (min-width: 1024px) {
+   .car-listings {
+      grid-template-columns: repeat(3, 1fr);
+   }
 }
 
 /* =========================================== */
 /* =============== CAR CARD ================== */
 /* =========================================== */
-.car-listings .car-card {
-   flex: 1 1 22rem;
+.car-card {
+   flex: 1 1 20rem;
 
    display: flex;
    flex-direction: column;
@@ -46,7 +117,7 @@ html, body {
    transition: all 0.1s ease-in-out;
 }
 
-.car-listings .car-card:hover {
+.car-card:hover {
    transform: translateY(-0.1rem);
    scale: 1.01;
    outline: 1px solid gray;
@@ -56,15 +127,22 @@ html, body {
 /* ============================================= */
 /* =============== CAR HEADER ================== */
 /* ============================================= */
-.car-listings .car-card .card-header {
+.car-card .card-header {
    display: flex;
+   flex-direction: row;
    justify-content: space-between;
 
    width: 100%;
    margin-bottom: var(--margin-s);
 }
 
-.car-listings .car-card .card-header .rating-container {
+.card-header>img {
+   height: 2rem;
+   width: 2rem;
+   object-fit: contain;
+}
+
+.rating-container {
    display: flex;
    justify-content: start;
    align-items: center;
@@ -81,31 +159,26 @@ html, body {
    outline: 1px solid var(--text-900);
 }
 
-.car-listings .car-card .card-header .rating-container .star {
+.rating-container .star {
    font-size: large;
    color: gold;
 }
 
-.car-listings .car-card .card-header .rating-container .rating-count {
+.rating-container .rating-count {
    color: gray;
-}
-
-.car-listings .car-card .card-header >img {
-   height: 2rem;
-   object-fit: contain;
 }
 
 /* ============================================= */
 /* ============= IMAGE CONTAINER =============== */
 /* ============================================= */
-.car-listings .car-card .image-container {
+.car-card .image-container {
    width: 100%;
    height: 20rem;
 
    overflow: hidden;
 }
 
-.car-listings .car-card .image-container >img {
+.car-card .image-container>img {
    width: 100%;
    object-fit: contain;
 }
@@ -162,10 +235,16 @@ html, body {
    margin-top: var(--margin-s);
 }
 
-.car-listings .car-card div {
+.car-stat {
    display: flex;
    justify-content: center;
    align-items: center;
+   gap: 0.1rem;
+}
+
+.car-stat>img {
+   width: 1.5rem;
+   height: 1.5rem;
 }
 
 /* ---- DEBUG ---- */

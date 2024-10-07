@@ -56,15 +56,15 @@ function makeCarStats(bodyStyle, batteryLife, passengerCapacity) {
 
     return `
         <div class="car-stats">
-            <div class="body-style">
+            <div class="car-stat body-style">
                <img src="../assets/svg/Car.svg" alt="Car Icon">
                <span>${bodyStyle}</span>
             </div>
-            <div class="battery-life">
+            <div class="car-stat battery-life">
                <img src="../assets/svg/Battery.svg" alt="Battery Icon">
                <span>${batteryLife}hr</span>
             </div>
-            <div class="passenger-capacity">
+            <div class="car-stat passenger-capacity">
                <img src="../assets/svg/Person.svg" alt="Person Icon">
                <span>${passengerCapacity}</span>
             </div>
