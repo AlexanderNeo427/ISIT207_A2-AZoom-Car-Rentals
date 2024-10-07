@@ -48,7 +48,7 @@
    display: none;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
    .header {
       padding-left: var(--header-xpad);
       padding-right: var(--header-xpad);
@@ -58,7 +58,7 @@
    }
 }
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 1024px) {
    .burger-menu {
       display: none;
    }

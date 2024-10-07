@@ -38,7 +38,7 @@
    grid-template-columns: 0% 100%;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
    .login-form {
       flex: none;
       width: auto;
@@ -46,7 +46,7 @@
    }
 }
 
-@media (min-width: 991px) {
+@media (min-width: 1024px) {
    .login-form {
       min-width: 60rem;
       grid-template-columns: 57% 43%;

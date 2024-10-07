@@ -38,82 +38,146 @@
    </header>
 
    <!------- MAIN -------->
-   <main class="car-checkout">
+   <main>
+      <div class="car-checkout-body">
+         <section class="review-booking-header">
+            <button>
+               <img src="../assets/svg/arrow-back.svg" alt="Arrow Back">
+            </button>
+            <span><strong>Review your booking</strong></span>
+         </section>
 
-      <!----- BOOKING DETAILS ----->
-      <section class="booking-details">
+         <div class="review-booking-body">
+            <!----- BOOKING DETAILS ----->
+            <section class="booking-details">
 
-         <!------ HEADER ------>
-         <div class="booking-header">
-            <img class="car-img" src="../assets/images/white-jeep.jpg" alt="">
-            <div class="car-details">
-               <span class="car-make-model"><strong>BMW 3 Series Touring</strong></span>
-               <span class="rent-duration">6 rental days</span>
-            </div>
-         </div>
-
-         <span class="separator"></span>
-
-         <!----- PICKUP/RETURN INFO ----->
-         <div class="pickup-return-container">
-            <div class="pickup-return-graphic">
-               <img src="../assets/svg/Car.svg" alt="">
-               <span></span>
-               <img src="../assets/svg/Car.svg" alt="">
-            </div>
-            <div class="pickup-return-details">
-               <div class="details">
-                  <span class="pickup-return-type">Pickup</span>
-                  <span class="pickup-return-location"><strong>Frankfurt Airport</strong></span>
-                  <span class="pickup-return-date">Tue, 08 Oct, 2024 | 12:30pm</span>
+               <!------ HEADER ------>
+               <div class="booking-header">
+                  <img class="car-img" src="../assets/images/white-jeep.jpg" alt="">
+                  <div class="car-details">
+                     <span class="car-make-model"><strong>BMW 3 Series Touring</strong></span>
+                     <span class="rent-duration">6 rental days</span>
+                  </div>
                </div>
-               <div class="details">
-                  <span class="pickup-return-type">Return</span>
-                  <span class="pickup-return-location"><strong>Singapore Airport</strong></span>
-                  <span class="pickup-return-date">Sat, 12 Oct, 2024 | 08:30am</span>
+
+               <span class="separator"></span>
+
+               <!----- PICKUP/RETURN INFO ----->
+               <div class="pickup-return-container">
+                  <div class="pickup-return-graphic">
+                     <img src="../assets/svg/Car.svg" alt="">
+                     <span></span>
+                     <img src="../assets/svg/Car.svg" alt="">
+                  </div>
+                  <div class="pickup-return-details">
+                     <div class="details">
+                        <span class="pickup-return-type">Pickup</span>
+                        <span class="pickup-return-location"><strong>Frankfurt Airport</strong></span>
+                        <span class="pickup-return-date">Tue, 08 Oct, 2024 | 12:30pm</span>
+                     </div>
+                     <div class="details">
+                        <span class="pickup-return-type">Return</span>
+                        <span class="pickup-return-location"><strong>Singapore Airport</strong></span>
+                        <span class="pickup-return-date">Sat, 12 Oct, 2024 | 08:30am</span>
+                     </div>
+                  </div>
                </div>
-            </div>
+
+               <span class="separator"></span>
+
+               <div class="booking-overview">
+                  <span class="payment-summary">Payment Summary</span>
+                  <div class="cost-breakdown">
+                     <span>Rental Fee</span>
+                     <span><strong>SGD 18.30</strong></span>
+                  </div>
+                  <div class="cost-breakdown">
+                     <span>Add-Ons</span>
+                     <span><strong>SGD 2.10</strong></span>
+                  </div>
+                  <div class="cost-breakdown">
+                     <span>Insurance</span>
+                     <span><strong>SGD 28.90</strong></span>
+                  </div>
+                  <span class="separator"></span>
+                  <div class="cost-breakdown">
+                     <span>Total Payable</span>
+                     <span class="cost-final"><strong>SGD 410.58</strong></span>
+                  </div>
+               </div>
+            </section>
+
+            <!----------- CHECKOUT DATA ------------>
+            <section class="checkout-data">
+
+               <!------- DRIVER INFO ------->
+               <form class="input-form driver-info">
+                  <h2>Driver Information</h2>
+
+                  <div class="input-label-pair">
+                     <label for="first-name">First name</label>
+                     <input type="text" name="first-name">
+                  </div>
+                  <div class="input-label-pair">
+                     <label for="last-name">Last name</label>
+                     <input type="text" name="last-name">
+                  </div>
+                  <div class="input-label-pair">
+                     <label for="email">Email</label>
+                     <input type="email" name="email">
+                  </div>
+                  <div class="input-label-pair">
+                     <label for="phone-no">Phone number</label>
+                     <input type="number" name="phone-no" maxlength="8">
+                  </div>
+               </form>
+
+               <!------ PAYMENT INFO ------>
+               <form class="input-form payment-info">
+                  <h2>Payment Info</h2>
+                  
+                  <!---- CREDIT CARD NO. ---> 
+                  <div class="input-label-pair">
+                     <label for="credit-card-number">Card No.</label>
+                     <input name="credit-card-number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}"
+                        autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
+                  </div>
+
+                  <!---- CARDHOLDER NAME ---->
+                  <div class="input-label-pair">
+                     <label for="credit-card-name">Name on Credit Card</label>
+                     <input type="text" name="credit-card-name" placeholder="Name">
+                  </div>
+
+                  <!---- EXPIRATION DATE ----->
+                  <div class="input-label-pair">
+                     <label for="expiration-date">Expiration Date</label>
+                     <input type="text" name="expiration-date" placeholder="MM/YY" maxlength="4" size="4" />
+                  </div>
+
+                  <!---- CVV ---->
+                  <div class="input-label-pair">
+                     <label for="cvv">CVV</label>
+                     <input type="text" name="cvv" placeholder="123" maxlength="3" size="3" />
+                  </div>
+               </form>
+
+               <!----- CONTACT INFO ------>
+               <form class="input-form contact-info" action="">
+                  <h2>Contact Info</h2>
+                  <div class="input-label-pair">
+                     <label for="expiration-date">Expiration Date</label>
+                     <input type="text" name="expiration-date" placeholder="MM/YY" maxlength="4" size="4" />
+                  </div>
+
+                  <div class="input-label-pair">
+                     <label for="cvv">CVV</label>
+                     <input type="text" name="cvv" placeholder="123" maxlength="3" size="3" />
+                  </div>
+               </form>
+            </section>
          </div>
-
-         <span class="separator"></span>
-
-         <div class="booking-overview">
-            <span class="payment-summary">Payment Summary</span>
-            <div class="cost-breakdown">
-               <span>Rental Fee</span>
-               <span><strong>SGD 18.30</strong></span>
-            </div>
-            <div class="cost-breakdown">
-               <span>Add-Ons</span>
-               <span><strong>SGD 2.10</strong></span>
-            </div>
-            <div class="cost-breakdown">
-               <span>Insurance</span>
-               <span><strong>SGD 28.90</strong></span>
-            </div>
-            <span class="separator"></span>
-            <div class="cost-breakdown">
-               <span>Total Payable</span>
-               <span class="cost-final"><strong>SGD 410.58</strong></span>
-            </div>
-         </div>
-      </section>
-
-      <!----------- CHECKOUT DATA ------------>
-      <section class="checkout-data">
-         <form class="input-form driver-info">
-         </form>
-         <form class="input-form payment-info">
-            <h2>Credit Card</h2>
-            <input type="text" placeholder="Name on Credit Card">
-            <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
-            <input type="text" name="month" placeholder="MM" maxlength="2" size="2" />
-            <input type="text" name="year" placeholder="YY" maxlength="2" size="2" />
-            <button>Finish Booking -></button>
-         </form>
-         <form action="input-form contact-info"></form>
-      </section>
-
+      </div>
    </main>
 </body>
 
