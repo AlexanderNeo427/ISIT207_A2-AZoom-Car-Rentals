@@ -44,6 +44,10 @@
    display: none;
 }
 
+.menu-items-large a.active {
+   color: var(--secondary-600);
+}
+
 .login-btn {
    display: none;
 }
@@ -53,6 +57,7 @@
       padding-left: var(--header-xpad);
       padding-right: var(--header-xpad);
    }
+
    .login-btn {
       margin-right: 0;
    }
@@ -62,12 +67,14 @@
    .burger-menu {
       display: none;
    }
+
    .menu-items-large {
       flex-grow: 1;
       display: flex;
       justify-content: center;
       gap: 2.8rem;
    }
+
    .menu-items-large a {
       color: var(--text-950);
       text-decoration: none;
@@ -75,9 +82,11 @@
       font-weight: 700;
       transition: color 0.25s ease-in-out;
    }
+
    .menu-items-large a:hover {
       color: var(--secondary-600);
    }
+
    .login-btn {
       display: block;
       padding: 0.7rem 1.7rem;
@@ -89,8 +98,131 @@
       background-color: var(--primary-300);
       transition: background-color 0.2s ease-in-out;
    }
+
    .login-btn:hover {
       cursor: pointer;
       background-color: var(--primary-400);
    }
 }
+
+/* ============================================ */
+/* ============== HEADER MODAL ================ */
+/* ============================================ */
+.header-modal {
+   z-index: 5;
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: rgba(64, 32, 103, 0.95);
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   transition: all 1s ease-in-out;
+}
+
+.header-modal >nav {
+   height: 80%;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 3rem;
+}
+
+.header-modal >nav >a {
+   display: inline-block;
+   position: relative;
+
+   color: var(--text-50);
+   font-size: x-large;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+.header-modal >nav >a::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   transform: scaleX(0) translateY(1px);
+   height: 3px;
+   bottom: 0;
+   left: 0;
+   background-color: var(--text-50);
+   transform-origin: bottom center;
+   transition: transform 0.25s ease-out;
+}
+
+.header-modal >nav >a:hover::after {
+   transform: scaleX(1);
+   transform-origin: bottom center;
+}
+
+.header-modal >nav >button {
+   border: none;
+   display: inline-block;
+   position: relative;
+
+   color: var(--text-950);
+   font-size: x-large;
+   font-weight: bold;
+   text-decoration: none;
+   
+   padding: 1.2rem 3rem;
+}
+
+.header-modal >nav >button::after {
+   content: '';
+   position: absolute;
+   width: 100%;
+   transform: scaleX(0) translateY(1px);
+   height: 3px;
+   bottom: 0;
+   left: 0;
+   background-color: var(--text-950);
+   transform-origin: bottom center;
+   transition: transform 0.25s ease-out;
+}
+
+.header-modal >nav >button:hover::after {
+   transform: scaleX(1);
+   transform-origin: bottom center;
+}
+
+.close-button {
+   position: fixed;
+   top: 0.5rem;
+   right: 2rem;
+
+   color: white;
+   background: none;
+   font-size: 5rem;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border: none;
+}
+
+.close-button:hover {
+   cursor: pointer;
+}
+/* 
+.close-button >span {
+   width: 70%;
+   height: 4px;
+   background-color: var(--text-50);
+}
+
+.close-button >span:first-child {
+   transform: rotateZ(45deg);
+}
+
+.close-button >span:last-child {
+   transform: rotateZ(135deg);
+} */

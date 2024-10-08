@@ -9,10 +9,11 @@
    <!-- <link rel="stylesheet" href="css/style.css"> -->
 
    <link rel="stylesheet" href="css/globalVars.css">
+   <link rel="stylesheet" href="css/header.css">
    <link rel="stylesheet" href="css/index.css">
-   <link rel="stylesheet" href="css/TEMP.css">
 
    <script src="database/testimonials.js"></script>
+   <script src="js/global.js"></script>
    <script src="js/index.js"></script>
 </head>
 
@@ -32,11 +33,8 @@
          <a href="">Contact Us</a>
       </nav>
 
-      <!-- <nav class="menu-items-small"></nav> -->
-      <button 
-         onclick="window.location.href = './pages/login.html'" 
-         class="login-btn">
-            Login
+      <button onclick="window.location.href = './pages/login.html'" class="login-btn">
+         Login
       </button>
       <div class="burger-menu">
          <span></span>
@@ -44,6 +42,17 @@
          <span></span>
       </div>
    </header>
+
+   <div class="header-modal">
+      <nav>
+         <a href="./pages/carCatalogue.html">Rent a Car</a>
+         <a href="">About Us</a>
+         <a href="./pages/FAQ.html">FAQ</a>
+         <a href="">Contact Us</a>
+         <button>Login</button>
+      </nav>
+      <button class="close-button">×</button>
+   </div>
 
    <!--------- SECTIONS CONTAINER ---------->
    <main class="sections-container">
@@ -66,14 +75,17 @@
          <!--------- REASONS CONTAINER ----------->
          <div class="reasons-container">
             <div class="reason">
+               <img src="assets/svg/Verified-user.svg" alt="">
                <h3>Get verified instantly</h3>
                <span>Registration is fast and easy</span>
             </div>
             <div class="reason">
+               <img src="assets/svg/Dollar-sign.svg" alt="">
                <h3>No deposit or membership fees</h3>
                <span>You only need to pay for the hours and mileage used. That's it!</span>
             </div>
             <div class="reason">
+               <img src="assets/svg/Clock.svg" alt="">
                <h3>Rent a car in minutes</h3>
                <span>With cars across 1,600+ locations, it's possible to find and book a car near you in minutes</span>
             </div>

@@ -64,7 +64,6 @@
 }
 
 .hero >h1 {
-   /* max-width: 58rem; */
    width: 75vw;
    font-size: clamp(2rem, calc(5vw), 5rem);
    margin-bottom: var(--margin-xs);
@@ -120,7 +119,7 @@
    justify-content: start;
    align-items: center;
    width: 100%;
-   gap: 1rem;
+   gap: 1.5rem;
 }
 
 .reasons-container .reason:nth-child(1) {
@@ -138,12 +137,18 @@
 .reason {
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: start;
    align-items: center;
    border-radius: 1rem;
    width: 90%;
-   min-height: 7rem;
+   min-height: 13rem;
+   padding-top: 1rem;
    text-align: center;
+}
+
+.reason >img {
+   width: 6rem;
+   height: 6rem;
 }
 
 .reason >h3 {
@@ -152,6 +157,11 @@
 
 .reason >span {
    width: 80%;
+   text-align: left;
+}
+
+.reasons-container .reason:first-child >span {
+   text-align: center;
 }
 
 @keyframes reason-fade-up {
@@ -200,6 +210,7 @@
    .reason {
       height: 8rem;
       max-width: 28rem;
+      min-height: 16rem;
    }
 }
 
