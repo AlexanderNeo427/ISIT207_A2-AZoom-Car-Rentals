@@ -118,10 +118,12 @@
    background-color: rgba(64, 32, 103, 0.95);
 
    display: flex;
-   justify-content: center;
    align-items: center;
+   justify-content: center;
+   opacity: 0;
+   pointer-events: none;
 
-   transition: all 1s ease-in-out;
+   transition: all 0.2s ease-out;
 }
 
 .header-modal >nav {
@@ -132,6 +134,8 @@
    justify-content: center;
    align-items: center;
    gap: 3rem;
+
+   transition: transform 0.8s, opacity 0.5s;
 }
 
 .header-modal >nav >a {
@@ -212,17 +216,3 @@
 .close-button:hover {
    cursor: pointer;
 }
-/* 
-.close-button >span {
-   width: 70%;
-   height: 4px;
-   background-color: var(--text-50);
-}
-
-.close-button >span:first-child {
-   transform: rotateZ(45deg);
-}
-
-.close-button >span:last-child {
-   transform: rotateZ(135deg);
-} */

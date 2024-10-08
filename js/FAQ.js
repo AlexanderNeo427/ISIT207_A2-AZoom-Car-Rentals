@@ -45,7 +45,7 @@ function makeDropdownObject(faqDatum) {
     return dropdownObject
 }
 
-window.onload = function () {
+window.addEventListener('load', function () {
     const MAX_HEIGHT = "45rem"
 
     console.log("START of the FAQ main function()")
@@ -69,4 +69,4 @@ window.onload = function () {
     })
 
     console.log("END of the FAQ Main function()")
-}
+})

@@ -93,7 +93,7 @@ function makeCard(carDatum) {
     return carCard
 }
 
-window.onload = function () {
+window.addEventListener('load', function () {
     console.log("START of the carCatalogue.js")
 
     const carListings = document.getElementsByClassName("car-listings")[0]
@@ -107,4 +107,4 @@ window.onload = function () {
     });
 
     console.log("END of the carCatalogue.js")
-}
+})
