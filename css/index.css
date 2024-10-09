@@ -1,6 +1,11 @@
 @import url(globalVars.css);
 @import url(header.css);
 
+/* ---- DEBUG ---- */
+* {
+   /* outline: 1px dotted rgb(138, 138, 138); */
+}
+
 .index {
    --hero-leftpad: 1rem;
 }
@@ -83,7 +88,8 @@
    padding: 0.9rem 2.2rem;
    font-size: large;
    font-weight: bold;
-   background-color: var(--primary-300);
+   background-color: var(--primary-500);
+   color: var(--text-50);
    transition: background-color 0.2s ease-in-out;
 }
 
@@ -116,7 +122,7 @@
 .reasons-container {
    display: flex;
    flex-direction: column;
-   justify-content: start;
+   justify-content: center;
    align-items: center;
    width: 100%;
    gap: 1.5rem;
@@ -127,7 +133,8 @@
 }
 
 .reasons-container .reason:nth-child(2) {
-   background-color: var(--primary-300);
+   background-color: var(--primary-500);
+   color: var(--text-50);
 }
 
 .reasons-container .reason:nth-child(3) {
@@ -137,27 +144,30 @@
 .reason {
    display: flex;
    flex-direction: column;
-   justify-content: start;
+   justify-content: center;
    align-items: center;
+   gap: 0.25rem;
    border-radius: 1rem;
    width: 90%;
    min-height: 13rem;
-   padding-top: 1rem;
    text-align: center;
+
+   padding: 0rem 1rem;
 }
 
 .reason >img {
-   width: 6rem;
-   height: 6rem;
+   width: 5rem;
+   height: 5rem;
 }
 
 .reason >h3 {
-   margin-bottom: var(--margin-xs);
+   font-size: x-large;
 }
 
 .reason >span {
    width: 80%;
-   text-align: left;
+   text-align: center;
+   font-size: large;
 }
 
 .reasons-container .reason:first-child >span {
@@ -181,17 +191,14 @@
 }
 
 .reasons-container div:nth-child(1) {
-   background: var(--secondary-400);
    animation: reason-fade-up 0.6s ease 0.5s 1 normal both;
 }
 
 .reasons-container div:nth-child(2) {
-   background: var(--secondary-400);
    animation: reason-fade-up 0.6s ease 1s 1 normal both;
 }
 
 .reasons-container div:nth-child(3) {
-   background: var(--secondary-400);
    animation: reason-fade-up 0.6s ease 1.5s 1 normal both;
 }
 
@@ -208,9 +215,12 @@
       width: 95%;
    }
    .reason {
-      height: 8rem;
+      /* height: 10rem; */
       max-width: 28rem;
-      min-height: 16rem;
+      min-height: 17rem;
+   }
+   .reason span {
+      text-align: left;
    }
 }
 
@@ -324,6 +334,32 @@
    font-size: small;
 }
 
+/* =========================================== */
+/* =============== LOCATIONS ================= */
+/* =========================================== */
+.locations-section {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.locations-section >h2 {
+   font-size: xx-large;
+   padding: 1rem 0rem;
+
+   color: linear-gradient(
+      to right,
+      red, blue
+   );
+}
+
+.all-locations {
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+}
+
 /* ============================================= */
 /* ================= FOOTER ==================== */
 /* ============================================= */
@@ -422,7 +458,7 @@ footer {
    flex-direction: column;
    align-items: start;
    justify-content: space-between;
-   /* gap: 2.5rem; */
+   gap: 2.5rem;
 }
 
 .footer-object {
@@ -431,9 +467,26 @@ footer {
    gap: 0.333rem;
 }
 
+.social-links {
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   gap: 1.5rem;
+}
+
+.social-links img {
+   width: 1.3rem;
+   height: 1.3rem;
+   object-fit: contain;
+}
+
 .footer-middle .footer-object a {
-   color: lightgray;
+   color: rgb(182, 182, 182);
    text-decoration: none;
+}
+
+.footer-middle .footer-object span {
+   color: rgb(182, 182, 182); 
 }
 
 .footer-middle .footer-object a:hover {
@@ -454,9 +507,4 @@ footer {
       display: flex;
       justify-content: center;
    }
-}
-
-/* ---- DEBUG ---- */
-* {
-   /* outline: 1px dotted rgb(138, 138, 138); */
 }

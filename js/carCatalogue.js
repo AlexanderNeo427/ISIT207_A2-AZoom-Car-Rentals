@@ -72,6 +72,14 @@ function makeCarStats(bodyStyle, batteryLife, passengerCapacity) {
     `
 }
 
+function makeButton(carID) {
+    return `
+        <button class="rent-btn">
+            Rent Car
+        </button>
+    `
+}
+
 function makeCard(carDatum) {
     const carCard = document.createElement("div")
     carCard.classList.add("car-card")
@@ -90,12 +98,12 @@ function makeCard(carDatum) {
         carDatum.batteryLifeHours, 
         carDatum.seats
     )
+    carCard.innerHTML += makeButton(carDatum.id)
+    
     return carCard
 }
 
 window.addEventListener('load', function () {
-    console.log("START of the carCatalogue.js")
-
     const carListings = document.getElementsByClassName("car-listings")[0]
     database.cars.forEach(carDatum => {
         const cardNode = makeCard(carDatum)
@@ -105,6 +113,4 @@ window.addEventListener('load', function () {
         }
         carListings.appendChild(cardNode)
     });
-
-    console.log("END of the carCatalogue.js")
 })

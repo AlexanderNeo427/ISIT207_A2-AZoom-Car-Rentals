@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AZoom - Car Catalogue</title>
+   <link rel="stylesheet" href="../css/globalVars.css">
+   <link rel="stylesheet" href="../css/carCatalogue.css">
+   <script src="../database/cars.js"></script>
+   <script src="../js/Constants.js"></script>
+   <script src="../js/Utils.js"></script>
+   <script src="../js/navbar.js"></script>
+   <script src="../js/carCatalogue.js"></script>
+</head>
+
+<body class="car-catalogue">
+
+   <!---------- HEADER ---------->
+   <header class="header">
+      <a href="./index.html">
+         <img class="logo" src="../assets/images/AZoom-Logo.png" alt="">
+      </a>
+
+      <!--- MENU ITEMS LARGE (only show on larger devices) --->
+      <nav class="menu-items-large">
+         <a href="">About Us</a>
+         <a href="FAQ.html">FAQ</a>
+         <a href="">Contact Us</a>
+         <a href="login.html">Login</a>
+      </nav>
+
+      <button onclick="window.location.href = 'carCatalogue.html'" class="login-btn">Rent a car</button>
+      <div class="burger-menu">
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
+   </header>
+
+   <div class="header-modal">
+      <nav>
+         <a href="">About Us</a>
+         <a href="FAQ.html">FAQ</a>
+         <a href="">Contact Us</a>
+         <a href="login.html">Login</a>
+         <button onclick="window.location.href = 'carCatalogue.html'">Rent a Car</button>
+      </nav>
+      <button class="close-button">×</button>
+   </div>
+
+   <!--------- MAIN ---------->
+   <main class="car-checkout-main">
+      <div class="width-resize-container">
+
+         <!------ PICKUP/RETURN DETAILS CONTAINER ------>
+         <section class="pickup-return-details">
+            <div class="pickup-details">
+               <h2>Pick Up</h2>
+               <input type="date">
+               <input type="time">
+               <input type="text">
+            </div>
+            <div class="return-details">
+               <h2>Return</h2>
+               <input type="date">
+               <input type="time">
+               <input type="text">
+            </div>
+         </section>
+
+         <!-------- CAR FILTERS -------->
+         <section class="car-filters-container">
+
+            <div class="all-dropdowns">
+               <!------ CAR BRAND - DROPDOWN ------>
+               <div class="dropdown-container">
+                  <button class="dropdown-btn">
+                     Brand<span>▼</span>
+                  </button>
+                  <div class="dropdown-content">
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>Ford</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>Toyota</span>
+                     </div>
+                     <div class="dropdown-option" >
+                        <input type="checkbox" checked>
+                        <span>Volkswagen</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>Renault</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>Fiat</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>Volvo</span>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="dropdown-container">
+                  <button class="dropdown-btn">
+                     Type<span>▼</span>
+                  </button>
+                  <div class="dropdown-content">
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>SUV</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>Hatchback</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>Coupe</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>Sedan</span>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="dropdown-container">
+                  <button class="dropdown-btn">
+                     Seats<span>▼</span>
+                  </button>
+                  <div class="dropdown-content">
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>1 Seater</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>2 Seater</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>3 Seater</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>4 Seater</span>
+                     </div>
+                     <div class="dropdown-option">
+                        <input type="checkbox" checked>
+                        <span>5 Seater</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="car-search">
+               <img src="assets/svg/Search.svg" alt="">
+               <input type="text" placeholder="Find a car...">
+            </div>
+         </section>
+
+         <!------ CAR LISTINGS CONTAINER -->
+         <section class="car-listings">
+            <!-- To be filled dynamically via Javascript -->
+         </section>
+      </div>
+   </main>
+</body>
+
+</html>
