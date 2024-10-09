@@ -421,8 +421,8 @@ footer {
    display: flex;
    flex-direction: column;
    align-items: start;
-   justify-content: space-around;
-   gap: 2.5rem;
+   justify-content: space-between;
+   /* gap: 2.5rem; */
 }
 
 .footer-object {

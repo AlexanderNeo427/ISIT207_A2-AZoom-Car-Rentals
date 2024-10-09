@@ -94,8 +94,8 @@
       border: none;
       font-size: large;
       font-weight: 700;
-      color: var(--text-950);
-      background-color: var(--primary-300);
+      color: var(--text-50);
+      background-color: var(--primary-500);
       transition: background-color 0.2s ease-in-out;
    }
 

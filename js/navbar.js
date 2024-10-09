@@ -1,6 +1,4 @@
 window.addEventListener('load', function() {
-    console.log("START of Navbar.js")
-
     const burgerMenu = document.getElementsByClassName("burger-menu")[0]
     const closeBtn = document.querySelector(".header-modal .close-button")
     const headerModal = document.querySelector(".header-modal")
@@ -21,5 +19,4 @@ window.addEventListener('load', function() {
         navElem.style.transform = "translateY(10rem)"
         navElem.style.opacity = "0"
     }
-    console.log("END of Navbar.js")
 })
