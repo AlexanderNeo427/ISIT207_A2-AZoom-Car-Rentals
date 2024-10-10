@@ -72,21 +72,13 @@ function makeCarStats(bodyStyle, batteryLife, passengerCapacity) {
     `
 }
 
-function makeButton(carID) {
-    return `
-        <button class="rent-btn">
-            Rent Car
-        </button>
-    `
-}
-
 function makeCard(carDatum) {
     const carCard = document.createElement("div")
     carCard.classList.add("car-card")
 
     carCard.innerHTML += makeCardHeader(
-        utils.randFloat(0, 5), 
-        utils.randInt(5, 500) 
+        Utils.randFloat(0, 5), 
+        Utils.randInt(5, 500) 
     )
     carCard.innerHTML += makeCardPicture(carDatum.imageURL)
     carCard.innerHTML += makeCardData(
@@ -98,19 +90,52 @@ function makeCard(carDatum) {
         carDatum.batteryLifeHours, 
         carDatum.seats
     )
-    carCard.innerHTML += makeButton(carDatum.id)
+    carCard.innerHTML += `
+        <button class="rent-btn">
+            Rent Car
+            <span>▶</span>
+        </button>
+    `
     
     return carCard
 }
 
+// TODO
+// - Toast warning(??) | Or maybe I can just trigger the default form validation UI
+// - Pickup time cannot be before curren time (maybe atleast 1 hour from current time?)
+// - Return time cannot be before pickup time (maybe atleast 1 hour from pickup time?)
+function cardButtonClickHandler(evt, carDatum) {
+    const formElem = document.querySelector(".pickup-return-details")
+    if (!formElem.reportValidity()) {
+        return
+    }
+    localStorage.setItem(LocalStorageKeys.RESERVED_CAR_ID, carDatum.id)
+
+    const pickupDetails = formElem.querySelector(".pickup-details")
+    localStorage.setItem(LocalStorageKeys.PICKUP_DETAILS, JSON.stringify({
+        date: pickupDetails.querySelector("input[type='date']").value,
+        time: pickupDetails.querySelector("input[type='time']").value,
+        location: pickupDetails.querySelector("select").value, 
+    }))
+
+    const returnDetails = formElem.querySelector(".return-details")
+    localStorage.setItem(LocalStorageKeys.RETURN_DETAILS, JSON.stringify({
+        date: returnDetails.querySelector("input[type='date']").value,
+        time: returnDetails.querySelector("input[type='time']").value,
+        location: returnDetails.querySelector("select").value, 
+    }))
+
+    window.location.href = "carCheckout.html"
+}
+
 window.addEventListener('load', function () {
     const carListings = document.getElementsByClassName("car-listings")[0]
+
     database.cars.forEach(carDatum => {
         const cardNode = makeCard(carDatum)
-        cardNode.onclick = function() {
-            localStorage.setItem(LocalStorageKeys.RESERVED_CAR_ID, carDatum.id)
-            location.href = "carCheckout.html"
-        }
+        cardNode.querySelector(".rent-btn").onclick = function(evt) {
+            cardButtonClickHandler(evt, carDatum)
+        } 
         carListings.appendChild(cardNode)
     });
 })

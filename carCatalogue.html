@@ -7,11 +7,10 @@
    <title>AZoom - Car Catalogue</title>
    <link rel="stylesheet" href="../css/globalVars.css">
    <link rel="stylesheet" href="../css/carCatalogue.css">
-   <script src="../database/cars.js"></script>
-   <script src="../js/Constants.js"></script>
-   <script src="../js/Utils.js"></script>
-   <script src="../js/navbar.js"></script>
-   <script src="../js/carCatalogue.js"></script>
+   <script src="database/cars.js"></script>
+   <script src="js/Globals.js"></script>
+   <script src="js/navbar.js"></script>
+   <script src="js/carCatalogue.js"></script>
 </head>
 
 <body class="car-catalogue">
@@ -54,20 +53,31 @@
       <div class="width-resize-container">
 
          <!------ PICKUP/RETURN DETAILS CONTAINER ------>
-         <section class="pickup-return-details">
+         <form class="pickup-return-details">
             <div class="pickup-details">
                <h2>Pick Up</h2>
-               <input type="date">
-               <input type="time">
-               <input type="text">
+               <input type="date" required>
+               <input type="time" required>
+               <select name="location-options" id="" required>
+                  <option value=""></option>
+                  <option value="Bukit Timah Nature Reserve">Bukit Timah Nature Reserve</option>
+                  <option value="Hougang Rivercourt">Hougang Rivercourt</option>
+               </select>
             </div>
             <div class="return-details">
                <h2>Return</h2>
-               <input type="date">
-               <input type="time">
-               <input type="text">
+               <input type="date" required>
+               <input type="time" required>
+               <select name="location-options" id="" required>
+                  <option value=""></option>
+                  <option value="Changi Village">Changi Village</option>
+                  <option value="Hougang Rivercourt">Hougang Rivercourt</option>
+                  <option value="Wilson Parking Singapore">Wilson Parking Singapore</option>
+                  <option value="Nex Carpark">Nex Carpark</option>
+                  <option value="Bukit Timah Nature Reserve">Bukit Timah Nature Reserve</option>
+               </select>
             </div>
-         </section>
+         </form>
 
          <!-------- CAR FILTERS -------->
          <section class="car-filters-container">
@@ -87,7 +97,7 @@
                         <input type="checkbox" checked>
                         <span>Toyota</span>
                      </div>
-                     <div class="dropdown-option" >
+                     <div class="dropdown-option">
                         <input type="checkbox" checked>
                         <span>Volkswagen</span>
                      </div>

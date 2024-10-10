@@ -6,10 +6,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>AZoom - Car Checkout</title>
    <link rel="stylesheet" href="../css/carCheckout.css">
-   <script src="../database/cars.js"></script>
-   <script src="../js/Constants.js"></script>
-   <script src="../js/navbar.js"></script>
-   <script src="../js/carCheckout.js"></script>
+   <script src="database/cars.js"></script>
+   <script src="js/Globals.js"></script>
+   <script src="js/navbar.js"></script>
+   <script src="js/carCheckout.js"></script>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
    <main>
       <div class="car-checkout-body">
          <section class="review-booking-header">
-            <button>
+            <button onclick="history.back()" style="cursor: pointer;">
                <img src="../assets/svg/arrow-back.svg" alt="Arrow Back">
             </button>
             <span><strong>Review your booking</strong></span>
@@ -62,9 +62,9 @@
 
                <!------ HEADER ------>
                <div class="booking-header">
-                  <img class="car-img" src="../assets/images/white-jeep.jpg" alt="">
+                  <img class="car-img" src="" alt="Image of a car">
                   <div class="car-details">
-                     <span class="car-make-model"><strong>BMW 3 Series Touring</strong></span>
+                     <strong><span class="car-make-model">BMW 3 Series Touring</span></strong>
                      <span class="rent-duration">6 rental days</span>
                   </div>
                </div>
@@ -79,14 +79,14 @@
                      <img src="../assets/svg/Car.svg" alt="">
                   </div>
                   <div class="pickup-return-details">
-                     <div class="details">
+                     <div class="pickup details">
                         <span class="pickup-return-type">Pickup</span>
-                        <span class="pickup-return-location"><strong>Frankfurt Airport</strong></span>
+                        <strong><span class="pickup-return-location">Frankfurt Airport</span></strong>
                         <span class="pickup-return-date">Tue, 08 Oct, 2024 | 12:30pm</span>
                      </div>
-                     <div class="details">
+                     <div class="return details">
                         <span class="pickup-return-type">Return</span>
-                        <span class="pickup-return-location"><strong>Singapore Airport</strong></span>
+                        <strong><span class="pickup-return-location">Singapore Airport</span></strong>   
                         <span class="pickup-return-date">Sat, 12 Oct, 2024 | 08:30am</span>
                      </div>
                   </div>
@@ -98,20 +98,20 @@
                   <span class="payment-summary">Payment Summary</span>
                   <div class="cost-breakdown">
                      <span>Rental Fee</span>
-                     <span><strong>SGD 18.30</strong></span>
+                     <strong><span class="rental-cost">SGD 18.50</span></strong>
                   </div>
                   <div class="cost-breakdown">
                      <span>Add-Ons</span>
-                     <span><strong>SGD 2.10</strong></span>
+                     <strong><span class="addon-cost">SGD 2.10</span></strong>
                   </div>
                   <div class="cost-breakdown">
                      <span>Insurance</span>
-                     <span><strong>SGD 28.90</strong></span>
+                     <strong><span class="insurance-cost">SGD 34.80</span></strong>
                   </div>
                   <span class="separator"></span>
                   <div class="cost-breakdown">
                      <span>Total Payable</span>
-                     <span class="cost-final"><strong>SGD 410.58</strong></span>
+                     <strong><span class="cost-final">SGD 410.58</span></strong>
                   </div>
                </div>
             </section>

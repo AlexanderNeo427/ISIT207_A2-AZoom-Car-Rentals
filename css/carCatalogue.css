@@ -12,7 +12,7 @@ body {
    justify-content: start;
    align-items: center;
 
-   gap: 2rem;
+   gap: 2.5rem;
    margin-top: 2rem;
    margin-bottom: 2rem;
 }
@@ -110,11 +110,11 @@ body {
 }
 
 .dropdown-container:hover .dropdown-btn >span {
-   transform: scale(-1);
+   transform: scaleY(-1);
 }
 
 .dropdown-btn >span {
-   transition: transform 0.4s ease-in-out;
+   transition: transform 0.25s ease-in-out;
 }
 
 .dropdown-content .dropdown-option {
@@ -148,7 +148,6 @@ body {
 }
 
 .car-search >img {
-   /* outline: 1px solid red; */
    width: 1.5rem;
    height: 1.5rem;
    object-fit: contain;
@@ -196,10 +195,12 @@ body {
 
 .pickup-return-details input[type="date"],
 .pickup-return-details input[type="time"],
-.pickup-return-details input[type="text"] {
+.pickup-return-details input[type="text"],
+.pickup-return-details select {
    border-radius: 0.5rem;
    border: none;
    outline: 1px solid lightgray;
+   background: white;
    color: var(--text-950);
    padding: 0.8rem 1rem;
 }
@@ -261,18 +262,8 @@ body {
    height: 24rem;
 
    background-color: white;
-   border-radius: 1rem;
+   border-radius: 0.25rem;
    box-shadow: 0px 0px 8px darkgray;
-
-   cursor: pointer;
-   transition: all 0.1s ease-in-out;
-}
-
-.car-card:hover {
-   transform: translateY(-0.1rem);
-   scale: 1.01;
-   outline: 1px solid gray;
-   box-shadow: 0px 0px 14px darkgray;
 }
 
 /* ============================================= */
@@ -414,6 +405,23 @@ body {
    border: none;
    border-radius: 0.5rem;
    padding: 0.7rem 0rem;
+
+   cursor: pointer;
+   transition: background-color 0.1s ease-in-out;
+}
+
+.rent-btn:hover {
+   background-color: var(--primary-400);
+}
+
+.rent-btn >span {
+   margin-left: 1rem;
+   transition: all 0.1s;
+}
+
+.rent-btn:hover >span {
+   /* margin-left: 1rem; */
+   transform: scale(1.5);
 }
 
 /* ---- DEBUG ---- */
