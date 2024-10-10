@@ -16,11 +16,11 @@
    box-shadow: 0px 0.5px 4px var(--text-800);
 }
 
-.logo {
+.header .logo {
    height: var(--header-height);
 }
 
-.burger-menu {
+.header .burger-menu {
    width: var(--header-height);
    height: var(--header-height);
 
@@ -33,22 +33,22 @@
    cursor: pointer;
 }
 
-.burger-menu>span {
+.header .burger-menu>span {
    height: 3px;
    width: 30px;
    border-radius: 10rem;
    background-color: var(--background-950);
 }
 
-.menu-items-large {
+.header .menu-items-large {
    display: none;
 }
 
-.menu-items-large a.active {
+.header .menu-items-large a.active {
    color: var(--primary-400);
 }
 
-.login-btn {
+.header .login-btn {
    display: none;
 }
 
@@ -58,24 +58,24 @@
       padding-right: var(--header-xpad);
    }
 
-   .login-btn {
+   .header .login-btn {
       margin-right: 0;
    }
 }
 
 @media screen and (min-width: 1024px) {
-   .burger-menu {
+   .header .burger-menu {
       display: none;
    }
 
-   .menu-items-large {
+   .header .menu-items-large {
       flex-grow: 1;
       display: flex;
       justify-content: center;
       gap: 2.8rem;
    }
 
-   .menu-items-large a {
+   .header .menu-items-large a {
       color: var(--text-950);
       text-decoration: none;
       font-size: large;
@@ -83,11 +83,11 @@
       transition: color 0.2s ease-in-out;
    }
 
-   .menu-items-large a:hover {
+   .header .menu-items-large a:hover {
       color: var(--primary-400);
    }
 
-   .login-btn {
+   .header .login-btn {
       display: block;
       padding: 0.7rem 1.7rem;
       border-radius: 0.333rem;
@@ -99,7 +99,7 @@
       transition: background-color 0.2s ease-in-out;
    }
 
-   .login-btn:hover {
+   .header .login-btn:hover {
       cursor: pointer;
       background-color: var(--primary-400);
    }

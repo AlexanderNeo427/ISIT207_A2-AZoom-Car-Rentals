@@ -4,11 +4,63 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Contact us</title>
+   <title>AZoom - Contact Us</title>
+   <link rel="stylesheet" href="css/contactUs.css">
+   <script src="js/navbar.js"></script>
 </head>
 
 <body>
+   <!---------- HEADER ---------->
+   <header class="header">
+      <a href="./index.html">
+         <img class="logo" src="../assets/images/AZoom-Logo.png" alt="">
+      </a>
 
+      <!--- MENU ITEMS LARGE (only show on larger devices) --->
+      <nav class="menu-items-large">
+         <a href="aboutUs.html">About Us</a>
+         <a href="FAQ.html">FAQ</a>
+         <a class="active" href="contactUs.html">Contact Us</a>
+         <a href="login.html">Login</a>
+      </nav>
+
+      <button onclick="window.location.href = 'carCatalogue.html'" class="login-btn">Rent a car</button>
+      <div class="burger-menu">
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
+   </header>
+
+   <div class="header-modal">
+      <nav>
+         <a href="aboutUs.html">About Us</a>
+         <a href="FAQ.html">FAQ</a>
+         <a href="contactUs.html">Contact Us</a>
+         <a href="login.html">Login</a>
+         <button onclick="window.location.href = 'carCatalogue.html'">Rent a Car</button>
+      </nav>
+      <button class="close-button">×</button>
+   </div>
+
+   <main class="contact-us">
+      <form class="contact-form" action="">
+         <div class="form-left"></div>
+         <div class="form-right">
+            <h1>Get in Touch</h1>
+            <p>Have any burning questions? Submit your enquiry and we will get back to you in 3-5 business days</p>
+            <div class="form-right-container">
+               <div class="name-inputs">
+                  <input type="text" placeholder="First name" required>
+                  <input type="text" placeholder="Last name" required>
+               </div>
+               <input type="email" placeholder="Email" required>
+               <textarea name="" id="" placeholder="Write a message" rows="7" required></textarea>
+               <button>Submit</button>
+            </div>
+         </div>
+      </form>
+   </main>
 </body>
 
 </html>

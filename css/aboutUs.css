@@ -1,0 +1,11 @@
+@import url(globalVars.css);
+@import url(header.css);
+
+.about-us {
+   --width-percentage-large: 75%;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+}

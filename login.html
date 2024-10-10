@@ -8,6 +8,7 @@
    <link rel="stylesheet" href="../css/globalVars.css">
    <link rel="stylesheet" href="../css/login.css">
    <script src="js/navbar.js"></script>
+   <script src="js/login.js"></script>
 </head>
 
 <body class="login">
@@ -20,9 +21,9 @@
 
       <!--- MENU ITEMS LARGE (only show on larger devices) --->
       <nav class="menu-items-large">
-         <a href="">About Us</a>
+         <a href="aboutUs.html">About Us</a>
          <a href="FAQ.html">FAQ</a>
-         <a href="">Contact Us</a>
+         <a href="contactUs.html">Contact Us</a>
          <a class="active" href="login.html">Login</a>
       </nav>
 
@@ -36,9 +37,9 @@
 
    <div class="header-modal">
       <nav>
-         <a href="">About Us</a>
+         <a href="aboutUs.html">About Us</a>
          <a href="FAQ.html">FAQ</a>
-         <a href="">Contact Us</a>
+         <a href="contactUs.html">Contact Us</a>
          <a href="login.html">Login</a>
          <button onclick="window.location.href = 'carCatalogue.html'" >Rent a Car</button>
       </nav>
@@ -49,11 +50,12 @@
    <main class="login-body">
       <form class="login-form">
          <div class="form-left"></div>
-         <div class="form-right">
-            <h1>LOGIN</h1>
 
+         <!------ LOGIN FORM ------>
+         <div class="form-right login">
+            <h1>LOGIN</h1>
             <input type="text" placeholder="Username">
-            <input type="text" placeholder="Password">
+            <input type="password" placeholder="Password">
             <button class="login-btn">Login</button>
             <div class="input-options">
                <label>
@@ -62,12 +64,25 @@
                </label>
                <a href="">Forgot your password?</a>
             </div>
-
             <span>
                Don't have an account yet?
-               <strong><a href="">Register</a></strong>
+               <strong><a class="registration-link" href="">Register</a></strong>
             </span>
          </div>
+
+         <!------ REGISTER FORM ------>
+         <div class="form-right register">
+            <h1>Sign Up</h1>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
+            <button class="register-btn">Create Account</button>
+            <span>
+               Already have an account? 
+               <strong><a class="login-link" href="">Login</a></strong>
+            </span>
+         </div>
+
       </form>
    </main>
 </body>

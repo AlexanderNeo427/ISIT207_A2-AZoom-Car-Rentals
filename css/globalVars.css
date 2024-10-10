@@ -261,7 +261,8 @@ h5,
 h6, 
 ul,
 ol,
-p {
+p,
+textarea {
    margin: 0;
    padding: 0;
 }
