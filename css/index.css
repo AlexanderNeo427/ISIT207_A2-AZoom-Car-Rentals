@@ -6,6 +6,10 @@
    /* outline: 2px dotted rgb(18, 18, 18); */
 }
 
+html, body {
+   height: 100%;
+}
+
 .index {
    --hero-leftpad: 1rem;
 }
@@ -16,7 +20,6 @@
 .index .sections-container {
    display: flex;
    flex-direction: column;
-   gap: 1rem;
 }
 
 /* ============================================= */
@@ -45,50 +48,55 @@
 }
 
 .hero-container {
-   display: grid;
-   grid-template-areas: "hero-grid-overlay";
+   position: relative;
    height: 94vh;
-   /* min-height: 22rem;
-   max-height: 45rem; */
 }
 
-.hero-container img {
-   grid-area: hero-grid-overlay;
+.hero-container .parallax-img {
+   background-image: url("../assets/images/Hero.png");
+   opacity: 0.25;
    height: 100%;
-   object-fit: cover;
-   overflow: hidden;
-   animation: hero-img-fade-in 0.8s ease-in-out 0s 1 normal forwards;
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   animation: hero-img-fade-in 2s ease 0s 1 normal forwards;
 }
 
 .hero {
-   grid-area: hero-grid-overlay;
-   z-index: 1;
-   padding-left: 1.5rem;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+
    display: flex;
    flex-direction: column;
    justify-content: center;
-   align-items: start;
-   animation: hero-text-fade-in 1s;
+
+   padding-left: 3rem;
+   z-index: 1;
+   animation: hero-text-fade-in 1.5s;
 }
 
 .hero>h1 {
    width: 75vw;
-   font-size: clamp(2rem, calc(5vw), 5rem);
-   margin-bottom: var(--margin-xs);
+   font-size: clamp(3rem, calc(4.8vw), 5rem);
+   margin-bottom: var(--margin-s);
 }
 
 .hero>p {
    font-weight: normal;
    max-width: 47rem;
    width: 60vw;
-   font-size: clamp(0.8rem, calc(2vw), 1.875rem);
-   margin-bottom: var(--margin-l);
+   font-size: clamp(1.2rem, calc(2.2vw), 2rem);
+   margin-bottom: var(--margin-xl);
 }
 
 .hero>button {
    border: none;
    border-radius: 0.5rem;
    padding: 0.9rem 2.2rem;
+   max-width: 14rem;
    font-size: large;
    font-weight: bold;
    background-color: var(--primary-500);
@@ -101,7 +109,7 @@
    background-color: var(--primary-400);
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
    .hero {
       padding-left: 5rem;
    }
@@ -113,9 +121,11 @@
 .why-azoom {
    display: flex;
    flex-direction: column;
+   justify-content: center;
    align-items: center;
 
    padding: 3rem 0rem;
+   min-height: 80vh;
 }
 
 .why-azoom>h2 {
@@ -129,20 +139,24 @@
    justify-content: center;
    align-items: center;
    width: 100%;
-   gap: 1.5rem;
+   gap: 2rem;
 }
 
-.reasons-container .reason:nth-child(1) {
-   background-color: var(--secondary-400);
+.reasons-container .reason {
+   box-shadow: 0px 0px 1rem gray;
+   background-color: var(--primary-100);
 }
 
-.reasons-container .reason:nth-child(2) {
+.reasons-container .reason::before {
+   content: "";
+   position: absolute;
+   height: 0.6rem;
+   top: -0.6rem;
+   left: 0;
+   right: 0;
    background-color: var(--primary-500);
-   color: var(--text-50);
-}
-
-.reasons-container .reason:nth-child(3) {
-   background-color: var(--accent-400);
+   border-top-left-radius: 1.5rem;
+   border-top-right-radius: 1.5rem;
 }
 
 .reason {
@@ -151,12 +165,13 @@
    justify-content: center;
    align-items: center;
    gap: 0.5rem;
-   border-radius: 1rem;
    width: 90%;
    min-height: 13rem;
    text-align: center;
-
    padding: 0rem 1.5rem;
+
+   border-bottom-left-radius: 1rem;
+   border-bottom-right-radius: 1rem;
 }
 
 .reason>img {
@@ -172,6 +187,7 @@
    width: 80%;
    text-align: center;
    font-size: large;
+   color: var(--text-800);
 }
 
 .reasons-container .reason:first-child>span {
@@ -235,13 +251,14 @@
 .get-started-section {
    display: flex;
    flex-direction: column;
-   justify-content: start;
+   justify-content: center;
    align-items: center;
-   width: 100%;
 
-   background-color: var(--primary-500);
-   color: var(--text-50);
    padding: 3rem 0rem;
+   background-color: rgba(255, 255, 255, 0.25);
+   color: var(--text-950);
+
+   min-height: 80vh;
 }
 
 .get-started-section >h2 {
@@ -253,28 +270,24 @@
 .get-started {
    display: grid;
    grid-auto-flow: row;
-
-   gap: 1rem;
-
-   /* background-color: var(--primary-100); */
-   background-color: rgba(255, 255, 255, 0.2);
+   gap: 2rem;
    border-radius: 1rem;
    padding: 2rem;
-
    width: 95%;
 }
 
 .get-started .instruction {
    display: grid;
-   grid-template-columns: 1fr 5fr;
-   grid-template-rows: 1fr 3fr;
-   gap: 0.5rem;
+   grid-template-columns: 1fr 15fr;
+   grid-template-rows: 1fr 2fr;
+   gap: 1rem;
 
    padding: 1rem;
-   border-radius: 1rem;
+   /* border-radius: 1rem; */
+   box-shadow: 0px 0px 1rem gray;
 
    color: var(--text-950);
-   background-color: var(--secondary-400);
+   background-color: var(--primary-100);
 }
 
 .get-started .step-number {
@@ -284,8 +297,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-
-   background-color: var(--accent-700);
+   background-color: var(--secondary-500);
    color: var(--text-50);
    border-radius: 4rem;
    width: 3rem;
@@ -321,12 +333,19 @@
 .testimonials {
    display: flex;
    flex-direction: column;
+   justify-content: center;
    align-items: center;
-   gap: 2rem;
+   gap: 4rem;
 
-   background: linear-gradient(110deg, #1b1b1b, #200a22 65%, #2f0b2c);
+   min-height: 70vh;
+
+   background: linear-gradient(
+      /* to right, */
+      110deg, 
+      #1b1b1b, 
+      var(--primary-900)
+   );
    color: var(--text-50);
-   padding: 5rem 0rem;
 }
 
 .testimonials-top {
@@ -336,24 +355,26 @@
    align-items: start;
    gap: 1rem;
 
-   width: 90%;
+   min-width: 90%;
    text-align: left;
 }
 
 .testimonials-text >h2 {
    font-weight: bold;
    font-size: 2.5rem;
+   margin-bottom: var(--margin-xs);
 }
 
 .testimonials-text >p {
    font-size: large;
+   color: var(--text-200);
 }
 
 .testimonials-buttons {
    display: flex;
-   justify-content: space-between;
    align-items: center;
    width: 100%;
+   gap: 1rem;
 }
 
 .testimonials-buttons button {
@@ -381,9 +402,9 @@
    gap: 1.2rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
    .testimonials-top {
-      width: 80%;
+      width: 50rem;
 
       flex-direction: row;
       justify-content: space-between;
@@ -391,7 +412,6 @@
    } 
    .testimonials-buttons {
       justify-content: flex-end;
-      gap: 1rem;
    }
 }
 
@@ -439,6 +459,8 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
+
+   min-height: 75vh;
 }
 
 .locations-section>h2 {

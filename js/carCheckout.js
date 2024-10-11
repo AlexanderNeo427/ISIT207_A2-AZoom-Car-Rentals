@@ -51,6 +51,5 @@ window.addEventListener('load', function() {
     const insuranceCost = Utils.randFloat(10, 100)
     bookingOverview.querySelector(".insurance-cost").innerHTML = `SGD ${insuranceCost.toFixed(2)}`
 
-
     bookingOverview.querySelector(".cost-final").innerHTML = `SGD ${(rentalFee + addonCost + insuranceCost).toFixed(2)}`
 })
