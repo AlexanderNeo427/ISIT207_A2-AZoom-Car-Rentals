@@ -68,7 +68,7 @@
    flex-direction: column;
    justify-content: center;
    align-items: start;
-   animation: hero-text-fade-in 1s ease-in-out;
+   animation: hero-text-fade-in 1s;
 }
 
 .hero>h1 {
@@ -319,76 +319,80 @@
 /* ================= TESTIMONIALS ================= */
 /* ================================================ */
 .testimonials {
-   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 2rem;
+
    background: linear-gradient(110deg, #1b1b1b, #200a22 65%, #2f0b2c);
    color: var(--text-50);
-   padding: 3rem 0rem;
+   padding: 5rem 0rem;
 }
 
 .testimonials-top {
    display: flex;
    flex-direction: column;
-   justify-content: center;
-   align-items: center;
+   justify-content: start;
+   align-items: start;
+   gap: 1rem;
 
-   width: 100%;
-   text-align: center;
-
-   margin-bottom: var(--margin-l);
+   width: 90%;
+   text-align: left;
 }
 
+.testimonials-text >h2 {
+   font-weight: bold;
+   font-size: 2.5rem;
+}
+
+.testimonials-text >p {
+   font-size: large;
+}
 
 .testimonials-buttons {
-   position: absolute;
-   top: 50%;
-   left: 1rem;
-   right: 1rem;
    display: flex;
    justify-content: space-between;
+   align-items: center;
+   width: 100%;
 }
 
 .testimonials-buttons button {
-   z-index: 1;
-   color: white;
-   font-size: 1.25rem;
-   width: 2.5rem;
-   height: 2.5rem;
+   color: var(--text-50);
+   font-size: x-large;
+   font-weight: bold;
+   width: 3.5rem;
+   height: 3.5rem;
+
    background: rgba(255, 255, 255, 0.3);
    border: 0;
-   border-radius: 0.3rem;
+   border-radius: 0.3333rem;
 }
 
 .testimonials-buttons button:hover {
    cursor: pointer;
 }
 
-.testimonials-buttons-backdrop {
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   display: flex;
-   justify-content: space-between;
-}
-
-.testimonials-buttons-backdrop .backdrop {
-   background: radial-gradient(ellipse at center, #000000, transparent);
-   width: 10rem;
-}
-
-.testimonials-buttons-backdrop .backdrop:nth-child(1) {
-   transform: translateX(-5rem);
-}
-
-.testimonials-buttons-backdrop .backdrop:nth-child(2) {
-   transform: translateX(5rem);
-}
-
+/* =========================================== */
+/* ================ CAROUSEL ================= */
+/* =========================================== */
 .testimonials-carousel {
    display: flex;
-   overflow-x: scroll;
+   justify-content: start;
    gap: 1.2rem;
+}
+
+@media screen and (min-width: 1024px) {
+   .testimonials-top {
+      width: 80%;
+
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+   } 
+   .testimonials-buttons {
+      justify-content: flex-end;
+      gap: 1rem;
+   }
 }
 
 .carousel-item {
@@ -402,7 +406,7 @@
    height: 20rem;
    padding: 0rem 1.2rem;
    border-radius: 0.8rem;
-   overflow: hidden;
+   /* overflow: hidden; */
    background: rgba(255, 255, 255, 0.1);
 }
 
@@ -454,7 +458,7 @@
 /* ============================================= */
 /* ================= FOOTER ==================== */
 /* ============================================= */
-footer {
+.index footer {
    display: flex;
    justify-content: center;
    align-items: center;

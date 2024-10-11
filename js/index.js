@@ -50,6 +50,7 @@ function makeTestimonial(testimonialDatum) {
     return containerNode 
 }
 
+
 window.addEventListener('load', function () {
     const testimonialCarousel = document.getElementsByClassName("testimonials-carousel")[0]
     database.testimonials.forEach(testimonialData => {
@@ -57,4 +58,28 @@ window.addEventListener('load', function () {
             makeTestimonial(testimonialData)
         )
     })
+
+    const leftBtn = this.document.querySelectorAll(".testimonials-buttons")[0]
+    const rightBtn = this.document.querySelectorAll(".testimonials-buttons")[1]
+
+    const cardWidth = testimonialCarousel.querySelector(".carousel-item").offsetWidth
+    console.log("Card width: ", cardWidth)
+
+    leftBtn.onclick = function(e) {
+        console.log("START leftbtn click")
+        e.preventDefault()
+        testimonialCarousel.scrollLeft += cardWidth
+        console.log("END leftbtn click")
+    }
+    rightBtn.onclick = function(e) {
+        console.log("END rightbtn click")
+        testimonialCarousel.scrollLeft -= cardWidth
+        console.log("END rightbtn click")
+    }
+    // const initialOffset = (carouselWidth * 0.5) - (cardWidth * 0.5)
+    // testimonialCarousel.style.transform = `translateX(${initialOffset}px)`
+    // console.log("END Testimonial bootstrapper")
+
+    // let cardNo = 0
+
 })
