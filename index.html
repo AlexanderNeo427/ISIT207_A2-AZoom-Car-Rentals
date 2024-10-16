@@ -8,11 +8,12 @@
    <title>AZoom Car Rentals</title>
    <!-- <link rel="stylesheet" href="css/style.css"> -->
 
-   <link rel="stylesheet" href="css/globalVars.css">
+   <link rel="stylesheet" href="css/globalVars.css/globalVars.css">
    <link rel="stylesheet" href="css/header.css">
    <link rel="stylesheet" href="css/index.css">
 
    <script src="database/testimonials.js"></script>
+   <script src="js/Globals.js"></script>
    <script src="js/navbar.js"></script>
    <script src="js/index.js"></script>
 </head>
@@ -21,8 +22,8 @@
 
    <!---------- HEADER ---------->
    <header class="header">
-      <a href="./index.html">
-         <img class="logo" src="../assets/images/AZoom-Logo.png" alt="">
+      <a href="index.html">
+         <img class="logo" src="assets/images/AZoom-Logo.png" alt="">
       </a>
 
       <!--- MENU ITEMS LARGE (only show on larger devices) --->
@@ -30,7 +31,7 @@
          <a class="active" href="index.html">Home</a>
          <a href="FAQ.html">FAQ</a>
          <a href="contactUs.html">Contact Us</a>
-         <a href="login.html">Login</a>
+         <a class="login-signout-link" href="login.html">Login</a>
       </nav>
 
       <button onclick="window.location.href = 'carCatalogue.html'" class="login-btn">Rent a car</button>

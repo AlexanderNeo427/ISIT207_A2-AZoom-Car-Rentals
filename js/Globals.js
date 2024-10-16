@@ -4,7 +4,9 @@ const SECONDS_PER_DAY = SECONDS_PER_HOUR * 24
 const LocalStorageKeys = {
     RESERVED_CAR_ID: "RESERVED_CAR_ID",
     PICKUP_DETAILS: "PICKUP_DETAILS", 
-    RETURN_DETAILS: "RETURN_DETAILS"
+    RETURN_DETAILS: "RETURN_DETAILS",
+    USER_ACCOUNTS: "USER_ACCOUNTS", 
+    LOGGED_IN_USER_ID: "LOGGED_IN_USER_ID"
 }
 
 const Utils = {
@@ -58,3 +60,4 @@ function customDateTimeFormat(datetime) {
         ${meridiem}
     `
 }
+

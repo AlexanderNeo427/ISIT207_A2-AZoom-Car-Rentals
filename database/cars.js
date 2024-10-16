@@ -8,7 +8,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Hatchback",
             "seats": 5,
-            "imageURL": "../assets/images/blue-audi.jpg",
+            "imageURL": "assets/images/blue-audi.jpg",
             "hourlyRate": 20
         },
         {
@@ -19,7 +19,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "SUV",
             "seats": 5,
-            "imageURL": "../assets/images/yellow-benz.jpg",
+            "imageURL": "assets/images/yellow-benz.jpg",
             "hourlyRate": 20
         },
         {
@@ -30,7 +30,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Coupe",
             "seats": 5,
-            "imageURL": "../assets/images/black-and-yellow.jpg",
+            "imageURL": "assets/images/black-and-yellow.jpg",
             "hourlyRate": 20
         },
         {
@@ -41,7 +41,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Sedan",
             "seats": 5,
-            "imageURL": "../assets/images/white-jeep.jpg",
+            "imageURL": "assets/images/white-jeep.jpg",
             "hourlyRate": 20
         },
         {
@@ -52,7 +52,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Convertible",
             "seats": 5,
-            "imageURL": "../assets/images/green.jpg",
+            "imageURL": "assets/images/green.jpg",
             "hourlyRate": 20
         },
         {
@@ -63,7 +63,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Muscle Car",
             "seats": 5,
-            "imageURL": "../assets/images/red-car.jpg",
+            "imageURL": "assets/images/red-car.jpg",
             "hourlyRate": 20
         },
         {
@@ -74,7 +74,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Sportscar",
             "seats": 5,
-            "imageURL": "../assets/images/white-jeep.jpg",
+            "imageURL": "assets/images/white-jeep.jpg",
             "hourlyRate": 20
         },
         {
@@ -85,7 +85,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Jeep",
             "seats": 5,
-            "imageURL": "../assets/images/yellow-vintage.jpg",
+            "imageURL": "assets/images/yellow-vintage.jpg",
             "hourlyRate": 20
         },
         {
@@ -96,7 +96,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "SUV",
             "seats": 5,
-            "imageURL": "../assets/images/black-supercar.jpg",
+            "imageURL": "assets/images/black-supercar.jpg",
             "hourlyRate": 20
         },
         {
@@ -107,7 +107,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Crossover",
             "seats": 5,
-            "imageURL": "../assets/images/blue-bmw.jpg",
+            "imageURL": "assets/images/blue-bmw.jpg",
             "hourlyRate": 20
         },
         {
@@ -118,7 +118,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Hatchback",
             "seats": 5,
-            "imageURL": "../assets/images/blue-audi.jpg",
+            "imageURL": "assets/images/blue-audi.jpg",
             "hourlyRate": 20
         },
         {
@@ -129,7 +129,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Hatchback",
             "seats": 5,
-            "imageURL": "../assets/images/red-car.jpg",
+            "imageURL": "assets/images/red-car.jpg",
             "hourlyRate": 20
         },
         {
@@ -140,7 +140,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Muscle Car",
             "seats": 5,
-            "imageURL": "../assets/images/black-and-yellow.jpg",
+            "imageURL": "assets/images/black-and-yellow.jpg",
             "hourlyRate": 20
         },
         {
@@ -151,7 +151,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Hatchback",
             "seats": 5,
-            "imageURL": "../assets/images/red-car.jpg",
+            "imageURL": "assets/images/red-car.jpg",
             "hourlyRate": 20
         },
         {
@@ -162,7 +162,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Sportscar",
             "seats": 5,
-            "imageURL": "../assets/images/red-car.jpg",
+            "imageURL": "assets/images/red-car.jpg",
             "hourlyRate": 20
         },
         {
@@ -173,7 +173,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Sedan",
             "seats": 5,
-            "imageURL": "../assets/images/black-and-yellow.jpg",
+            "imageURL": "assets/images/black-and-yellow.jpg",
             "hourlyRate": 20
         },
         {
@@ -184,7 +184,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Hatchback",
             "seats": 5,
-            "imageURL": "../assets/images/red-car.jpg",
+            "imageURL": "assets/images/red-car.jpg",
             "hourlyRate": 20
         },
         {
@@ -195,7 +195,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Sedan",
             "seats": 5,
-            "imageURL": "../assets/images/black-and-yellow.jpg",
+            "imageURL": "assets/images/black-and-yellow.jpg",
             "hourlyRate": 20
         },
         {
@@ -206,7 +206,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Convertible",
             "seats": 5,
-            "imageURL": "../assets/images/white-jeep.jpg",
+            "imageURL": "assets/images/white-jeep.jpg",
             "hourlyRate": 20
         },
         {
@@ -217,7 +217,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "SUV",
             "seats": 5,
-            "imageURL": "../assets/images/red-car.jpg",
+            "imageURL": "assets/images/red-car.jpg",
             "hourlyRate": 20
         },
     ]

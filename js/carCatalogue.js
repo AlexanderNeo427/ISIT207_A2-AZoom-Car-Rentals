@@ -1,3 +1,8 @@
+const userID = localStorage.getItem(LocalStorageKeys.LOGGED_IN_USER_ID)
+if (!userID || userID < 0) {
+    window.location.href = "login.html"
+}
+
 function appendChild(parent, child) {
     parent.appendChild(child)
     return child
@@ -16,7 +21,7 @@ function makeCardHeader(rating, numRatings) {
                 </span>
                 <span class="rating-count">(${numRatings})</span>
             </div>
-            <img src="../assets/svg/Heart.svg" alt="Heart Icon">
+            <img src="assets/svg/Heart.svg" alt="Heart Icon">
         </div> 
     `
 }
@@ -57,15 +62,15 @@ function makeCarStats(bodyStyle, batteryLife, passengerCapacity) {
     return `
         <div class="car-stats">
             <div class="car-stat body-style">
-               <img src="../assets/svg/Car.svg" alt="Car Icon">
+               <img src="assets/svg/Car.svg" alt="Car Icon">
                <span>${bodyStyle}</span>
             </div>
             <div class="car-stat battery-life">
-               <img src="../assets/svg/Battery.svg" alt="Battery Icon">
+               <img src="assets/svg/Battery.svg" alt="Battery Icon">
                <span>${batteryLife}hr</span>
             </div>
             <div class="car-stat passenger-capacity">
-               <img src="../assets/svg/Person.svg" alt="Person Icon">
+               <img src="assets/svg/Person.svg" alt="Person Icon">
                <span>${passengerCapacity}</span>
             </div>
         </div>
@@ -109,6 +114,7 @@ function cardButtonClickHandler(evt, carDatum) {
     if (!formElem.reportValidity()) {
         return
     }
+
     localStorage.setItem(LocalStorageKeys.RESERVED_CAR_ID, carDatum.id)
 
     const pickupDetails = formElem.querySelector(".pickup-details")
@@ -128,7 +134,14 @@ function cardButtonClickHandler(evt, carDatum) {
     window.location.href = "carCheckout.html"
 }
 
+function isLoggedIn() {
+    const userID = localStorage.getItem(LocalStorageKeys.LOGGED_IN_USER_ID)
+    return userID && userID >= 0
+}
+
 window.addEventListener('load', function () {
+ 
+
     const carListings = document.getElementsByClassName("car-listings")[0]
 
     database.cars.forEach(carDatum => {
