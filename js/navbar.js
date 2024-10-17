@@ -14,6 +14,15 @@ function checkForLoginData() {
         localStorage.removeItem(LocalStorageKeys.LOGGED_IN_USER_ID)
         console.log("Currently logged in ID (should be null): ", LocalStorageKeys.LOGGED_IN_USER_ID)
     }
+
+    const modalLoginSignoutLink = document.querySelector(".header-modal .login-signout-link")
+    // console.log("Modal window: ", modalLoginSignoutLink)
+    modalLoginSignoutLink.textContent = "Sign out"
+    modalLoginSignoutLink.href = "index.html"
+    modalLoginSignoutLink.onclick = function() {
+        localStorage.removeItem(LocalStorageKeys.LOGGED_IN_USER_ID)
+        console.log("Currently logged in ID (should be null): ", LocalStorageKeys.LOGGED_IN_USER_ID)
+    }
 }
 
 window.addEventListener('load', function() {
