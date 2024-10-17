@@ -1,16 +1,4 @@
-
-window.addEventListener('load', function() {
-    const carID = localStorage.getItem(LocalStorageKeys.RESERVED_CAR_ID)
-    if (!carID || carID < 0) {
-        console.error("No valid key for ", LocalStorageKeys.RESERVED_CAR_ID, " found in localStorage")
-        return
-    }
-    const carDatum = database.cars.find(car => car.id === Number(carID))
-    if (!carDatum) {
-        console.error("No car with ID of ", carID)
-        return
-    }
-
+function setBookingDetails(carDatum) {
     const pickupDetails = JSON.parse(localStorage.getItem(LocalStorageKeys.PICKUP_DETAILS))
     const pickupDatetime = new Date(`${pickupDetails.date} ${pickupDetails.time}`)
 
@@ -21,10 +9,10 @@ window.addEventListener('load', function() {
     document.querySelector(".car-make-model").innerHTML = carDatum.make + " " + carDatum.model
 
     const diffSeconds = (returnDatetime.getTime() - pickupDatetime.getTime()) / 1000
-    const rentDuration = 
-        diffSeconds < SECONDS_PER_DAY ? 
-        `${Math.floor(diffSeconds / (60 * 60))} rental hour(s)` : 
-        `${Math.floor(diffSeconds / SECONDS_PER_DAY)} rental days`
+    const rentDuration =
+        diffSeconds < SECONDS_PER_DAY ?
+            `${Math.floor(diffSeconds / (60 * 60))} rental hour(s)` :
+            `${Math.floor(diffSeconds / SECONDS_PER_DAY)} rental days`
     document.querySelector(".rent-duration").innerHTML = rentDuration
 
     const detailNode = this.document.querySelector(".pickup-return-details")
@@ -52,4 +40,32 @@ window.addEventListener('load', function() {
     bookingOverview.querySelector(".insurance-cost").innerHTML = `SGD ${insuranceCost.toFixed(2)}`
 
     bookingOverview.querySelector(".cost-final").innerHTML = `SGD ${(rentalFee + addonCost + insuranceCost).toFixed(2)}`
+}
+
+function wireCheckoutFunctionality() {
+    const checkoutButtons = [
+        document.querySelector(".car-checkout-body .confirmation-btn-small"),
+        document.querySelector(".car-checkout-body .confirmation-btn-large")
+    ]
+    checkoutButtons.forEach(btn => {
+        btn.onclick = function() {
+            window.location.href = "orderConfirmation.html"
+        }
+    })
+}
+
+window.addEventListener('load', function () {
+    const carID = localStorage.getItem(LocalStorageKeys.RESERVED_CAR_ID)
+    if (!carID || carID < 0) {
+        console.error("No valid key for ", LocalStorageKeys.RESERVED_CAR_ID, " found in localStorage")
+        return
+    }
+    const carDatum = database.cars.find(car => car.id === Number(carID))
+    if (!carDatum) {
+        console.error("No car with ID of ", carID)
+        return
+    }
+
+    setBookingDetails(carDatum)
+    wireCheckoutFunctionality()
 })
