@@ -8,7 +8,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Hatchback",
             "seats": 5,
-            "imageURL": "assets/images/blue-audi.jpg",
+            "imageURL": "assets/images/blue-bmw.jpg",
             "hourlyRate": 20
         },
         {
@@ -18,7 +18,7 @@ const database = {
             "year": 2024,
             "batteryLifeHours": 14,
             "bodyStyle": "SUV",
-            "seats": 5,
+            "seats": 3,
             "imageURL": "assets/images/yellow-benz.jpg",
             "hourlyRate": 20
         },
@@ -29,8 +29,8 @@ const database = {
             "year": 2024,
             "batteryLifeHours": 14,
             "bodyStyle": "Coupe",
-            "seats": 5,
-            "imageURL": "assets/images/black-and-yellow.jpg",
+            "seats": 4,
+            "imageURL": "assets/images/white-car.jpg",
             "hourlyRate": 20
         },
         {
@@ -40,8 +40,8 @@ const database = {
             "year": 2024,
             "batteryLifeHours": 14,
             "bodyStyle": "Sedan",
-            "seats": 5,
-            "imageURL": "assets/images/white-jeep.jpg",
+            "seats": 4,
+            "imageURL": "assets/images/black-and-yellow.jpg",
             "hourlyRate": 20
         },
         {
@@ -51,7 +51,7 @@ const database = {
             "year": 2024,
             "batteryLifeHours": 14,
             "bodyStyle": "Convertible",
-            "seats": 5,
+            "seats": 4,
             "imageURL": "assets/images/green.jpg",
             "hourlyRate": 20
         },
@@ -61,9 +61,9 @@ const database = {
             "model": "Prius",
             "year": 2024,
             "batteryLifeHours": 14,
-            "bodyStyle": "Muscle Car",
-            "seats": 5,
-            "imageURL": "assets/images/red-car.jpg",
+            "bodyStyle": "Jeep",
+            "seats": 2,
+            "imageURL": "assets/images/red-benz.jpg",
             "hourlyRate": 20
         },
         {
@@ -74,7 +74,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Sportscar",
             "seats": 5,
-            "imageURL": "assets/images/white-jeep.jpg",
+            "imageURL": "assets/images/white-car.jpg",
             "hourlyRate": 20
         },
         {
@@ -95,7 +95,7 @@ const database = {
             "year": 2024,
             "batteryLifeHours": 14,
             "bodyStyle": "SUV",
-            "seats": 5,
+            "seats": 2,
             "imageURL": "assets/images/black-supercar.jpg",
             "hourlyRate": 20
         },
@@ -105,8 +105,8 @@ const database = {
             "model": "Polo",
             "year": 2024,
             "batteryLifeHours": 14,
-            "bodyStyle": "Crossover",
-            "seats": 5,
+            "bodyStyle": "Jeep",
+            "seats": 3,
             "imageURL": "assets/images/blue-bmw.jpg",
             "hourlyRate": 20
         },
@@ -118,7 +118,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Hatchback",
             "seats": 5,
-            "imageURL": "assets/images/blue-audi.jpg",
+            "imageURL": "assets/images/black-maserati.jpg",
             "hourlyRate": 20
         },
         {
@@ -129,7 +129,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Hatchback",
             "seats": 5,
-            "imageURL": "assets/images/red-car.jpg",
+            "imageURL": "assets/images/red-benz.jpg",
             "hourlyRate": 20
         },
         {
@@ -138,8 +138,8 @@ const database = {
             "model": "Fuego",
             "year": 2024,
             "batteryLifeHours": 14,
-            "bodyStyle": "Muscle Car",
-            "seats": 5,
+            "bodyStyle": "Sportscar",
+            "seats": 4,
             "imageURL": "assets/images/black-and-yellow.jpg",
             "hourlyRate": 20
         },
@@ -151,7 +151,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Hatchback",
             "seats": 5,
-            "imageURL": "assets/images/red-car.jpg",
+            "imageURL": "assets/images/red-benz.jpg",
             "hourlyRate": 20
         },
         {
@@ -160,9 +160,9 @@ const database = {
             "model": "Uno",
             "year": 2024,
             "batteryLifeHours": 14,
-            "bodyStyle": "Sportscar",
-            "seats": 5,
-            "imageURL": "assets/images/red-car.jpg",
+            "bodyStyle": "Coupe",
+            "seats": 4,
+            "imageURL": "assets/images/green.jpg",
             "hourlyRate": 20
         },
         {
@@ -172,8 +172,8 @@ const database = {
             "year": 2024,
             "batteryLifeHours": 14,
             "bodyStyle": "Sedan",
-            "seats": 5,
-            "imageURL": "assets/images/black-and-yellow.jpg",
+            "seats": 2,
+            "imageURL": "assets/images/yellow-vintage.jpg",
             "hourlyRate": 20
         },
         {
@@ -184,7 +184,7 @@ const database = {
             "batteryLifeHours": 14,
             "bodyStyle": "Hatchback",
             "seats": 5,
-            "imageURL": "assets/images/red-car.jpg",
+            "imageURL": "assets/images/black-supercar.jpg",
             "hourlyRate": 20
         },
         {
@@ -194,7 +194,7 @@ const database = {
             "year": 2024,
             "batteryLifeHours": 14,
             "bodyStyle": "Sedan",
-            "seats": 5,
+            "seats": 2,
             "imageURL": "assets/images/black-and-yellow.jpg",
             "hourlyRate": 20
         },
@@ -205,8 +205,8 @@ const database = {
             "year": 2024,
             "batteryLifeHours": 14,
             "bodyStyle": "Convertible",
-            "seats": 5,
-            "imageURL": "assets/images/white-jeep.jpg",
+            "seats": 3,
+            "imageURL": "assets/images/white-car.jpg",
             "hourlyRate": 20
         },
         {
@@ -216,8 +216,8 @@ const database = {
             "year": 2024,
             "batteryLifeHours": 14,
             "bodyStyle": "SUV",
-            "seats": 5,
-            "imageURL": "assets/images/red-car.jpg",
+            "seats": 4,
+            "imageURL": "assets/images/green.jpg",
             "hourlyRate": 20
         },
     ]

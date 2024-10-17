@@ -125,6 +125,66 @@
    font-size: small;
 }
 
+/* ========================================== */
+/* ================ TOAST =================== */
+/* ========================================== */
+.login .toast-container {
+   position: absolute;
+   z-index: 1;
+   padding: 1rem;
+   overflow: hidden;
+
+   bottom: 1rem;
+   right: 1rem;
+
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   gap: 1.5rem;
+}
+
+@keyframes move_left {
+   0% {
+      transform: translateX(100%);
+   } 
+   100% {
+      transform: translateX(0);
+   }
+}
+
+.login .toast {
+   position: relative;
+   width: 22rem;
+   height: 4rem;
+   padding: 0.6rem 0.8rem;
+
+   box-shadow: 0px 0px 0.333rem var(--text-800);
+   font-size: medium;
+   font-weight: bold;
+
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   gap: 0.5rem;
+
+   background-color: var(--text-50);
+   animation: move_left 0.5s;
+
+   pointer-events: none;
+}
+
+.login .toast img {
+   width: 2rem;
+   height: 2rem;
+}
+
+/* DO NOT DELETE - used programmatically via Javascript */
+@keyframes progress_bar {
+   100% {
+      width: 0;
+   } 
+}
+
 /* ---- DEBUG ---- */
 * {
    /* outline: 1px dotted rgb(205, 71, 71); */
