@@ -23,10 +23,38 @@
    justify-content: start;
    align-items: center;
 
-   gap: 1rem;
+   gap: 2.5rem;
 }
 
-.FAQ .all-dropdowns .dropdown-object {
+.FAQ {
+   color: var(--primary-950);
+}
+
+.FAQ details {
+   outline: 5px solid var(--primary-500);
+
+   border-radius: 1rem;
+   padding: 1.5rem 2rem;
+   width: 40rem;
+
+   cursor: pointer;
+}
+
+.FAQ details:hover {
+   color: var(--text-50);
+   background-color: var(--primary-500);
+}
+
+.FAQ summary {
+   font-size: xx-large;
+   font-weight: bold;
+}
+
+.FAQ details p {
+   font-size: large;
+}
+
+/* .FAQ .all-dropdowns .dropdown-object {
    max-width: 40rem;
    max-height: var(--FAQ-header-height);
    overflow: hidden;
@@ -68,5 +96,5 @@
 
    font-size: larger;
    text-align: left;
-}
+} */
 
