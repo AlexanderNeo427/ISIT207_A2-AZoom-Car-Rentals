@@ -41,7 +41,7 @@
          <a href="FAQ.html">FAQ</a>
          <a href="contactUs.html">Contact Us</a>
          <a class="login-signout-link" href="login.html">Login</a>
-         <button onclick="window.location.href = 'carCatalogue.html'" >Rent a Car</button>
+         <button onclick="window.location.href = 'carCatalogue.html'">Rent a Car</button>
       </nav>
       <button class="close-button">×</button>
    </div>
@@ -57,64 +57,69 @@
          </section>
 
          <div class="review-booking-body">
-            <!----- BOOKING DETAILS ----->
-            <section class="booking-details">
+            <div class="booking-details-container">
+               <!----- BOOKING DETAILS ----->
+               <section class="booking-details">
 
-               <!------ HEADER ------>
-               <div class="booking-header">
-                  <img class="car-img" src="" alt="Image of a car">
-                  <div class="car-details">
-                     <strong><span class="car-make-model">BMW 3 Series Touring</span></strong>
-                     <span class="rent-duration">6 rental days</span>
-                  </div>
-               </div>
-
-               <span class="separator"></span>
-
-               <!----- PICKUP/RETURN INFO ----->
-               <div class="pickup-return-container">
-                  <div class="pickup-return-graphic">
-                     <img src="assets/svg/Car.svg" alt="">
-                     <span></span>
-                     <img src="assets/svg/Car.svg" alt="">
-                  </div>
-                  <div class="pickup-return-details">
-                     <div class="pickup details">
-                        <span class="pickup-return-type">Pickup</span>
-                        <strong><span class="pickup-return-location">Frankfurt Airport</span></strong>
-                        <span class="pickup-return-date">Tue, 08 Oct, 2024 | 12:30pm</span>
-                     </div>
-                     <div class="return details">
-                        <span class="pickup-return-type">Return</span>
-                        <strong><span class="pickup-return-location">Singapore Airport</span></strong>   
-                        <span class="pickup-return-date">Sat, 12 Oct, 2024 | 08:30am</span>
+                  <!------ HEADER ------>
+                  <div class="booking-header">
+                     <img class="car-img" src="" alt="Image of a car">
+                     <div class="car-details">
+                        <strong><span class="car-make-model">BMW 3 Series Touring</span></strong>
+                        <span class="rent-duration">6 rental days</span>
                      </div>
                   </div>
-               </div>
 
-               <span class="separator"></span>
-
-               <div class="booking-overview">
-                  <span class="payment-summary">Payment Summary</span>
-                  <div class="cost-breakdown">
-                     <span>Rental Fee</span>
-                     <strong><span class="rental-cost">SGD 18.50</span></strong>
-                  </div>
-                  <div class="cost-breakdown">
-                     <span>Add-Ons</span>
-                     <strong><span class="addon-cost">SGD 2.10</span></strong>
-                  </div>
-                  <div class="cost-breakdown">
-                     <span>Insurance</span>
-                     <strong><span class="insurance-cost">SGD 34.80</span></strong>
-                  </div>
                   <span class="separator"></span>
-                  <div class="cost-breakdown">
-                     <span>Total Payable</span>
-                     <strong><span class="cost-final">SGD 410.58</span></strong>
+
+                  <!----- PICKUP/RETURN INFO ----->
+                  <div class="pickup-return-container">
+                     <div class="pickup-return-graphic">
+                        <img src="assets/svg/Car.svg" alt="">
+                        <span></span>
+                        <img src="assets/svg/Car.svg" alt="">
+                     </div>
+                     <div class="pickup-return-details">
+                        <div class="pickup details">
+                           <span class="pickup-return-type">Pickup</span>
+                           <strong><span class="pickup-return-location">Frankfurt Airport</span></strong>
+                           <span class="pickup-return-date">Tue, 08 Oct, 2024 | 12:30pm</span>
+                        </div>
+                        <div class="return details">
+                           <span class="pickup-return-type">Return</span>
+                           <strong><span class="pickup-return-location">Singapore Airport</span></strong>
+                           <span class="pickup-return-date">Sat, 12 Oct, 2024 | 08:30am</span>
+                        </div>
+                     </div>
                   </div>
-               </div>
-            </section>
+
+                  <span class="separator"></span>
+
+                  <div class="booking-overview">
+                     <span class="payment-summary">Payment Summary</span>
+                     <div class="cost-breakdown">
+                        <span>Rental Fee</span>
+                        <strong><span class="rental-cost">SGD 18.50</span></strong>
+                     </div>
+                     <div class="cost-breakdown">
+                        <span>Add-Ons</span>
+                        <strong><span class="addon-cost">SGD 2.10</span></strong>
+                     </div>
+                     <div class="cost-breakdown">
+                        <span>Insurance</span>
+                        <strong><span class="insurance-cost">SGD 34.80</span></strong>
+                     </div>
+                     <span class="separator"></span>
+                     <div class="cost-breakdown">
+                        <span>Total Payable</span>
+                        <strong><span class="cost-final">SGD 410.58</span></strong>
+                     </div>
+                  </div>
+               </section>
+               <button class="confirmation-btn-large">
+                  Hit the Road
+               </button>
+            </div>
 
             <!----------- CHECKOUT DATA ------------>
             <section class="checkout-data">
@@ -144,8 +149,8 @@
                <!------ PAYMENT INFO ------>
                <form class="input-form payment-info">
                   <h2>Payment Info</h2>
-                  
-                  <!---- CREDIT CARD NO. ---> 
+
+                  <!---- CREDIT CARD NO. --->
                   <div class="input-label-pair">
                      <label for="credit-card-number">Card No.</label>
                      <input name="credit-card-number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}"
@@ -184,6 +189,10 @@
                      <input type="text" name="cvv" placeholder="123" maxlength="3" size="3" />
                   </div>
                </form>
+
+               <button class="confirmation-btn-small">
+                  Hit the Road
+               </button>
             </section>
          </div>
       </div>
