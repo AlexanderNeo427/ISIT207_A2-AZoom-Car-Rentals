@@ -82,8 +82,8 @@ function makeCard(carDatum) {
     carCard.classList.add("car-card")
 
     carCard.innerHTML += makeCardHeader(
-        Utils.randFloat(0, 5), 
-        Utils.randInt(5, 500) 
+        Utils.randFloat(0, 5),
+        Utils.randInt(5, 500)
     )
     carCard.innerHTML += makeCardPicture(carDatum.imageURL)
     carCard.innerHTML += makeCardData(
@@ -91,8 +91,8 @@ function makeCard(carDatum) {
     )
     carCard.innerHTML += '<span class="separator"></span>'
     carCard.innerHTML += makeCarStats(
-        carDatum.bodyStyle, 
-        carDatum.batteryLifeHours, 
+        carDatum.bodyStyle,
+        carDatum.batteryLifeHours,
         carDatum.seats
     )
     carCard.innerHTML += `
@@ -101,7 +101,7 @@ function makeCard(carDatum) {
             <span>▶</span>
         </button>
     `
-    
+
     return carCard
 }
 
@@ -121,34 +121,125 @@ function cardButtonClickHandler(evt, carDatum) {
     localStorage.setItem(LocalStorageKeys.PICKUP_DETAILS, JSON.stringify({
         date: pickupDetails.querySelector("input[type='date']").value,
         time: pickupDetails.querySelector("input[type='time']").value,
-        location: pickupDetails.querySelector("select").value, 
+        location: pickupDetails.querySelector("select").value,
     }))
 
     const returnDetails = formElem.querySelector(".return-details")
     localStorage.setItem(LocalStorageKeys.RETURN_DETAILS, JSON.stringify({
         date: returnDetails.querySelector("input[type='date']").value,
         time: returnDetails.querySelector("input[type='time']").value,
-        location: returnDetails.querySelector("select").value, 
+        location: returnDetails.querySelector("select").value,
     }))
 
     window.location.href = "carCheckout.html"
 }
 
-function isLoggedIn() {
-    const userID = localStorage.getItem(LocalStorageKeys.LOGGED_IN_USER_ID)
-    return userID && userID >= 0
+function getAllowedCarBrands() {
+    const allowedBrands = []
+
+    const brandDropdown = document.querySelector(".dropdown-container.brand")
+    const dropdownOptions = brandDropdown.querySelectorAll(".dropdown-option")
+    dropdownOptions.forEach(option => {
+        const isOptionChecked = option.querySelector("input[type='checkbox']").checked
+        if (!isOptionChecked) {
+            return
+        }
+
+        const optionValue = option.querySelector("span").textContent
+        allowedBrands.push(optionValue.toLowerCase())
+    })
+
+    return allowedBrands
+}
+
+function getAllowedCarTypes() {
+    const allowedTypes = []
+
+    const typeDropdown = document.querySelector(".dropdown-container.type")
+    const dropdownOptions = typeDropdown.querySelectorAll(".dropdown-option")
+    dropdownOptions.forEach(option => {
+        const isOptionChecked = option.querySelector("input[type='checkbox']").checked
+        if (!isOptionChecked) {
+            return
+        }
+
+        const optionValue = option.querySelector("span").textContent
+        allowedTypes.push(optionValue.toLowerCase())
+    })
+
+    return allowedTypes
+}
+
+function getAllowedSeatingCapacities() {
+    const allowedCapacities = []
+
+    const seatingDropdown = document.querySelector(".dropdown-container.seats")
+    const dropdownOptions = seatingDropdown.querySelectorAll(".dropdown-option")
+    dropdownOptions.forEach(option => {
+        const isOptionChecked = option.querySelector("input[type='checkbox']").checked
+        if (!isOptionChecked) {
+            return
+        }
+        
+        const optionValue = option.querySelector("span").textContent
+        allowedCapacities.push(
+            Number(optionValue.split(' ')[0])
+        )
+    })
+
+    return allowedCapacities
+}
+
+function getSearchInput() {
+    return document.querySelector(".car-search input[type='text']").value.toLowerCase()
+}
+
+function displayFilteredCars() {
+    const carListings = document.querySelector(".car-listings")
+    carListings.innerHTML = ""
+
+    database.cars.forEach(carDatum => {
+        if (!getAllowedCarBrands().includes(carDatum.make.toLowerCase())) {
+            return
+        }
+        if (!getAllowedCarTypes().includes(carDatum.bodyStyle.toLowerCase())) {
+            return
+        }
+        if (!getAllowedSeatingCapacities().includes(carDatum.seats)) {
+            return
+        }
+
+        const searchInput = getSearchInput()
+        if (searchInput && searchInput != '') {
+            const brandMatch = carDatum.make.toLowerCase().includes(searchInput)
+            const modelMatch = carDatum.model.toLowerCase().includes(searchInput)
+            const typeMatch = carDatum.bodyStyle.toLowerCase().includes(searchInput)
+
+            if (!brandMatch && !modelMatch && !typeMatch) {
+                return
+            }
+        }
+
+        const cardNode = makeCard(carDatum)
+        cardNode.querySelector(".rent-btn").onclick = function (evt) {
+            cardButtonClickHandler(evt, carDatum)
+        }
+        carListings.appendChild(cardNode)
+    });
+}
+
+function registerInputListeners() {
+    document.querySelectorAll(".dropdown-option").forEach(option => {
+        option.querySelector("input[type='checkbox']").addEventListener('change', function() {
+            displayFilteredCars() 
+        })
+    })
+    document.querySelector(".car-search input[type='text']").addEventListener('input', function() {
+        displayFilteredCars()
+    })
 }
 
 window.addEventListener('load', function () {
- 
-
-    const carListings = document.getElementsByClassName("car-listings")[0]
-
-    database.cars.forEach(carDatum => {
-        const cardNode = makeCard(carDatum)
-        cardNode.querySelector(".rent-btn").onclick = function(evt) {
-            cardButtonClickHandler(evt, carDatum)
-        } 
-        carListings.appendChild(cardNode)
-    });
+    registerInputListeners()
+    displayFilteredCars()
 })
