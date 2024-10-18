@@ -1,5 +1,10 @@
-const NAV_LINKS = {
-    HOME: "",
+function registerIntersectionObservers() {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+
+        })
+    })
+    // observer.observe(document.querySelector(""))
 }
 
 /*
@@ -66,12 +71,13 @@ window.addEventListener('load', function () {
     console.log("Card width: ", cardWidth)
 
     leftBtn.onclick = function(e) {
-        console.log("START leftbtn click")
         e.preventDefault()
+        console.log("START leftbtn click")
         testimonialCarousel.scrollLeft += cardWidth
         console.log("END leftbtn click")
     }
     rightBtn.onclick = function(e) {
+        e.preventDefault()
         console.log("END rightbtn click")
         testimonialCarousel.scrollLeft -= cardWidth
         console.log("END rightbtn click")
@@ -79,7 +85,7 @@ window.addEventListener('load', function () {
     // const initialOffset = (carouselWidth * 0.5) - (cardWidth * 0.5)
     // testimonialCarousel.style.transform = `translateX(${initialOffset}px)`
     // console.log("END Testimonial bootstrapper")
-
     // let cardNo = 0
+
 
 })

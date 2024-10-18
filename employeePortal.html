@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AZoom - Employee Portal</title>
+   <link rel="stylesheet" href="css/employeePortal.css">
+</head>
+
+<body class="employee-portal">
+   <header class="header">
+      <a href="index.html">
+         <img class="logo" src="assets/images/AZoom-Logo.png" alt="">
+      </a>
+
+      <!--- MENU ITEMS LARGE (only show on larger devices) --->
+      <nav class="menu-items-large">
+         <a href="index.html">Home</a>
+         <a href="contactUs.html">Contact Us</a>
+         <a class="login-signout-link" class="active" href="login.html">Login</a>
+      </nav>
+
+      <button onclick="window.location.href = 'carCatalogue.html'" class="login-btn">Rent a car</button>
+      <div class="burger-menu">
+         <span></span>
+         <span></span>
+         <span></span>
+      </div>
+   </header>
+
+   <main class="flex-centered">
+      <h1>Car Inspection Page</h1>
+      <div class="sections-container">
+         <section class="cars-pending-inspection">
+
+            <div class="inspection-card">
+               <img src="assets/images/black-supercar.jpg" alt="">
+               <div class="inspection-details-container">
+                  <div class="inspection-details">
+                     <h2>#FJf09d23fj</h2>
+                     <h3>Ford Falcon</h3>
+                     <span><strong>Booking Date: </strong>06 Oct 2023 | 10:23pm</span>
+                     <span><strong>Return Date: </strong>15 Oct 2024 | 09:54am</span>
+                     <span><strong>Final Cost: </strong>$373.61</span>
+                  </div>
+                  <button class="inspect-btn">
+                     <img src="assets/svg/Arrow-right.svg" alt="">
+                  </button>
+               </div>
+               <!-- <div class="inspection-form"></div> -->
+            </div>
+
+         </section>
+      </div>
+   </main>
+</body>
+
+</html>
