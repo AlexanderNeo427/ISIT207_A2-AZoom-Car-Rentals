@@ -244,7 +244,28 @@ html, body {
       text-align: left;
    }
 }
+/* ========================================== */
+/* ============== OUR MISSION =============== */
+/* ========================================== */
+.mission-section {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
 
+   height: 30rem;
+   background-image: url('../assets/images/black-supercar.jpg');
+   background-size: cover;
+
+   text-align: center;
+   padding: 2rem 0rem;
+}
+
+.mission-section h2 {
+   margin-bottom: var(--margin-s);
+}
+
+.mission-section p {
+}
 /* ========================================== */
 /* ============== GET STARTED =============== */
 /* ========================================== */
@@ -476,46 +497,6 @@ html, body {
    justify-content: center;
    gap: 1rem;
 }
-
-/* ============================================= */
-/* ================= FOOTER ==================== */
-/* ============================================= */
-.index footer {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-   color: var(--text-50);
-   background: black;
-}
-
-.footer-content {
-   width: 90%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-
-   margin: 2rem 0rem;
-   gap: 1rem;
-}
-
-.footer-section {
-   width: 95%;
-}
-
-.footer-separator {
-   width: 100%;
-   background: var(--background-50);
-   height: 1px;
-}
-
-@media screen and (min-width: 768px) {
-   .footer-content {
-      width: 80%;
-      max-width: 63rem;
-      align-items: center;
-   }
-}
 /* ==================================== */
 /* =============== FAQ ================ */
 /* ==================================== */
@@ -579,6 +560,46 @@ html, body {
    font-size: large;
 }
 
+
+/* ============================================= */
+/* ================= FOOTER ==================== */
+/* ============================================= */
+.index footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   color: var(--text-50);
+   background: black;
+}
+
+.footer-content {
+   width: 90%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   margin: 2rem 0rem;
+   gap: 1rem;
+}
+
+.footer-section {
+   width: 95%;
+}
+
+.footer-separator {
+   width: 100%;
+   background: var(--background-50);
+   height: 1px;
+}
+
+@media screen and (min-width: 768px) {
+   .footer-content {
+      width: 80%;
+      max-width: 63rem;
+      align-items: center;
+   }
+}
 /* ============================================= */
 /* =============== FOOTER - TOP ================ */
 /* ============================================= */
