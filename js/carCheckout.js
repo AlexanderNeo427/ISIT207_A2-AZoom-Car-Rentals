@@ -1,3 +1,5 @@
+'use strict'
+
 function setBookingDetails(carDatum) {
     const pickupDetails = JSON.parse(localStorage.getItem(LocalStorageKeys.PICKUP_DETAILS))
     const pickupDatetime = new Date(`${pickupDetails.date} ${pickupDetails.time}`)

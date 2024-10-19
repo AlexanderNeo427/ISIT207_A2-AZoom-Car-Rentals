@@ -1,3 +1,5 @@
+'use strict'
+
 class UserAccount {
     constructor(id, username, password) {
         this.id = id

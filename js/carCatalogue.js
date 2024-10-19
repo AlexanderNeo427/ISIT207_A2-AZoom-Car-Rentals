@@ -1,3 +1,5 @@
+'use strict'
+
 const userID = localStorage.getItem(LocalStorageKeys.LOGGED_IN_USER_ID)
 if (!userID || userID < 0) {
     window.location.href = "login.html"

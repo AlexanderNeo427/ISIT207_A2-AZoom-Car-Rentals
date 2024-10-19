@@ -1,3 +1,5 @@
+'use strict'
+
 const SECONDS_PER_HOUR = 60 * 60
 const SECONDS_PER_DAY = SECONDS_PER_HOUR * 24
 
@@ -15,6 +17,9 @@ const Utils = {
     },
     randFloat(min, max) {
         return Math.random() * (max - min) + min;
+    },
+    lerp(a, b, t) {
+        return a * (1 - t) + b * t
     }
 }
 

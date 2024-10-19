@@ -1,5 +1,7 @@
+'use strict'
+
 function checkForLoginData() {
-    const userID = this.localStorage.getItem(LocalStorageKeys.LOGGED_IN_USER_ID)
+    const userID = localStorage.getItem(LocalStorageKeys.LOGGED_IN_USER_ID)
     if (!userID || userID < 0) {     
         return
     }

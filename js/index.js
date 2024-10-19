@@ -1,3 +1,22 @@
+'use strict'
+
+function initializeStarfieldCanvas() {
+    console.log("Initialising starfield canvas...")
+    const starField = new Starfield("FAQ-canvas")
+    starField.onInit()
+
+    let startTime = -427
+    function tick(currentTime) {
+        if (startTime < 0) {
+            startTime = currentTime
+        }
+        starField.onTick(currentTime - startTime)
+        startTime = currentTime
+        window.requestAnimationFrame(tick);
+    }
+    window.requestAnimationFrame(tick);
+}
+
 function registerIntersectionObservers() {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -32,12 +51,12 @@ function makeTestimonial(testimonialDatum) {
     starContainer.classList.add("star-container")
     containerNode.appendChild(starContainer)
     for (let i = 0; i < numFilledStars; i++) {
-        const filledStar = document.createElement("div") 
+        const filledStar = document.createElement("div")
         filledStar.innerHTML = "★"
         starContainer.appendChild(filledStar)
     }
     for (let i = 0; i < numEmptyStars; i++) {
-        const emptyStar = document.createElement("div") 
+        const emptyStar = document.createElement("div")
         emptyStar.innerHTML = "☆"
         starContainer.appendChild(emptyStar)
     }
@@ -52,9 +71,8 @@ function makeTestimonial(testimonialDatum) {
     titleNode.innerHTML = testimonialDatum.title
     containerNode.appendChild(titleNode)
 
-    return containerNode 
+    return containerNode
 }
-
 
 window.addEventListener('load', function () {
     const testimonialCarousel = document.getElementsByClassName("testimonials-carousel")[0]
@@ -64,28 +82,28 @@ window.addEventListener('load', function () {
         )
     })
 
-    const leftBtn = this.document.querySelectorAll(".testimonials-buttons")[0]
-    const rightBtn = this.document.querySelectorAll(".testimonials-buttons")[1]
+    // const leftBtn = this.document.querySelectorAll(".testimonials-buttons")[0]
+    // const rightBtn = this.document.querySelectorAll(".testimonials-buttons")[1]
 
-    const cardWidth = testimonialCarousel.querySelector(".carousel-item").offsetWidth
-    console.log("Card width: ", cardWidth)
+    // const cardWidth = testimonialCarousel.querySelector(".carousel-item").offsetWidth
+    // console.log("Card width: ", cardWidth)
 
-    leftBtn.onclick = function(e) {
-        e.preventDefault()
-        console.log("START leftbtn click")
-        testimonialCarousel.scrollLeft += cardWidth
-        console.log("END leftbtn click")
-    }
-    rightBtn.onclick = function(e) {
-        e.preventDefault()
-        console.log("END rightbtn click")
-        testimonialCarousel.scrollLeft -= cardWidth
-        console.log("END rightbtn click")
-    }
+    // leftBtn.onclick = function (e) {
+    //     e.preventDefault()
+    //     console.log("START leftbtn click")
+    //     testimonialCarousel.scrollLeft += cardWidth
+    //     console.log("END leftbtn click")
+    // }
+    // rightBtn.onclick = function (e) {
+    //     e.preventDefault()
+    //     console.log("END rightbtn click")
+    //     testimonialCarousel.scrollLeft -= cardWidth
+    //     console.log("END rightbtn click")
+    // }
     // const initialOffset = (carouselWidth * 0.5) - (cardWidth * 0.5)
     // testimonialCarousel.style.transform = `translateX(${initialOffset}px)`
     // console.log("END Testimonial bootstrapper")
     // let cardNo = 0
 
-
+    initializeStarfieldCanvas()
 })

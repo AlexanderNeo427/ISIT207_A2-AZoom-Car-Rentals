@@ -501,28 +501,33 @@ html, body {
 /* =============== FAQ ================ */
 /* ==================================== */
 .FAQ-section {
-   background: linear-gradient(
+   /* background: linear-gradient(
       to right, 
       var(--primary-700), 
       var(--primary-950)
-   ); 
-   /* background-color: var(--background-200); */
-   /* background-image: url('../assets/images/black-maserati.jpg'); */
-   /* background-size: cover; */
-   /* background-color: rgba(255, 255, 255, 0.1); */
+   );  */
    color: var(--text-50);
 
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
+   position: relative;
 
-   min-height: 50rem;
+   padding: 3rem 0rem;
+   min-height: 45rem;
+}
+
+#FAQ-canvas {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
 }
 
 .FAQ-section >h1 {
    text-align: center;
-   font-size: 3rem;
+   font-size: xx-large;
    margin-bottom: var(--margin-l);
 }
 
@@ -531,7 +536,6 @@ html, body {
    flex-direction: column;
    justify-content: start;
    align-items: center;
-
    gap: 2.5rem;
 }
 
@@ -540,10 +544,9 @@ html, body {
 
    border-radius: 1rem;
    padding: 1.5rem 2rem;
-   width: 40rem;
 
    cursor: pointer;
-   transition: all 0.1s;
+   transition: all 0.2s;
 }
 
 .FAQ-section details:hover {
@@ -552,7 +555,7 @@ html, body {
 }
 
 .FAQ-section summary {
-   font-size: xx-large;
+   font-size: x-large;
    font-weight: bold;
 }
 
@@ -560,6 +563,11 @@ html, body {
    font-size: large;
 }
 
+.FAQ-section details, 
+.FAQ-section summary, 
+.FAQ-section p {
+   max-width: 30rem;
+}
 
 /* ============================================= */
 /* ================= FOOTER ==================== */
