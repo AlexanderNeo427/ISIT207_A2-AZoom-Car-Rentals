@@ -1,7 +1,6 @@
 'use strict'
 
 function initializeStarfieldCanvas() {
-    console.log("Initialising starfield canvas...")
     const starField = new Starfield("FAQ-canvas")
     starField.onInit()
 
@@ -20,7 +19,6 @@ function initializeStarfieldCanvas() {
 function registerIntersectionObservers() {
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-
         })
     })
     // observer.observe(document.querySelector(""))

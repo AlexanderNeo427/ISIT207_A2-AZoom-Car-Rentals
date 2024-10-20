@@ -15,7 +15,7 @@ class Star {
 }
 
 class Starfield {
-    constructor(canvasID, numStars = 50) {
+    constructor(canvasID, numStars = 80) {
         this.NUM_STARS = numStars
 
         this.canvas = document.getElementById(canvasID)
@@ -38,7 +38,7 @@ class Starfield {
         this.allStars = []
         for (let i = 0; i < this.NUM_STARS; i++) {
             const velRadians = Utils.randFloat(0, 2 * Math.PI)
-            const velMagntitude = 0.0333
+            const velMagntitude = Utils.randFloat(0.01, 0.04)
             const vel2D = new Vec2D(
                 Math.cos(velRadians) * velMagntitude,
                 Math.sin(velRadians) * velMagntitude
@@ -65,7 +65,7 @@ class Starfield {
 
     onTick(deltaTime) {
         this.ctx.globalAlpha = 1
-        const linearGrad = this.ctx.createLinearGradient(0, 0, this.canvas.width * 0.9, 0);
+        const linearGrad = this.ctx.createLinearGradient(0, 0, this.canvas.width * 1.2, 0);
         linearGrad.addColorStop(0, "#0b0118");
         linearGrad.addColorStop(1, "#410891");
         this.ctx.fillStyle = linearGrad
@@ -80,8 +80,8 @@ class Starfield {
             // Screen wrap
             if (star.pos.x < 0) star.pos.x += this.canvas.width
             if (star.pos.x > this.canvas.width) star.pos.x -= this.canvas.width
-            if (star.pos.y < 0) star.pos.y += this.canvas.width
-            if (star.pos.y > this.canvas.width) star.pos.y -= this.canvas.width
+            if (star.pos.y < 0) star.pos.y += this.canvas.height
+            if (star.pos.y > this.canvas.width) star.pos.y -= this.canvas.height
 
             // Draw stars
             this.ctx.globalAlpha = 1
@@ -95,8 +95,8 @@ class Starfield {
             }
             const dx = star.pos.x - this.mousePos.x
             const dy = star.pos.y - this.mousePos.y
-            const MAX_DIST = 300
             const distanceToLine = Math.sqrt(dx * dx + dy * dy)
+            const MAX_DIST = 150
             if (distanceToLine <= MAX_DIST) {
                 this.ctx.globalAlpha = 1 - (distanceToLine / MAX_DIST)
                 this.ctx.strokeStyle = `lightgray`
