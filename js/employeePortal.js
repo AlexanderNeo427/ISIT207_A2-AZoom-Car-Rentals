@@ -23,6 +23,10 @@ function setCardIsOpen(inspectionCard, openIntent, cardState) {
     else {
         cardTop.classList.remove("highlight")
     }
+
+    const inspectBtnIMG = cardTop.querySelector(".inspect-btn >img")
+    const rotation = cardState.isOpen ? 270 : 90
+    inspectBtnIMG.style.transform = `rotateZ(${rotation}deg)`
 }
 
 function setupInspectionCardFunctions(allInspectionCards) {
@@ -39,19 +43,23 @@ function setupInspectionCardFunctions(allInspectionCards) {
             String(cardHeight_px) + "px", 
             String(cardHeight_px + formHeight_px) + "px"
         ) 
-        
+
         inspectionCard.querySelector(".inspect-btn").onclick = function() {
             allInspectionCards.forEach(otherCard => {
                 const otherOrderID = otherCard.querySelector(".inspection-details >h2").textContent
-                const openIntent = (orderID === otherOrderID)
-                setCardIsOpen(otherCard, openIntent, stateData[otherOrderID])
-            })
+                const isCurrentSelected = (orderID === otherOrderID)
+                if (isCurrentSelected) {
+                    setCardIsOpen(otherCard, !stateData[otherOrderID].isOpen, stateData[otherOrderID])
+                }
+                else {
+                    setCardIsOpen(otherCard, isCurrentSelected, stateData[otherOrderID])
+                }
+            }) 
         } 
     })
 }
 
 window.addEventListener('load', function() {
-
     setupInspectionCardFunctions(
         document.querySelectorAll(".inspection-card")
     )
