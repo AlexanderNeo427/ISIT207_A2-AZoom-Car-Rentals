@@ -66,7 +66,7 @@ h1 {
    height: calc(var(--card-height) + calc(var(--outline-size) * 2));
    overflow: hidden;
 
-   transition: height 0.4s;
+   transition: height 0.4s, width 1s;
 }
 
 .inspection-card-top {
@@ -147,7 +147,6 @@ h1 {
 
 .inspection-form-container {
    width: 100%;
-   height: 20rem;
 
    margin-top: 0.5rem;
    outline: 1px solid lightgray;
@@ -156,8 +155,6 @@ h1 {
    display: flex;
    justify-content: center;
    align-items: center;
-
-   overflow: scroll;
 }
 
 .inspection-form {
@@ -166,12 +163,13 @@ h1 {
    gap: 1rem;
 
    overflow: scroll;
-   max-width: 50rem;
+   min-width: 30rem;
+   height: 20rem;
    padding: 1rem;
-   background-color: var(--background-100);
-   border-radius: 2rem;
+   background-color: var(--secondary-100);
+   border-radius: 1rem;
 
-   text-overflow: nowrap;
+   white-space: nowrap;
 }
 
 .inspection-form input {

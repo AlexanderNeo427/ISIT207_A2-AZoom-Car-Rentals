@@ -3,7 +3,7 @@
 class InspectionCardState {
     constructor(closedHeightStr, openHeightStr) {
         this.isOpen = false
-        this.closedHeightStr = closedHeightStr 
+        this.closedHeightStr = closedHeightStr
         this.openHeightStr = openHeightStr
     }
 }
@@ -11,10 +11,10 @@ class InspectionCardState {
 function setCardIsOpen(inspectionCard, openIntent, cardState) {
     cardState.isOpen = openIntent
 
-    inspectionCard.style.height = 
-    cardState.isOpen ? 
-    cardState.openHeightStr : 
-    cardState.closedHeightStr 
+    inspectionCard.style.height =
+        cardState.isOpen ?
+            cardState.openHeightStr :
+            cardState.closedHeightStr
 
     const cardTop = inspectionCard.querySelector(".inspection-card-top")
     if (cardState.isOpen) {
@@ -35,16 +35,23 @@ function setupInspectionCardFunctions(allInspectionCards) {
     allInspectionCards.forEach(inspectionCard => {
         const orderID = inspectionCard.querySelector(".inspection-details >h2").textContent
 
+        const REM_PX = parseFloat(getComputedStyle(document.documentElement).fontSize)
+        const YPAD_REM = 3
+
         const cardHeight_px = parseFloat(getComputedStyle(inspectionCard).height)
-        const inspectionForm = inspectionCard.querySelector(".inspection-form")
-        const formHeight_px = parseFloat(getComputedStyle(inspectionForm).height)
+        const inspectForm = inspectionCard.querySelector(".inspection-form")
+        const formHeight_px = parseFloat(getComputedStyle(inspectForm).height)
+
+        const inspectFormContainer = inspectionCard.querySelector(".inspection-form-container")
+        const formContainerTargetHeight = formHeight_px + (YPAD_REM * REM_PX)
+        inspectFormContainer.style.height = String(formContainerTargetHeight) + "px"
 
         stateData[orderID] = new InspectionCardState(
-            String(cardHeight_px) + "px", 
-            String(cardHeight_px + formHeight_px) + "px"
-        ) 
+            String(cardHeight_px) + "px",
+            String(cardHeight_px + formContainerTargetHeight) + "px"
+        )
 
-        inspectionCard.querySelector(".inspect-btn").onclick = function() {
+        inspectionCard.querySelector(".inspect-btn").onclick = function () {
             allInspectionCards.forEach(otherCard => {
                 const otherOrderID = otherCard.querySelector(".inspection-details >h2").textContent
                 const isCurrentSelected = (orderID === otherOrderID)
@@ -54,12 +61,29 @@ function setupInspectionCardFunctions(allInspectionCards) {
                 else {
                     setCardIsOpen(otherCard, isCurrentSelected, stateData[otherOrderID])
                 }
-            }) 
-        } 
+            })
+        }
+
+        inspectionCard.querySelector(".complete-inspection-btn").onclick = function() {
+            let fadeTimeSeconds = 2
+            const currTransitions = getComputedStyle(inspectionCard).transition
+            const heightTransition = currTransitions.split(",")
+                                    .map(transition => transition.split(" "))
+                                    .find(transition => transition[0] === 'height')
+            if (heightTransition) {
+                fadeTimeSeconds = parseFloat(heightTransition[1]) * 2.2
+            }
+
+            const newTrans = `${currTransitions}, opacity ${fadeTimeSeconds}s`
+            inspectionCard.style.transition = newTrans
+            inspectionCard.style.opacity = "0"
+            setCardIsOpen(inspectionCard, false, stateData[orderID])
+            setTimeout(() => inspectionCard.remove(), fadeTimeSeconds * 1000)
+        }
     })
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     setupInspectionCardFunctions(
         document.querySelectorAll(".inspection-card")
     )
