@@ -8,6 +8,23 @@ class InspectionCardState {
     }
 }
 
+function setCardIsOpen(inspectionCard, openIntent, cardState) {
+    cardState.isOpen = openIntent
+
+    inspectionCard.style.height = 
+    cardState.isOpen ? 
+    cardState.openHeightStr : 
+    cardState.closedHeightStr 
+
+    const cardTop = inspectionCard.querySelector(".inspection-card-top")
+    if (cardState.isOpen) {
+        cardTop.classList.add("highlight")
+    }
+    else {
+        cardTop.classList.remove("highlight")
+    }
+}
+
 function setupInspectionCardFunctions(allInspectionCards) {
     const stateData = {}
 
@@ -15,7 +32,6 @@ function setupInspectionCardFunctions(allInspectionCards) {
         const orderID = inspectionCard.querySelector(".inspection-details >h2").textContent
 
         const cardHeight_px = parseFloat(getComputedStyle(inspectionCard).height)
-        
         const inspectionForm = inspectionCard.querySelector(".inspection-form")
         const formHeight_px = parseFloat(getComputedStyle(inspectionForm).height)
 
@@ -24,12 +40,12 @@ function setupInspectionCardFunctions(allInspectionCards) {
             String(cardHeight_px + formHeight_px) + "px"
         ) 
         
-        const dropdownBtn = inspectionCard.querySelector(".inspect-btn")
-        dropdownBtn.onclick = function() {
-            stateData[orderID].isOpen = !stateData[orderID].isOpen
-
-            inspectionCard.style.height = stateData[orderID].isOpen ? 
-            stateData[orderID].openHeightStr : stateData[orderID].closedHeightStr
+        inspectionCard.querySelector(".inspect-btn").onclick = function() {
+            allInspectionCards.forEach(otherCard => {
+                const otherOrderID = otherCard.querySelector(".inspection-details >h2").textContent
+                const openIntent = (orderID === otherOrderID)
+                setCardIsOpen(otherCard, openIntent, stateData[otherOrderID])
+            })
         } 
     })
 }
