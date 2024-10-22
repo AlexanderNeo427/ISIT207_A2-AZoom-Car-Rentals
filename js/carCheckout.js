@@ -17,7 +17,7 @@ function setBookingDetails(carDatum) {
             `${Math.floor(diffSeconds / SECONDS_PER_DAY)} rental days`
     document.querySelector(".rent-duration").innerHTML = rentDuration
 
-    const detailNode = this.document.querySelector(".pickup-return-details")
+    const detailNode = document.querySelector(".pickup-return-details")
 
     const pickupDetailNode = detailNode.querySelector(".pickup")
     pickupDetailNode.querySelector(".pickup-return-location").innerHTML = pickupDetails.location
@@ -27,7 +27,7 @@ function setBookingDetails(carDatum) {
     returnDetailNode.querySelector(".pickup-return-location").innerHTML = returnDetails.location
     returnDetailNode.querySelector(".pickup-return-date").innerHTML = customDateTimeFormat(returnDatetime)
 
-    const bookingOverview = this.document.querySelector(".booking-overview")
+    const bookingOverview = document.querySelector(".booking-overview")
 
     const hoursRented = diffSeconds / (60 * 60)
     const rentalFee = hoursRented * carDatum.hourlyRate

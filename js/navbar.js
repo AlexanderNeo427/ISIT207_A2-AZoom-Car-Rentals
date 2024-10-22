@@ -6,7 +6,7 @@ function checkForLoginData() {
         return
     }
 
-    console.log("navbar.js - Found a currently logged in user of ID: ", userID)
+    // console.log("navbar.js - Found a currently logged in user of ID: ", userID)
 
     // Found a currently logged-in user, change instances of the word "login" to "signout"
     const loginSignoutLink = document.querySelector(".header .login-signout-link")
@@ -14,7 +14,7 @@ function checkForLoginData() {
     loginSignoutLink.href = "index.html"
     loginSignoutLink.onclick = function() {
         localStorage.removeItem(LocalStorageKeys.LOGGED_IN_USER_ID)
-        console.log("Currently logged in ID (should be null): ", LocalStorageKeys.LOGGED_IN_USER_ID)
+        // console.log("Currently logged in ID (should be null): ", LocalStorageKeys.LOGGED_IN_USER_ID)
     }
 
     const modalLoginSignoutLink = document.querySelector(".header-modal .login-signout-link")
@@ -23,7 +23,7 @@ function checkForLoginData() {
     modalLoginSignoutLink.href = "index.html"
     modalLoginSignoutLink.onclick = function() {
         localStorage.removeItem(LocalStorageKeys.LOGGED_IN_USER_ID)
-        console.log("Currently logged in ID (should be null): ", LocalStorageKeys.LOGGED_IN_USER_ID)
+        // console.log("Currently logged in ID (should be null): ", LocalStorageKeys.LOGGED_IN_USER_ID)
     }
 }
 

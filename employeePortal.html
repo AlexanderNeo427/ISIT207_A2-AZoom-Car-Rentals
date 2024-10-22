@@ -6,6 +6,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>AZoom - Employee Portal</title>
    <link rel="stylesheet" href="css/employeePortal.css">
+   <script src="js/Globals.js"></script>
+   <script src="js/navbar.js"></script>
+   <script src="js/employeePortal.js"></script>
 </head>
 
 <body class="employee-portal">
@@ -29,26 +32,85 @@
       </div>
    </header>
 
+   <div class="header-modal">
+      <nav>
+         <a href="index.html">Home</a>
+         <a href="contactUs.html">Contact Us</a>
+         <a class="login-signout-link" href="login.html">Login</a>
+         <button onclick="window.location.href = 'carCatalogue.html'">Rent a Car</button>
+      </nav>
+      <button class="close-button">×</button>
+   </div>
+
    <main class="flex-centered">
       <h1>Car Inspection Page</h1>
       <div class="sections-container">
          <section class="cars-pending-inspection">
 
             <div class="inspection-card">
-               <img src="assets/images/black-supercar.jpg" alt="">
-               <div class="inspection-details-container">
-                  <div class="inspection-details">
-                     <h2>#FJf09d23fj</h2>
-                     <h3>Ford Falcon</h3>
-                     <span><strong>Booking Date: </strong>06 Oct 2023 | 10:23pm</span>
-                     <span><strong>Return Date: </strong>15 Oct 2024 | 09:54am</span>
-                     <span><strong>Final Cost: </strong>$373.61</span>
+               <div class="inspection-card-top highlight">
+                  <div class="inspection-details-container">
+                     <img src="assets/images/black-supercar.jpg" alt="">
+                     <div class="inspection-details">
+                        <h2>#FJf09d23fj</h2>
+                        <h3>Ford Falcon</h3>
+                        <span><strong>Booking Date: </strong>06 Oct 2023 | 10:23pm</span>
+                        <span><strong>Return Date: </strong>15 Oct 2024 | 09:54am</span>
+                        <span><strong>Final Cost: </strong>$373.61</span>
+                     </div>
                   </div>
                   <button class="inspect-btn">
                      <img src="assets/svg/Arrow-right.svg" alt="">
                   </button>
                </div>
-               <!-- <div class="inspection-form"></div> -->
+               <div class="inspection-form-container">
+                  <div class="inspection-form">
+                     <input type="text" name="" id="">
+                     <input type="text" name="" id="">
+                     <input type="text" name="" id="">
+                     <input type="text" name="" id="">
+                     <input type="text" name="" id="">
+                     <input type="text" name="" id="">
+                  </div>
+               </div>
+            </div>
+
+            <div class="inspection-card">
+               <div class="inspection-card-top">
+                  <div class="inspection-details-container">
+                     <img src="assets/images/black-supercar.jpg" alt="">
+                     <div class="inspection-details">
+                        <h2>#ue8fh3h09d23fj</h2>
+                        <h3>Ford Falcon</h3>
+                        <span><strong>Booking Date: </strong>06 Oct 2023 | 10:23pm</span>
+                        <span><strong>Return Date: </strong>15 Oct 2024 | 09:54am</span>
+                        <span><strong>Final Cost: </strong>$373.61</span>
+                     </div>
+                  </div>
+                  <button class="inspect-btn">
+                     <img src="assets/svg/Arrow-right.svg" alt="">
+                  </button>
+               </div>
+               <div class="inspection-form"></div>
+            </div>
+
+            <div class="inspection-card">
+               <div class="inspection-card-top">
+                  <div class="inspection-details-container">
+                     <img src="assets/images/black-supercar.jpg" alt="">
+                     <div class="inspection-details">
+                        <h2>#FJffhd9HJOHHH3fj</h2>
+                        <h3>Ford Falcon</h3>
+                        <span><strong>Booking Date: </strong>06 Oct 2023 | 10:23pm</span>
+                        <span><strong>Return Date: </strong>15 Oct 2024 | 09:54am</span>
+                        <span><strong>Final Cost: </strong>$373.61</span>
+                     </div>
+                  </div>
+                  <button class="inspect-btn">
+                     <img src="assets/svg/Arrow-right.svg" alt="">
+                  </button>
+               </div>
+               <div class="inspection-form"></div>
             </div>
 
          </section>

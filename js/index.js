@@ -80,8 +80,8 @@ window.addEventListener('load', function () {
         )
     })
 
-    // const leftBtn = this.document.querySelectorAll(".testimonials-buttons")[0]
-    // const rightBtn = this.document.querySelectorAll(".testimonials-buttons")[1]
+    // const leftBtn = document.querySelectorAll(".testimonials-buttons")[0]
+    // const rightBtn = document.querySelectorAll(".testimonials-buttons")[1]
 
     // const cardWidth = testimonialCarousel.querySelector(".carousel-item").offsetWidth
     // console.log("Card width: ", cardWidth)

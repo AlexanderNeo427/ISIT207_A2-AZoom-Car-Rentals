@@ -2,13 +2,12 @@
 @import url(header.css);
 
 *, *::before, *::after {
-   outline: 2px dotted black;
+   /* outline: 1px dotted black; */
 }
 
 .employee-portal {
-   --card-height: 12rem;
-   --card-border-radius: 0.5rem;
-   --img-AR: calc(4 / 3);
+   --card-height: 9rem;
+   color: var(--text-950);
 }
 
 .flex-centered {
@@ -19,6 +18,15 @@
 
    width: 100%;
    height: 100%;
+
+   /* background-color: white; */
+}
+
+h1 {
+   font-size: 3rem;
+   font-weight: bold;
+   margin-top: var(--margin-s);
+   margin-bottom: var(--margin-xs);
 }
 
 .sections-container {
@@ -26,50 +34,75 @@
    display: flex;
    flex-direction: column;
    justify-content: start;
-
-   width: 90%;
+   align-items: center;
+   width: 100%;
 }
 
 .cars-pending-inspection {
-   display: flex;
-   justify-content: start;
-   align-items: flex-start;
+   width: 100%; 
+
+   display: grid;
+   gap: 2rem;
 }
 
 .inspection-card {
+   --outline-size: 0.25rem;
+
    display: flex;
+   flex-direction: column;
    justify-content: start;
    align-items: center;
-   gap: 1rem;
-   border-radius: var(--card-border-radius);
+   padding-top: var(--outline-size);
 
-   background-color: var(--text-50);
-   box-shadow: 0px 0px 0.5rem var(--text-800);
+   height: calc(var(--card-height) + calc(var(--outline-size) * 2));
+   overflow: hidden;
 
-   height: var(--card-height);
+   transition: height 0.4s;
 }
 
-.inspection-card >img {
+.inspection-card-top {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: var(--background-100);
+   box-shadow: 0px 0px 0.25rem var(--text-800);
+
+   max-width: 50rem;
+
+   height: var(--card-height);
+   z-index: 1;
+}
+
+.highlight {
+   border-radius: 0.3rem;
+   outline: var(--outline-size) solid var(--background-400);
+}
+
+.inspection-details-container >img {
+   --img-AR: calc(4 / 3);
+   --img-padding: 0.3rem;
    height: var(--card-height);
    width: calc(var(--card-height) * var(--img-AR));
-
-   padding: 0.25rem;
-   border-radius: var(--card-border-radius); 
+   padding: var(--img-padding);
+   border-radius: calc(0.3rem + var(--img-padding));
+   margin-right: var(--margin-xxs);
 }
 
 .inspection-details-container {
    display: flex;
-   justify-content: space-between;
-
+   justify-content: start;
    height: 100%;
-   width: 30rem;
+   max-width: 35rem;
 }
 
 .inspection-details {
+   flex-grow: 1;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: flex-start;
+   padding-right: 1rem;
+   white-space: nowrap;
 }
 
 .inspection-details * {
@@ -79,9 +112,52 @@
 .inspect-btn {
    border: none;
    background-color: var(--primary-500);
-   width: 5rem;
+   padding: 0rem 0.333rem;
    height: 100%;
 
-   border-top-right-radius: var(--card-border-radius);
-   border-bottom-right-radius: var(--card-border-radius);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   cursor: pointer;
+   transition: background-color 0.1s;
 }
+
+.inspect-btn:hover {
+   background-color: var(--primary-400);
+}
+
+.inspect-btn>img {
+   width: 2.8rem;
+   height: 2.8rem;
+}
+
+.inspection-form-container {
+   width: 100%;
+   height: 20rem;
+
+   margin-top: 0.5rem;
+   box-shadow: 0px 0px 0.25rem var(--text-800);
+   background-color: white;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   overflow: scroll;
+}
+
+.inspection-form {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.inspection-form input {
+   width: 20rem;
+   height: 3rem;
+   border: 1px solid red;
+}
+
+
+

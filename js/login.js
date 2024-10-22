@@ -162,8 +162,8 @@ window.addEventListener('load', function () {
     // QUick way to clear the local storage key
     // this.localStorage.removeItem(LocalStorageKeys.USER_ACCOUNTS)
 
-    const loginForm = this.document.querySelector(".form-right.login")
-    const registerForm = this.document.querySelector(".form-right.register")
+    const loginForm = document.querySelector(".form-right.login")
+    const registerForm = document.querySelector(".form-right.register")
     loginForm.querySelector(".registration-link").onclick = function (evt) {
         evt.preventDefault()
         // console.log("Registration link was clicked")
