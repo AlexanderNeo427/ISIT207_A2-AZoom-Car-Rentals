@@ -2,6 +2,7 @@
 
 class InspectionCardState {
     constructor(closedHeightStr, openHeightStr) {
+        this.isActive = true
         this.isOpen = false
         this.closedHeightStr = closedHeightStr
         this.openHeightStr = openHeightStr
@@ -9,6 +10,9 @@ class InspectionCardState {
 }
 
 function setCardIsOpen(inspectionCard, openIntent, cardState) {
+    if (!cardState.isActive) {
+        return
+    }
     cardState.isOpen = openIntent
 
     inspectionCard.style.height =
@@ -78,7 +82,17 @@ function setupInspectionCardFunctions(allInspectionCards) {
             inspectionCard.style.transition = newTrans
             inspectionCard.style.opacity = "0"
             setCardIsOpen(inspectionCard, false, stateData[orderID])
-            setTimeout(() => inspectionCard.remove(), fadeTimeSeconds * 1000)
+            stateData[orderID].isActive = false
+
+            setTimeout(() => {
+                const HEIGHT_TRANS_TIME = 0.5
+                inspectionCard.style.transition = `all ${HEIGHT_TRANS_TIME}s`
+                
+                inspectionCard.style.height = "0px"
+                inspectionCard.style.margin = "0px"
+                inspectionCard.style.padding = "0px"
+                setTimeout(() => inspectionCard.remove(), HEIGHT_TRANS_TIME * 1000)
+            }, fadeTimeSeconds * 1000)
         }
     })
 }

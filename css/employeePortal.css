@@ -51,7 +51,6 @@ h1 {
 .cars-pending-inspection {
    width: 100%; 
    display: grid;
-   gap: 2rem;
 }
 
 .inspection-card {
@@ -61,12 +60,14 @@ h1 {
    flex-direction: column;
    justify-content: start;
    align-items: center;
+
+   margin-bottom: var(--margin-l);
    padding-top: var(--outline-size);
 
    height: calc(var(--card-height) + calc(var(--outline-size) * 2));
    overflow: hidden;
 
-   transition: height 0.4s, width 1s;
+   transition: height 0.4s;
 }
 
 .inspection-card-top {
