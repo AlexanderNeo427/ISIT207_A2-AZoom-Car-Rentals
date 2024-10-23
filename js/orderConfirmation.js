@@ -1,15 +1,5 @@
 'use strict'
 
-function generateRandomString(length) {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let result = '';
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * characters.length);
-        result += characters.charAt(randomIndex);
-    }
-    return result;
-}
-
 function initializeTimer() {
     let timeLeftSeconds = 15
     const timerElem = document.querySelector(".order-confirmation-body .countdown-timer")
@@ -27,6 +17,6 @@ function initializeTimer() {
 }
 
 window.addEventListener('load', function () {
-    document.querySelector(".order-confirmation-body .ID-value").textContent = '#' + generateRandomString(10)
+    document.querySelector(".order-confirmation-body .ID-value").textContent = '#' + Utils.generateRandomString(10)
     initializeTimer()
 })

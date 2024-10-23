@@ -55,6 +55,7 @@ function setupInspectionCardFunctions(allInspectionCards) {
             String(cardHeight_px + formContainerTargetHeight) + "px"
         )
 
+        // INSPECT BUTTON
         inspectionCard.querySelector(".inspect-btn").onclick = function () {
             allInspectionCards.forEach(otherCard => {
                 const otherOrderID = otherCard.querySelector(".inspection-details >h2").textContent
@@ -68,12 +69,31 @@ function setupInspectionCardFunctions(allInspectionCards) {
             })
         }
 
-        inspectionCard.querySelector(".penalty-input button").onclick = function() {
+        // ADD ENTRY BUTTON
+        inspectionCard.querySelector(".add-entry-btn").onclick = function (evt) {
+            evt.preventDefault()
+            inspectionCard.querySelector(".penalties").appendChild(
+                InspectionCardGenerator.makePenaltyEntry_HTML()
+            ) 
+
+            // PENALTY ENTRIES
+            inspectionCard.querySelectorAll(".penalty-entry").forEach(penaltyEntry => {
+                penaltyEntry.querySelector(".delete-entry-btn").onclick = function (evt) {
+                    evt.preventDefault()
+                    penaltyEntry.remove()
+                }
+            })
+        }
+
+        // CLEAR INSPECTION BUTTON
+        inspectionCard.querySelector(".clear-inspection-btn").onclick = function (evt) {
+            evt.preventDefault()
+
             let fadeTimeSeconds = 2
             const currTransitions = getComputedStyle(inspectionCard).transition
             const heightTransition = currTransitions.split(",")
-                                    .map(transition => transition.split(" "))
-                                    .find(transition => transition[0] === 'height')
+                .map(transition => transition.split(" "))
+                .find(transition => transition[0] === 'height')
             if (heightTransition) {
                 fadeTimeSeconds = parseFloat(heightTransition[1]) * 2.2
             }
@@ -87,18 +107,40 @@ function setupInspectionCardFunctions(allInspectionCards) {
             setTimeout(() => {
                 const HEIGHT_TRANS_TIME = 0.5
                 inspectionCard.style.transition = `all ${HEIGHT_TRANS_TIME}s`
-                
+
                 inspectionCard.style.height = "0px"
                 inspectionCard.style.margin = "0px"
-                // inspectionCard.style.padding = "0px"
                 setTimeout(() => inspectionCard.remove(), HEIGHT_TRANS_TIME * 1000)
             }, fadeTimeSeconds * 1000)
         }
     })
 }
 
-window.addEventListener('load', function () {
+function generateInspectionCards() {
+    const cardsPendingInspectionNode = document.querySelector(".cars-pending-inspection")
+
+    const carDatum = database.cars[Utils.randInt(0, database.cars.length - 1)]
+    const cardHTML = InspectionCardGenerator.makeInspectionCard_HTML(
+        carDatum.imageURL,
+        "#" + Utils.generateRandomString(10),
+        carDatum.make + " " + carDatum.model,
+        customDateTimeFormat(new Date()),
+        "Hougang Rivercourt",
+    )
+    cardsPendingInspectionNode.appendChild(cardHTML) 
+
     setupInspectionCardFunctions(
         document.querySelectorAll(".inspection-card")
     )
+}
+
+window.addEventListener('load', function () {
+    // const leRepeat = function() {
+    //     generateInspectionCards()
+    //     setTimeout(leRepeat, 3000)
+    // }
+    // leRepeat()
+    for (let i = 0; i < 4; i++) {
+        generateInspectionCards()
+    }
 })

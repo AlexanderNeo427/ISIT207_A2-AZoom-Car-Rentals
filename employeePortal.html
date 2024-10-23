@@ -6,8 +6,10 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>AZoom - Employee Portal</title>
    <link rel="stylesheet" href="css/employeePortal.css">
+   <script src="database/cars.js"></script>
    <script src="js/Globals.js"></script>
    <script src="js/navbar.js"></script>
+   <script src="js/penaltyEntry.js"></script>
    <script src="js/employeePortal.js"></script>
 </head>
 
@@ -43,193 +45,14 @@
    </div>
 
    <main class="flex-centered">
-      <!-- <div class="photo-modal">
+      <!-- <div class="confirmation-modal-container">
+         <div class="confirmation-modal">
+         </div>
       </div> -->
 
       <h1>Car Inspection Page</h1>
       <div class="sections-container">
-         <section class="cars-pending-inspection">
-
-            <div class="inspection-card">
-               <div class="inspection-card-top">
-                  <div class="inspection-details-container">
-                     <img src="assets/images/black-supercar.jpg" alt="">
-                     <div class="inspection-details">
-                        <h2>#FJf09d23fj</h2>
-                        <h3>Ford Falcon</h3>
-                        <span><strong>Booking Date: </strong>06 Oct 2023 | 10:23pm</span>
-                        <span><strong>Return Date: </strong>15 Oct 2024 | 09:54am</span>
-                        <span><strong>Final Cost: </strong>$373.61</span>
-                     </div>
-                  </div>
-                  <button class="inspect-btn">
-                     <img src="assets/svg/Arrow-right.svg" alt="">
-                  </button>
-               </div>
-               <div class="inspection-form-container">
-                  <form class="inspection-form">
-                     <li class="add-entry-btn-container">
-                        <button>+ Add Entry</button>
-                     </li>
-                     <ul class="penalties">
-                        <li class="penalty-entry">
-                           <select class="damage-selector" name="" id="">
-                              <option value="">Tire Puncture</option>
-                              <option value="">Scratches</option>
-                              <option value="">Dents</option>
-                              <option value="">Glass crack</option>
-                           </select>
-                           <div class="cost-input">
-                              <img src="assets/svg/Money.svg" alt="">
-                              <input type="number" placeholder="">
-                           </div>
-                           <label class="img-input-label" for="img-input">
-                              <img src="assets/svg/Upload.svg" alt="">
-                              <span>Upload image</span>
-                           </label>
-                           <input class="img-input" type="file" accept="image/*" hidden>
-                           <button class="delete-entry-btn">x</button>
-                        </li> 
-
-                        <li class="penalty-entry">
-                           <select class="damage-selector" name="" id="">
-                              <option value="">Tire Puncture</option>
-                              <option value="">Scratches</option>
-                              <option value="">Dents</option>
-                              <option value="">Glass crack</option>
-                           </select>
-                           <div class="cost-input">
-                              <img src="assets/svg/Money.svg" alt="">
-                              <input type="number" placeholder="">
-                           </div>
-                           <label class="img-input-label" for="img-input">
-                              <img src="assets/svg/Upload.svg" alt="">
-                              <span>Upload image</span>
-                           </label>
-                           <input class="img-input" type="file" accept="image/*" hidden>
-                           <button class="delete-entry-btn">x</button>
-                        </li> 
-
-                        <li class="penalty-entry">
-                           <select class="damage-selector" name="" id="">
-                              <option value="">Tire Puncture</option>
-                              <option value="">Scratches</option>
-                              <option value="">Dents</option>
-                              <option value="">Glass crack</option>
-                           </select>
-                           <div class="cost-input">
-                              <img src="assets/svg/Money.svg" alt="">
-                              <input type="number" placeholder="">
-                           </div>
-                           <label class="img-input-label" for="img-input">
-                              <img src="assets/svg/Upload.svg" alt="">
-                              <span>Upload image</span>
-                           </label>
-                           <input class="img-input" type="file" accept="image/*" hidden>
-                           <button class="delete-entry-btn">x</button>
-                        </li> 
-
-                        <li class="penalty-entry">
-                           <select class="damage-selector" name="" id="">
-                              <option value="">Tire Puncture</option>
-                              <option value="">Scratches</option>
-                              <option value="">Dents</option>
-                              <option value="">Glass crack</option>
-                           </select>
-                           <div class="cost-input">
-                              <img src="assets/svg/Money.svg" alt="">
-                              <input type="number" placeholder="">
-                           </div>
-                           <label class="img-input-label" for="img-input">
-                              <img src="assets/svg/Upload.svg" alt="">
-                              <span>Upload image</span>
-                           </label>
-                           <input class="img-input" type="file" accept="image/*" hidden>
-                           <button class="delete-entry-btn">x</button>
-                        </li> 
-                     </ul>
-                     <div class="penalty-input">
-                        <span><strong>TOTAL: </strong>$4382.93</span>
-                        <button>
-                           <img src="assets/svg/Tick.svg" alt="">
-                        </button>
-                     </div>
-                  </form>
-               </div>
-            </div>
-
-            <div class="inspection-card">
-               <div class="inspection-card-top">
-                  <div class="inspection-details-container">
-                     <img src="assets/images/black-supercar.jpg" alt="">
-                     <div class="inspection-details">
-                        <h2>#FJf09dj</h2>
-                        <h3>Ford Falcon</h3>
-                        <span><strong>Booking Date: </strong>06 Oct 2023 | 10:23pm</span>
-                        <span><strong>Return Date: </strong>15 Oct 2024 | 09:54am</span>
-                        <span><strong>Final Cost: </strong>$373.61</span>
-                     </div>
-                  </div>
-                  <button class="inspect-btn">
-                     <img src="assets/svg/Arrow-right.svg" alt="">
-                  </button>
-               </div>
-               <div class="inspection-form-container">
-                  <div class="inspection-form">
-                     <div class="form-top">
-                        <div class="penalties">
-                           <div class="penalty-entry"></div>
-                           <div class="penalty-entry"></div>
-                           <div class="penalty-entry"></div>
-                           <div class="penalty-entry"></div>
-                        </div>
-                     </div>
-                     <div class="form-bottom">
-                        <button class="complete-inspection-btn">
-                           <img src="assets/svg/Arrow-right.svg" alt="">
-                        </button>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-
-            <div class="inspection-card">
-               <div class="inspection-card-top">
-                  <div class="inspection-details-container">
-                     <img src="assets/images/black-supercar.jpg" alt="">
-                     <div class="inspection-details">
-                        <h2>#FJf093fh83hf3fj</h2>
-                        <h3>Ford Falcon</h3>
-                        <span><strong>Booking Date: </strong>06 Oct 2023 | 10:23pm</span>
-                        <span><strong>Return Date: </strong>15 Oct 2024 | 09:54am</span>
-                        <span><strong>Final Cost: </strong>$373.61</span>
-                     </div>
-                  </div>
-                  <button class="inspect-btn">
-                     <img src="assets/svg/Arrow-right.svg" alt="">
-                  </button>
-               </div>
-               <div class="inspection-form-container">
-                  <div class="inspection-form">
-                     <div class="form-top">
-                        <div class="penalties">
-                           <div class="penalty-entry"></div>
-                           <div class="penalty-entry"></div>
-                           <div class="penalty-entry"></div>
-                           <div class="penalty-entry"></div>
-                        </div>
-                     </div>
-                     <div class="form-bottom">
-                        <button class="complete-inspection-btn">
-                           <img src="assets/svg/Arrow-right.svg" alt="">
-                        </button>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-
+         <section class="cars-pending-inspection"> 
          </section>
       </div>
    </main>
