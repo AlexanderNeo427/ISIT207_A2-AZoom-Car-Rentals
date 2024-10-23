@@ -72,7 +72,7 @@ function makeTestimonial(testimonialDatum) {
     return containerNode
 }
 
-window.addEventListener('load', function () {
+function setupTestimonialCarousel() {
     const testimonialCarousel = document.getElementsByClassName("testimonials-carousel")[0]
     database.testimonials.forEach(testimonialData => {
         testimonialCarousel.appendChild(
@@ -80,9 +80,67 @@ window.addEventListener('load', function () {
         )
     })
 
-    // const leftBtn = document.querySelectorAll(".testimonials-buttons")[0]
-    // const rightBtn = document.querySelectorAll(".testimonials-buttons")[1]
+    const leftBtn = document.querySelector(".testimonials-buttons .left")
+    const rightBtn = document.querySelector(".testimonials-buttons .right")
 
+    const carouselWidth_px = parseFloat(getComputedStyle(testimonialCarousel).width)
+    const cardWidth_px = parseFloat(getComputedStyle(testimonialCarousel.firstElementChild).width)
+
+    const SCALE_FACTOR = 1.2
+
+    let currentCard = 0
+    const gapBetweenCards_px = parseFloat(getComputedStyle(testimonialCarousel).gap)
+    const finalOffset_px = (carouselWidth_px * 0.5) - (cardWidth_px * currentCard) - (cardWidth_px * 0.5) - (gapBetweenCards_px * currentCard)
+    
+    testimonialCarousel.style.translate = `${finalOffset_px}px`
+    testimonialCarousel.querySelectorAll(".carousel-item").forEach((carouselItem, index) => {
+        if (index === currentCard) {
+            carouselItem.style.scale = "1.07"
+        }
+        else {
+            carouselItem.style.scale = "1"
+        }
+    })
+
+    rightBtn.onclick = function() {
+        currentCard = Math.min(testimonialCarousel.childElementCount - 1, currentCard + 1)
+        const finalOffset_px = (carouselWidth_px * 0.5) - (cardWidth_px * currentCard) - (cardWidth_px * 0.5) - (gapBetweenCards_px * currentCard) 
+        testimonialCarousel.style.translate = `${finalOffset_px}px`
+        testimonialCarousel.querySelectorAll(".carousel-item").forEach((carouselItem, index) => {
+            if (index === currentCard) {
+               carouselItem.style.scale = "1.07"
+            }
+            else {
+                carouselItem.style.scale = "1"
+            }
+        })
+    }
+    leftBtn.onclick = function() {
+        currentCard = Math.max(0, currentCard - 1)
+        const finalOffset_px = (carouselWidth_px * 0.5) - (cardWidth_px * currentCard) - (cardWidth_px * 0.5) - (gapBetweenCards_px * currentCard)
+        testimonialCarousel.style.translate = `${finalOffset_px}px`
+        testimonialCarousel.querySelectorAll(".carousel-item").forEach((carouselItem, index) => {
+            if (index === currentCard) {
+                carouselItem.style.scale = "1.07"
+            }
+            else {
+                carouselItem.style.scale = "1"
+            }
+        })
+    }
+
+    // testimonialCarousel.querySelectorAll(".carousel-item").forEach((carouselItem, index) => {
+    //     if (index === currentCard) {
+    //         carouselItem.classList.add("scale-up")
+    //     }
+    //     else {
+    //         carouselItem.classList.remove("scale-up")
+    //     }
+    // })
+}
+
+window.addEventListener('load', function () {
+    setupTestimonialCarousel()    
     // const cardWidth = testimonialCarousel.querySelector(".carousel-item").offsetWidth
     // console.log("Card width: ", cardWidth)
 

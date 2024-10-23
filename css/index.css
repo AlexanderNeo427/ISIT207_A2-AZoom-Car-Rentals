@@ -3,7 +3,7 @@
 
 /* ---- DEBUG ---- */
 * {
-   /* outline: 2px dotted rgb(18, 18, 18); */
+   /* outline: 2px dotted rgb(228, 4, 4); */
 }
 
 html, body {
@@ -420,7 +420,10 @@ html, body {
 .testimonials-carousel {
    display: flex;
    justify-content: start;
-   gap: 1.2rem;
+   gap: 1.6rem;
+   scale: 1.0;
+
+   transition: translate 0.5s;
 }
 
 @media screen and (min-width: 768px) {
@@ -449,6 +452,8 @@ html, body {
    border-radius: 0.8rem;
    /* overflow: hidden; */
    background: rgba(255, 255, 255, 0.1);
+
+   transition: scale 0.5s;
 }
 
 .carousel-item .star-container {
