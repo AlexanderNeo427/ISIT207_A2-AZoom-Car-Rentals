@@ -48,7 +48,7 @@ class InspectionCardGenerator {
                 <div class="inspection-form-container">
                     <form class="inspection-form">
                     <div class="add-entry-btn-container">
-                        <button class="add-entry-btn">+ Add Entry</button>
+                        <button class="add-entry-btn">+ Add Penalty</button>
                     </div>
                     <ul class="penalties"></ul>
                     <div class="penalty-input">

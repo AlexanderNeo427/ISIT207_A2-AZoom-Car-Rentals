@@ -39,7 +39,9 @@ h1 {
 /* ============= CONFIRMATION MODAL =============== */
 /* ================================================ */
 .confirmation-modal-container {
-   position: absolute;
+   display: none;
+
+   position: fixed;
    left: 0;
    top: 0;
    right: 0;
@@ -112,6 +114,7 @@ h1 {
    height: 3rem;
    width: 10rem;
 
+   transition: background-color 0.1s;
    cursor: pointer;
 }
 
@@ -120,9 +123,17 @@ h1 {
    background-color: var(--primary-400);
 }
 
+.confirmation-modal-container .modal-buttons .cancel:hover {
+   background-color: var(--primary-500);
+}
+
 .confirmation-modal-container .modal-buttons .confirm {
    color: var(--text-950);
-   background-color: var(--background-50);
+   background-color: var(--primary-50);
+}
+
+.confirmation-modal-container .modal-buttons .confirm:hover {
+   background-color: var(--primary-100);
 }
 /* ================================================ */
 /* ============ CARS PENDING INSPECT ============== */

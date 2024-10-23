@@ -33,6 +33,101 @@ function setCardIsOpen(inspectionCard, openIntent, cardState) {
     inspectBtnIMG.style.transform = `rotateZ(${rotation}deg)`
 }
 
+function fadeAndRemoveInspectionCard(inspectionCard, orderID, stateData) {
+    let fadeTimeSeconds = 2
+    const currTransitions = getComputedStyle(inspectionCard).transition
+    const heightTransition = currTransitions.split(",")
+                            .map(transition => transition.split(" "))
+                            .find(transition => transition[0] === 'height')
+    if (heightTransition) {
+        fadeTimeSeconds = parseFloat(heightTransition[1]) * 2.2
+    }
+
+    const newTrans = `${currTransitions}, opacity ${fadeTimeSeconds}s`
+    inspectionCard.style.transition = newTrans
+    inspectionCard.style.opacity = "0"
+    setCardIsOpen(inspectionCard, false, stateData[orderID])
+    stateData[orderID].isActive = false
+
+    setTimeout(() => {
+        const HEIGHT_TRANS_TIME = 0.5
+        inspectionCard.style.transition = `all ${HEIGHT_TRANS_TIME}s`
+
+        inspectionCard.style.height = "0px"
+        inspectionCard.style.margin = "0px"
+        setTimeout(() => inspectionCard.remove(), HEIGHT_TRANS_TIME * 1000)
+    }, fadeTimeSeconds * 1000)
+}
+
+function setupInspectionCardFunctionality(inspectionCard, stateData) {
+    const orderID = inspectionCard.querySelector(".inspection-details >h2").textContent
+
+    const REM_PX = parseFloat(getComputedStyle(document.documentElement).fontSize)
+    const YPAD_REM = 3
+
+    const cardHeight_px = parseFloat(getComputedStyle(inspectionCard).height)
+    const inspectForm = inspectionCard.querySelector(".inspection-form")
+    const formHeight_px = parseFloat(getComputedStyle(inspectForm).height)
+
+    const inspectFormContainer = inspectionCard.querySelector(".inspection-form-container")
+    const formContainerTargetHeight = formHeight_px + (YPAD_REM * REM_PX)
+    inspectFormContainer.style.height = String(formContainerTargetHeight) + "px"
+
+    stateData[orderID] = new InspectionCardState(
+        String(cardHeight_px) + "px",
+        String(cardHeight_px + formContainerTargetHeight) + "px"
+    )
+
+    // INSPECT BUTTON
+    inspectionCard.querySelector(".inspect-btn").onclick = function () {
+        document.querySelectorAll(".inspection-card").forEach(otherCard => {
+            const otherOrderID = otherCard.querySelector(".inspection-details >h2").textContent
+            const isCurrentSelected = (orderID === otherOrderID)
+            if (isCurrentSelected) {
+                setCardIsOpen(otherCard, !stateData[otherOrderID].isOpen, stateData[otherOrderID])
+            }
+            else {
+                setCardIsOpen(otherCard, isCurrentSelected, stateData[otherOrderID])
+            }
+        })
+    }
+
+    // ADD ENTRY BUTTON
+    inspectionCard.querySelector(".add-entry-btn").onclick = function (evt) {
+        evt.preventDefault()
+        inspectionCard.querySelector(".penalties").appendChild(
+            InspectionCardGenerator.makePenaltyEntry_HTML()
+        )
+
+        // PENALTY ENTRIES
+        inspectionCard.querySelectorAll(".penalty-entry").forEach(penaltyEntry => {
+            penaltyEntry.querySelector(".delete-entry-btn").onclick = function (evt) {
+                evt.preventDefault()
+                penaltyEntry.remove()
+            }
+        })
+    }
+
+    // CLEAR INSPECTION BUTTON
+    inspectionCard.querySelector(".clear-inspection-btn").onclick = function (evt) {
+        evt.preventDefault()
+        const modal = document.querySelector(".confirmation-modal-container")
+        modal.style.display = "block"
+
+        modal.querySelector(".modal-bottom p").textContent = `
+            By confirming this action, you will authorize a charge of $${334.32} to the customer's account.
+            Are you certain you want to apply this charge?
+        `
+        modal.querySelector(".modal-buttons .cancel").onclick = function() {
+            modal.style.display = "none"
+        }
+        modal.querySelector(".modal-buttons .confirm").onclick = function() {
+            modal.style.display = "none"
+            fadeAndRemoveInspectionCard(inspectionCard, orderID, stateData)
+        }
+    }
+}
+
 function setupInspectionCardFunctions(allInspectionCards) {
     const stateData = {}
 
@@ -74,7 +169,7 @@ function setupInspectionCardFunctions(allInspectionCards) {
             evt.preventDefault()
             inspectionCard.querySelector(".penalties").appendChild(
                 InspectionCardGenerator.makePenaltyEntry_HTML()
-            ) 
+            )
 
             // PENALTY ENTRIES
             inspectionCard.querySelectorAll(".penalty-entry").forEach(penaltyEntry => {
@@ -116,31 +211,44 @@ function setupInspectionCardFunctions(allInspectionCards) {
     })
 }
 
-function generateInspectionCards() {
+function generateInspectionCard(stateData) {
     const cardsPendingInspectionNode = document.querySelector(".cars-pending-inspection")
 
     const carDatum = database.cars[Utils.randInt(0, database.cars.length - 1)]
-    const cardHTML = InspectionCardGenerator.makeInspectionCard_HTML(
+    const inspectionCard = InspectionCardGenerator.makeInspectionCard_HTML(
         carDatum.imageURL,
         "#" + Utils.generateRandomString(10),
         carDatum.make + " " + carDatum.model,
         customDateTimeFormat(new Date()),
         "Hougang Rivercourt",
     )
-    cardsPendingInspectionNode.appendChild(cardHTML) 
+    cardsPendingInspectionNode.appendChild(inspectionCard)
 
-    setupInspectionCardFunctions(
-        document.querySelectorAll(".inspection-card")
-    )
+    setupInspectionCardFunctionality(inspectionCard, stateData)
+}
+
+function setupModalFunctionality() {
+    const modalContainer = document.querySelector(".confirmation-modal-container")
+    const modal = modalContainer.querySelector(".confirmation-modal")
+
+    modal.querySelector(".modal-buttons .confirm").onclick = function () {
+        console.log("Confirmation button")
+    }
+
+    modal.querySelector(".modal-buttons .cancel").onclick = function () {
+        console.log("cancel btn")
+    }
 }
 
 window.addEventListener('load', function () {
+    const stateData = {}
+    for (let i = 0; i < 5; i++) {
+        generateInspectionCard(stateData)
+    }
     // const leRepeat = function() {
-    //     generateInspectionCards()
-    //     setTimeout(leRepeat, 3000)
+    //     generateInspectionCard(stateData)
+    //     setTimeout(leRepeat, Utils.randFloat(4, 12) * 1000)
     // }
     // leRepeat()
-    for (let i = 0; i < 4; i++) {
-        generateInspectionCards()
-    }
+    // setupModalFunctionality()
 })
