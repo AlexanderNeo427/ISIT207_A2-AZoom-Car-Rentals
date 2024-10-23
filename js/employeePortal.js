@@ -90,7 +90,7 @@ function setupInspectionCardFunctions(allInspectionCards) {
                 
                 inspectionCard.style.height = "0px"
                 inspectionCard.style.margin = "0px"
-                inspectionCard.style.padding = "0px"
+                // inspectionCard.style.padding = "0px"
                 setTimeout(() => inspectionCard.remove(), HEIGHT_TRANS_TIME * 1000)
             }, fadeTimeSeconds * 1000)
         }

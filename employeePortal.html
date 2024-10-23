@@ -70,13 +70,28 @@
                   <div class="inspection-form">
                      <div class="form-top">
                         <div class="penalties">
-                           <div class="penalty-entry"></div>
-                           <div class="penalty-entry"></div>
-                           <div class="penalty-entry"></div>
-                           <div class="penalty-entry"></div>
+                           <div class="penalty-entry">
+                              <input class="damage-indicator" type="text" placeholder="Scratches" disabled>
+                              <input class="cost-indicator" type="text" placeholder="$32.98" disabled>
+                              <input class="photo-indicator" type="text" placeholder="Windshield-Damage.jpg" disabled>
+                              <button class="delete-entry-btn">X</button>
+                           </div>
+                           <div class="penalty-entry">
+                              <input class="damage-indicator" type="text" placeholder="Dents" disabled>
+                              <input class="cost-indicator" type="text" placeholder="$140.10" disabled>
+                              <input class="photo-indicator" type="text" placeholder="Dents.jpg" disabled>
+                              <button class="delete-entry-btn">X</button>
+                           </div>
+                           <div class="penalty-entry">   
+                              <input class="damage-indicator" type="text" placeholder="Tire Puncture" disabled>
+                              <input class="cost-indicator" type="text" placeholder="$60.43" disabled>
+                              <input class="photo-indicator" type="text" placeholder="Tire.jpg" disabled>
+                              <button class="delete-entry-btn">X</button>
+                           </div>
                         </div>
                      </div>
                      <div class="form-bottom">
+                        <input type="file" accept="images">
                         <button class="complete-inspection-btn">
                            <img src="assets/svg/Arrow-right.svg" alt="">
                         </button>
