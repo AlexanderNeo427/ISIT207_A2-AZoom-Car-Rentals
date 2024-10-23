@@ -68,7 +68,7 @@ function setupInspectionCardFunctions(allInspectionCards) {
             })
         }
 
-        inspectionCard.querySelector(".complete-inspection-btn").onclick = function() {
+        inspectionCard.querySelector(".penalty-input button").onclick = function() {
             let fadeTimeSeconds = 2
             const currTransitions = getComputedStyle(inspectionCard).transition
             const heightTransition = currTransitions.split(",")

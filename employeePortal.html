@@ -68,38 +68,56 @@
                </div>
                <div class="inspection-form-container">
                   <div class="inspection-form">
-                     <div class="form-top">
-                        <div class="penalties">
-                           <div class="penalty-entry">
-                              <input class="damage-indicator" type="text" placeholder="Scratches" disabled>
-                              <input class="cost-indicator" type="text" placeholder="$32.98" disabled>
-                              <input class="photo-indicator" type="text" placeholder="Windshield-Damage.jpg" disabled>
-                              <button class="delete-entry-btn">X</button>
+                     <ul class="penalties">
+                        <li class="penalty-entry">
+                           <select class="damage-selector" name="" id="">
+                              <option value="">Tire Puncture</option>
+                              <option value="">Scratches</option>
+                              <option value="">Dents</option>
+                              <option value="">Glass crack</option>
+                           </select>
+                           <div class="cost-input">
+                              <img src="assets/svg/Money.svg" alt="">
+                              <input type="text" placeholder="">
                            </div>
-                           <div class="penalty-entry">
-                              <input class="damage-indicator" type="text" placeholder="Dents" disabled>
-                              <input class="cost-indicator" type="text" placeholder="$140.10" disabled>
-                              <input class="photo-indicator" type="text" placeholder="Dents.jpg" disabled>
-                              <button class="delete-entry-btn">X</button>
+                           <label class="img-input-label" for="img-input">
+                              <img src="assets/svg/Upload.svg" alt="">
+                              <span>Upload image</span>
+                           </label>
+                           <input id="img-input" type="file" accept="image/*" hidden>
+                           <button class="delete-entry-btn">x</button>
+                        </li> 
+                        <li class="penalty-entry">
+                           <select class="damage-selector" name="" id="">
+                              <option value="">Tire Puncture</option>
+                              <option value="">Scratches</option>
+                              <option value="">Dents</option>
+                              <option value="">Glass crack</option>
+                           </select>
+                           <div class="cost-input">
+                              <img src="assets/svg/Money.svg" alt="">
+                              <input type="text" placeholder="">
                            </div>
-                           <div class="penalty-entry">   
-                              <input class="damage-indicator" type="text" placeholder="Tire Puncture" disabled>
-                              <input class="cost-indicator" type="text" placeholder="$60.43" disabled>
-                              <input class="photo-indicator" type="text" placeholder="Tire.jpg" disabled>
-                              <button class="delete-entry-btn">X</button>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="form-bottom">
-                        <input type="file" accept="images">
-                        <button class="complete-inspection-btn">
-                           <img src="assets/svg/Arrow-right.svg" alt="">
+                           <label class="img-input-label" for="img-input">
+                              <img src="assets/svg/Upload.svg" alt="">
+                              <span>Upload image</span>
+                           </label>
+                           <input id="img-input" type="file" accept="image/*" hidden>
+                           <button class="delete-entry-btn">x</button>
+                        </li> 
+                        <li class="add-entry-btn-container">
+                           <button>+ Add Entry</button>
+                        </li>
+                     </ul>
+                     <div class="penalty-input">
+                        <span><strong>TOTAL: </strong>$4382.93</span>
+                        <button>
+                           <img src="assets/svg/Tick.svg" alt="">
                         </button>
                      </div>
                   </div>
                </div>
             </div>
-
 
             <div class="inspection-card">
                <div class="inspection-card-top">
