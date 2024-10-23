@@ -67,7 +67,10 @@
                   </button>
                </div>
                <div class="inspection-form-container">
-                  <div class="inspection-form">
+                  <form class="inspection-form">
+                     <li class="add-entry-btn-container">
+                        <button>+ Add Entry</button>
+                     </li>
                      <ul class="penalties">
                         <li class="penalty-entry">
                            <select class="damage-selector" name="" id="">
@@ -78,15 +81,16 @@
                            </select>
                            <div class="cost-input">
                               <img src="assets/svg/Money.svg" alt="">
-                              <input type="text" placeholder="">
+                              <input type="number" placeholder="">
                            </div>
                            <label class="img-input-label" for="img-input">
                               <img src="assets/svg/Upload.svg" alt="">
                               <span>Upload image</span>
                            </label>
-                           <input id="img-input" type="file" accept="image/*" hidden>
+                           <input class="img-input" type="file" accept="image/*" hidden>
                            <button class="delete-entry-btn">x</button>
                         </li> 
+
                         <li class="penalty-entry">
                            <select class="damage-selector" name="" id="">
                               <option value="">Tire Puncture</option>
@@ -96,18 +100,53 @@
                            </select>
                            <div class="cost-input">
                               <img src="assets/svg/Money.svg" alt="">
-                              <input type="text" placeholder="">
+                              <input type="number" placeholder="">
                            </div>
                            <label class="img-input-label" for="img-input">
                               <img src="assets/svg/Upload.svg" alt="">
                               <span>Upload image</span>
                            </label>
-                           <input id="img-input" type="file" accept="image/*" hidden>
+                           <input class="img-input" type="file" accept="image/*" hidden>
                            <button class="delete-entry-btn">x</button>
                         </li> 
-                        <li class="add-entry-btn-container">
-                           <button>+ Add Entry</button>
-                        </li>
+
+                        <li class="penalty-entry">
+                           <select class="damage-selector" name="" id="">
+                              <option value="">Tire Puncture</option>
+                              <option value="">Scratches</option>
+                              <option value="">Dents</option>
+                              <option value="">Glass crack</option>
+                           </select>
+                           <div class="cost-input">
+                              <img src="assets/svg/Money.svg" alt="">
+                              <input type="number" placeholder="">
+                           </div>
+                           <label class="img-input-label" for="img-input">
+                              <img src="assets/svg/Upload.svg" alt="">
+                              <span>Upload image</span>
+                           </label>
+                           <input class="img-input" type="file" accept="image/*" hidden>
+                           <button class="delete-entry-btn">x</button>
+                        </li> 
+
+                        <li class="penalty-entry">
+                           <select class="damage-selector" name="" id="">
+                              <option value="">Tire Puncture</option>
+                              <option value="">Scratches</option>
+                              <option value="">Dents</option>
+                              <option value="">Glass crack</option>
+                           </select>
+                           <div class="cost-input">
+                              <img src="assets/svg/Money.svg" alt="">
+                              <input type="number" placeholder="">
+                           </div>
+                           <label class="img-input-label" for="img-input">
+                              <img src="assets/svg/Upload.svg" alt="">
+                              <span>Upload image</span>
+                           </label>
+                           <input class="img-input" type="file" accept="image/*" hidden>
+                           <button class="delete-entry-btn">x</button>
+                        </li> 
                      </ul>
                      <div class="penalty-input">
                         <span><strong>TOTAL: </strong>$4382.93</span>
@@ -115,7 +154,7 @@
                            <img src="assets/svg/Tick.svg" alt="">
                         </button>
                      </div>
-                  </div>
+                  </form>
                </div>
             </div>
 
