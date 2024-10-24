@@ -51,7 +51,7 @@ class Starfield {
         }
 
         // Mouse position event listener
-        const faqSection = document.querySelector(".FAQ-section") 
+        const faqSection = document.querySelector(".FAQ-section")
         faqSection.addEventListener('mousemove', function (evt) {
             const faqSectionRect = this.canvas.getBoundingClientRect()
             this.mousePos.x = Math.round(evt.clientX - faqSectionRect.x)
@@ -60,10 +60,12 @@ class Starfield {
 
         new ResizeObserver(entries => {
             entries.forEach(_ => {
-                if (this.canvas.width !== this.canvas.offsetWidth || this.canvas.height !== this.canvas.offsetHeight) {
+                if (this.canvas.width !== this.canvas.offsetWidth ||
+                    this.canvas.height !== this.canvas.offsetHeight) {
+
                     this.canvas.width = this.canvas.offsetWidth;
                     this.canvas.height = this.canvas.offsetHeight;
-                    console.log("Resizing happened")
+                    this.onRender()
                 }
             })
         }).observe(faqSection)
@@ -74,14 +76,6 @@ class Starfield {
     }
 
     onTick(deltaTime) {
-        this.ctx.globalAlpha = 1
-        const linearGrad = this.ctx.createLinearGradient(0, 0, this.canvas.width * 1.2, 0);
-        linearGrad.addColorStop(0, "#0b0118");
-        linearGrad.addColorStop(1, "#410891");
-        this.ctx.fillStyle = linearGrad
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
-        this.ctx.fillStyle = 'lightgray'
-
         this.allStars.forEach(star => {
             // Update position
             star.pos.x += star.vel.x * deltaTime
@@ -92,21 +86,31 @@ class Starfield {
             if (star.pos.x > this.canvas.width) star.pos.x -= this.canvas.width
             if (star.pos.y < 0) star.pos.y += this.canvas.height
             if (star.pos.y > this.canvas.width) star.pos.y -= this.canvas.height
+        })
+    }
 
-            // Draw stars
+    onRender() {
+        this.ctx.globalAlpha = 1
+        const linearGrad = this.ctx.createLinearGradient(0, 0, this.canvas.width * 1.2, 0);
+        linearGrad.addColorStop(0, "#0b0118");
+        linearGrad.addColorStop(1, "#410891");
+        this.ctx.fillStyle = linearGrad
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
+        this.ctx.fillStyle = 'lightgray'
+
+        this.allStars.forEach(star => {
             this.ctx.globalAlpha = 1
             this.ctx.beginPath()
             this.ctx.arc(star.pos.x, star.pos.y, 2, 0, Math.PI * 2)
             this.ctx.fill()
 
-            // Draw lines
             if (!this.isMouseInCanvas) {
                 return
             }
             const dx = star.pos.x - this.mousePos.x
             const dy = star.pos.y - this.mousePos.y
             const distanceToLine = Math.sqrt(dx * dx + dy * dy)
-            const MAX_DIST = 150
+            const MAX_DIST = 180
             if (distanceToLine <= MAX_DIST) {
                 this.ctx.globalAlpha = 1 - (distanceToLine / MAX_DIST)
                 this.ctx.strokeStyle = `lightgray`

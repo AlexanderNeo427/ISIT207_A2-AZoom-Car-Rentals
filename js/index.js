@@ -10,18 +10,11 @@ function initializeStarfieldCanvas() {
             startTime = currentTime
         }
         starField.onTick(currentTime - startTime)
+        starField.onRender()
         startTime = currentTime
         window.requestAnimationFrame(tick);
     }
     window.requestAnimationFrame(tick);
-}
-
-function registerIntersectionObservers() {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-        })
-    })
-    // observer.observe(document.querySelector(""))
 }
 
 /*
@@ -138,6 +131,7 @@ function setupFAQ() {
 }
 
 function setupIntersectionObservers() {
+
     // ---- WHY AZOOM ----
     const reasonsContainer = document.querySelector(".reasons-container")
     new IntersectionObserver(entries => {
