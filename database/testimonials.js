@@ -14,7 +14,7 @@ const database = {
             "title": "Computer Science Professor",
             "rating": 5,
             "imageURL": "assets/images/faces/Jionggo_Sapit.jpeg",
-            "content": "The AZoom car service has really been helpful for me in reliably finding the shortest paths between A and B. Now I can get to my destinations faster than Dijkstra can say 'Here!'"
+            "content": "The AZoom car service has really been helpful for me in reliably finding the shortest paths between A and B. Now I can get to my destinations faster than you can say 'Dijkstra!' "
         },
         {
             "id": 3,

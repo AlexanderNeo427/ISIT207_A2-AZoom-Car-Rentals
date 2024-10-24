@@ -82,7 +82,6 @@ function calcFinalOffset_px(currentCardIndex, carouselWidth_px, cardWidth_px, ga
 
 function setupTestimonialCarousel() {
     const testimonialCarousel = document.getElementsByClassName("testimonials-carousel")[0]
-    // const shuffledTestimonials = Utils.durstenfeldShuffle(database.testimonials)
     database.testimonials.forEach(testimonialData => {
         testimonialCarousel.appendChild(
             makeTestimonial(testimonialData)
@@ -120,25 +119,5 @@ function setupTestimonialCarousel() {
 
 window.addEventListener('load', function () {
     setupTestimonialCarousel()    
-    // const cardWidth = testimonialCarousel.querySelector(".carousel-item").offsetWidth
-    // console.log("Card width: ", cardWidth)
-
-    // leftBtn.onclick = function (e) {
-    //     e.preventDefault()
-    //     console.log("START leftbtn click")
-    //     testimonialCarousel.scrollLeft += cardWidth
-    //     console.log("END leftbtn click")
-    // }
-    // rightBtn.onclick = function (e) {
-    //     e.preventDefault()
-    //     console.log("END rightbtn click")
-    //     testimonialCarousel.scrollLeft -= cardWidth
-    //     console.log("END rightbtn click")
-    // }
-    // const initialOffset = (carouselWidth * 0.5) - (cardWidth * 0.5)
-    // testimonialCarousel.style.transform = `translateX(${initialOffset}px)`
-    // console.log("END Testimonial bootstrapper")
-    // let cardNo = 0
-
     initializeStarfieldCanvas()
 })

@@ -1,10 +1,13 @@
 'use strict'
 
+
+
 class UserAccount {
-    constructor(id, username, password) {
+    constructor(id, username, password, isEmployee = false) {
         this.id = id
         this.username = username
         this.password = password
+        this.isEmployee = isEmployee
     }
 }
 
@@ -127,13 +130,12 @@ function hookUpLoginFunctionality() {
     const loginBtn = document.querySelector(".form-right.login .login-btn")
     loginBtn.onclick = function (evt) {
         evt.preventDefault()
-
+        
         const userAccounts = JSON.parse(localStorage.getItem(LocalStorageKeys.USER_ACCOUNTS))
         if (!userAccounts) {
-            // console.log("Account not found")
             pushToast("Account not found", TOAST_ERROR, 2)
         }
-
+        
         const usernameValue = document.querySelector(".login .username-input").value
         const passwordValue = document.querySelector(".login .password-input").value
 
@@ -148,6 +150,13 @@ function hookUpLoginFunctionality() {
             pushToast("Incorrect password", TOAST_ERROR, 3)
             return
         }
+
+        // Employee Login
+        if (accountWithName.isEmployee) {
+            window.location.href = "employeePortal.html"
+            return
+        }
+
         localStorage.setItem(LocalStorageKeys.LOGGED_IN_USER_ID, accountWithName.id)
         window.location.href = "carCatalogue.html"
     }
@@ -158,9 +167,49 @@ function linkClickHandler(elemToShow, elemToHide) {
     elemToHide.style.display = "none"
 }
 
+function setupEmployeeAccounts() {
+    // Hard-coded employee credentials for the employee portal
+    const employeesCredentials = [
+        {
+            username: "admin",
+            password: "admin"
+        },
+        {
+            username: "admin2",
+            password: "hunter2"
+        },
+        {
+            username: "employee",
+            password: "employee"
+        },
+        {
+            username: "username",
+            password: "password"
+        }
+    ]
+
+    let userAccounts = JSON.parse(localStorage.getItem(LocalStorageKeys.USER_ACCOUNTS))
+    if (!userAccounts) {
+        localStorage.setItem(LocalStorageKeys.USER_ACCOUNTS, JSON.stringify([]))
+        userAccounts = JSON.parse(localStorage.getItem(LocalStorageKeys.USER_ACCOUNTS))
+    }
+
+    // Create the employee account if it doesn't exist
+    employeesCredentials.forEach(emp => {
+        const empAcc = userAccounts.find(userAcc => userAcc.username === emp.username)
+        if (empAcc) {
+            return
+        }
+        userAccounts.push(new UserAccount(userAccounts.length, emp.username, emp.password, true))
+    })
+    localStorage.setItem(LocalStorageKeys.USER_ACCOUNTS, JSON.stringify(userAccounts))
+}
+
 window.addEventListener('load', function () {
     // QUick way to clear the local storage key
-    // this.localStorage.removeItem(LocalStorageKeys.USER_ACCOUNTS)
+    // localStorage.removeItem(LocalStorageKeys.USER_ACCOUNTS)
+
+    setupEmployeeAccounts()
 
     const loginForm = document.querySelector(".form-right.login")
     const registerForm = document.querySelector(".form-right.register")
