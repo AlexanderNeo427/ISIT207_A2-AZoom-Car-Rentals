@@ -246,20 +246,69 @@ html, body {
 /* ============== OUR MISSION =============== */
 /* ========================================== */
 .mission-section {
+   position: relative;
+
    display: flex;
    flex-direction: column;
-   justify-content: flex-start;
+   justify-content: flex-end;
+   align-items: start;
 
-   height: 30rem;
-   background-image: url('../assets/images/black-supercar.jpg');
+   min-height: 75vh;
+   padding-left: 4rem;
+   padding-bottom: 5rem;
+   
+   color: var(--text-100);
+   text-align: left;
+}
+
+@keyframes mission-opacity-fade-in-anim {
+   0% {
+      opacity: 0;
+   } 
+   100% {
+      opacity: 80%;
+   }
+}
+
+.mission-opacity-fade-in {
+   animation-name: mission-opacity-fade-in-anim;
+   animation-duration: 0.5s;
+   animation-timing-function: ease;
+   animation-iteration-count: 1;
+   animation-direction: normal;
+   animation-fill-mode: both;
+}
+
+.mission-section-bg {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+
+   background-image: url('../assets/images/Our-mission.jpg');
+   background-repeat: no-repeat;
    background-size: cover;
+   background-position: bottom;
 
-   text-align: center;
-   padding: 2rem 0rem;
+   opacity: 0%;
 }
 
 .mission-section h2 {
-   margin-bottom: var(--margin-s);
+   margin-bottom: var(--margin-xxs);
+   font-size: 3.5rem;
+   z-index: 1;
+
+   opacity: 0%;
+}
+
+.mission-section p { 
+   font-style: italic;
+   max-width: 48rem;
+   font-size: x-large;
+   z-index: 1;
+
+   opacity: 0%;
 }
 /* ========================================== */
 /* ============== GET STARTED =============== */
@@ -345,7 +394,6 @@ html, body {
       grid-auto-flow: column;
    }
 }
-
 /* ================================================ */
 /* ================= TESTIMONIALS ================= */
 /* ================================================ */
@@ -553,8 +601,9 @@ html, body {
    flex-direction: column;
    justify-content: center;
    align-items: center;
-
    min-height: 75vh;
+   
+   opacity: 0%;
 }
 
 .locations-section>h2 {
@@ -585,6 +634,23 @@ html, body {
 
    padding: 4rem 0rem;
    min-height: 45rem;
+
+   opacity: 0%;
+}
+
+.FAQ-section >h1 {
+   font-size: 3rem;
+   margin-bottom: var(--margin-l);
+}
+
+.FAQ-section .all-dropdowns {
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+   gap: 2.5rem;
+
+   width: 100%;
 }
 
 .FAQ-section .dropdown {
@@ -595,12 +661,13 @@ html, body {
    flex-direction: column;
    justify-content: start;
    align-items: center;
-   gap: 1rem;
 
    text-align: left;
    overflow: hidden;
    cursor: pointer;
 
+   width: 80%;
+   max-width: 50rem;
    transition: height 0.2s ease-in-out, background-color 0.2s, color 0.2s;
 }
 
@@ -610,15 +677,17 @@ html, body {
 }
 
 .FAQ-section .dropdown>h2 {
+   width: 100%;
    font-size: x-large;
-   padding: 1.5rem 1rem;
+   padding: 1.9rem 2.5rem;
 }
 
-.FAQ-section .dropdown>p {
-   /* padding-top: 1rem; */
+.FAQ-section .dropdown >p {
+   font-size: large;
    padding-bottom: 3rem;
-   padding-left: 2rem;
-   padding-right: 2rem;
+   padding-left: 3rem;
+   padding-right: 3rem;
+   width: 100%;
 }
 
 #FAQ-canvas {
@@ -627,51 +696,6 @@ html, body {
    height: 100%;
    z-index: -1;
 }
-
-.FAQ-section>h1 {
-   text-align: center;
-   font-size: 2.8rem;
-   margin-bottom: var(--margin-l);
-}
-
-.FAQ-section .all-dropdowns {
-   display: flex;
-   flex-direction: column;
-   justify-content: start;
-   align-items: center;
-   gap: 2.5rem;
-}
-
-.FAQ-section details {
-   outline: 3px solid var(--text-50);
-
-   border-radius: 1rem;
-   padding: 1.5rem 2rem;
-
-   cursor: pointer;
-   transition: all 0.2s;
-}
-
-.FAQ-section details:hover {
-   color: var(--text-950);
-   background-color: var(--text-50);
-}
-
-.FAQ-section summary {
-   font-size: x-large;
-   font-weight: bold;
-}
-
-.FAQ-section details p {
-   font-size: large;
-}
-
-.FAQ-section details,
-.FAQ-section summary,
-.FAQ-section p {
-   max-width: 30rem;
-}
-
 /* ============================================= */
 /* ================= FOOTER ==================== */
 /* ============================================= */
@@ -682,6 +706,8 @@ html, body {
 
    color: var(--text-50);
    background: black;
+
+   opacity: 0%;
 }
 
 .footer-content {

@@ -126,6 +126,12 @@ function setupFAQ() {
 
             dropdown.style.height = faqState[index] ? 
             `${openHeight_px}px` : `${closedHeight_px}px`
+
+            // dropdown.style.color = faqState[index] ? 
+            // 'var(--primary-950)' : 'var(--primary-50)'
+            //
+            // dropdown.style.background = faqState[index] ? 
+            // 'var(--primary-50)' : 'none'
         }
     })
 }
@@ -150,7 +156,39 @@ function setupIntersectionObservers() {
                 reason.style.animationDelay = String((index + 1) * ANIM_DELAY) + "s" 
             })
         })
-    }, { threshold: 0.7 }).observe(reasonsContainer)
+    }, { threshold: 0.333 }).observe(reasonsContainer)
+    // ----- OUR MISSION -----
+    const missionSect = document.querySelector(".mission-section")
+    new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return
+            }
+            const MISSION_ANIM_DELAY = 0.5
+            
+            const background = missionSect.querySelector(".mission-section-bg")
+            background.classList.add("mission-opacity-fade-in")
+            background.style.animationDelay = MISSION_ANIM_DELAY + "s"
+        })
+    }, { threshold: 0.25 }).observe(missionSect)
+
+    const missionSectH2 = document.querySelector(".mission-section h2")
+    const missionSectP = document.querySelector(".mission-section p")
+    new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return
+            }
+            const ANIM_DURATION = 0.8
+            missionSectH2.classList.add("fade-from-left", "fade-in-opacity")
+            missionSectH2.style.animationDelay = ANIM_DURATION + "s"
+            missionSectH2.style.animationDuration = ANIM_DURATION + "s"
+
+            missionSectP.classList.add("fade-from-left", "fade-from-opacity")
+            missionSectP.style.animationDelay = ANIM_DURATION + "s"
+            missionSectP.style.animationDuration = (ANIM_DURATION * 1.2) + "s"
+        })
+    }, { threshold: 0.8 }).observe(missionSectP)
 
     // ----- GETTING STARTED -----
     const getStartedSect = document.querySelector(".get-started-section") 
@@ -169,7 +207,7 @@ function setupIntersectionObservers() {
                 instruction.style.animationDelay = String((index + 1) * ANIM_DELAY) + "s"
             })
         })
-    }, { threshold: 0.6 }).observe(getStartedSect)
+    }, { threshold: 0.333 }).observe(getStartedSect)
 
     // ----- TESTIMONIALS -----
     const testimonialSect = document.querySelector(".testimonials")
@@ -195,10 +233,25 @@ function setupIntersectionObservers() {
             }, FADE_IN_DURATION * 1000)
         })
     }, { threshold: 0.3 }).observe(testimonialSect)
+
+    const fadeIntersectObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return
+            }
+            entry.target.classList.add("fade-in-opacity")
+            entry.target.style.animationDuration = "0.8s"
+        }) 
+    }, { threshold: 0.5 })
+    fadeIntersectObserver.observe(document.querySelector(".locations-section"))
+    fadeIntersectObserver.observe(document.querySelector(".FAQ-section"))
+    fadeIntersectObserver.observe(document.querySelector("footer"))
 }
 
 window.addEventListener('load', function () {
     setupFAQ()
+    window.addEventListener('resize', () => setupFAQ())
+
     setupTestimonialCarousel()
     initializeStarfieldCanvas()
 
