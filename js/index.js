@@ -59,6 +59,10 @@ function makeTestimonial(testimonialDatum) {
         starContainer.appendChild(emptyStar)
     }
 
+    const imgNode = document.createElement("img")
+    imgNode.src = testimonialDatum.imageURL
+    containerNode.appendChild(imgNode)
+
     const nameNode = document.createElement("span")
     nameNode.classList.add("name")
     nameNode.innerHTML = testimonialDatum.reviewer
@@ -72,8 +76,13 @@ function makeTestimonial(testimonialDatum) {
     return containerNode
 }
 
+function calcFinalOffset_px(currentCardIndex, carouselWidth_px, cardWidth_px, gapBetweenCards_px) {
+    return (carouselWidth_px * 0.5) - (cardWidth_px * currentCardIndex) - (cardWidth_px * 0.5) - (gapBetweenCards_px * currentCardIndex) 
+}
+
 function setupTestimonialCarousel() {
     const testimonialCarousel = document.getElementsByClassName("testimonials-carousel")[0]
+    // const shuffledTestimonials = Utils.durstenfeldShuffle(database.testimonials)
     database.testimonials.forEach(testimonialData => {
         testimonialCarousel.appendChild(
             makeTestimonial(testimonialData)
@@ -85,58 +94,28 @@ function setupTestimonialCarousel() {
 
     const carouselWidth_px = parseFloat(getComputedStyle(testimonialCarousel).width)
     const cardWidth_px = parseFloat(getComputedStyle(testimonialCarousel.firstElementChild).width)
-
-    const SCALE_FACTOR = 1.2
+    const gapBetweenCards_px = parseFloat(getComputedStyle(testimonialCarousel).gap)
 
     let currentCard = 0
-    const gapBetweenCards_px = parseFloat(getComputedStyle(testimonialCarousel).gap)
-    const finalOffset_px = (carouselWidth_px * 0.5) - (cardWidth_px * currentCard) - (cardWidth_px * 0.5) - (gapBetweenCards_px * currentCard)
-    
+    const finalOffset_px = calcFinalOffset_px(
+        currentCard, carouselWidth_px, cardWidth_px, gapBetweenCards_px
+    )
     testimonialCarousel.style.translate = `${finalOffset_px}px`
-    testimonialCarousel.querySelectorAll(".carousel-item").forEach((carouselItem, index) => {
-        if (index === currentCard) {
-            carouselItem.style.scale = "1.07"
-        }
-        else {
-            carouselItem.style.scale = "1"
-        }
-    })
 
     rightBtn.onclick = function() {
         currentCard = Math.min(testimonialCarousel.childElementCount - 1, currentCard + 1)
-        const finalOffset_px = (carouselWidth_px * 0.5) - (cardWidth_px * currentCard) - (cardWidth_px * 0.5) - (gapBetweenCards_px * currentCard) 
+        const finalOffset_px = calcFinalOffset_px(
+            currentCard, carouselWidth_px, cardWidth_px, gapBetweenCards_px
+        )
         testimonialCarousel.style.translate = `${finalOffset_px}px`
-        testimonialCarousel.querySelectorAll(".carousel-item").forEach((carouselItem, index) => {
-            if (index === currentCard) {
-               carouselItem.style.scale = "1.07"
-            }
-            else {
-                carouselItem.style.scale = "1"
-            }
-        })
     }
     leftBtn.onclick = function() {
         currentCard = Math.max(0, currentCard - 1)
-        const finalOffset_px = (carouselWidth_px * 0.5) - (cardWidth_px * currentCard) - (cardWidth_px * 0.5) - (gapBetweenCards_px * currentCard)
+        const finalOffset_px = calcFinalOffset_px(
+            currentCard, carouselWidth_px, cardWidth_px, gapBetweenCards_px
+        )
         testimonialCarousel.style.translate = `${finalOffset_px}px`
-        testimonialCarousel.querySelectorAll(".carousel-item").forEach((carouselItem, index) => {
-            if (index === currentCard) {
-                carouselItem.style.scale = "1.07"
-            }
-            else {
-                carouselItem.style.scale = "1"
-            }
-        })
     }
-
-    // testimonialCarousel.querySelectorAll(".carousel-item").forEach((carouselItem, index) => {
-    //     if (index === currentCard) {
-    //         carouselItem.classList.add("scale-up")
-    //     }
-    //     else {
-    //         carouselItem.classList.remove("scale-up")
-    //     }
-    // })
 }
 
 window.addEventListener('load', function () {

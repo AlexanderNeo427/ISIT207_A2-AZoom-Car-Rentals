@@ -125,12 +125,12 @@ html, body {
    align-items: center;
 
    padding: 3rem 0rem;
-   min-height: 80vh;
+   min-height: 60vh;
 }
 
 .why-azoom>h2 {
    font-size: 2.5rem;
-   margin-bottom: 2rem;
+   margin-bottom: var(--margin-l);
 }
 
 .reasons-container {
@@ -279,7 +279,7 @@ html, body {
    background-color: rgba(255, 255, 255, 0.25);
    color: var(--text-950);
 
-   min-height: 80vh;
+   min-height: 60vh;
 }
 
 .get-started-section >h2 {
@@ -454,6 +454,11 @@ html, body {
    background: rgba(255, 255, 255, 0.1);
 
    transition: scale 0.5s;
+}
+
+.carousel-item img {
+   border-radius: 100rem;
+   width: 3rem;
 }
 
 .carousel-item .star-container {
