@@ -58,9 +58,19 @@ class Starfield {
             this.mousePos.y = Math.round(evt.clientY - faqSectionRect.y)
         }.bind(this))
 
+        new ResizeObserver(entries => {
+            entries.forEach(_ => {
+                if (this.canvas.width !== this.canvas.offsetWidth || this.canvas.height !== this.canvas.offsetHeight) {
+                    this.canvas.width = this.canvas.offsetWidth;
+                    this.canvas.height = this.canvas.offsetHeight;
+                    console.log("Resizing happened")
+                }
+            })
+        }).observe(faqSection)
+
         // Mouse enter/leave canvas event listener(s)
-        faqSection.addEventListener('mouseenter', () => this.isMouseInCanvas = true) 
-        faqSection.addEventListener('mouseleave', () => this.isMouseInCanvas = false)  
+        faqSection.addEventListener('mouseenter', () => this.isMouseInCanvas = true)
+        faqSection.addEventListener('mouseleave', () => this.isMouseInCanvas = false)
     }
 
     onTick(deltaTime) {

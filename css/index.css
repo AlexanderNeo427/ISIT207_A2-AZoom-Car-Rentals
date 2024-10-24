@@ -3,7 +3,7 @@
 
 /* ---- DEBUG ---- */
 * {
-   /* outline: 2px dotted rgb(228, 4, 4); */
+   /* outline: 1px dotted rgb(228, 4, 4); */
 }
 
 html, body {
@@ -131,6 +131,8 @@ html, body {
 .why-azoom>h2 {
    font-size: 2.5rem;
    margin-bottom: var(--margin-l);
+
+   opacity: 0%;
 }
 
 .reasons-container {
@@ -143,6 +145,7 @@ html, body {
 }
 
 .reasons-container .reason {
+   position: relative;
    box-shadow: 0px 0px 1rem gray;
    background-color: var(--primary-100);
 }
@@ -172,6 +175,8 @@ html, body {
 
    border-bottom-left-radius: 1rem;
    border-bottom-right-radius: 1rem;
+
+   opacity: 0%;
 }
 
 .reason>img {
@@ -194,10 +199,10 @@ html, body {
    text-align: center;
 }
 
-@keyframes reason-fade-up {
+@keyframes fade-up-anim {
    0% {
       opacity: 0%;
-      transform: translateY(50px);
+      transform: translateY(4rem);
    }
 
    100% {
@@ -206,20 +211,13 @@ html, body {
    }
 }
 
-.why-azoom>h2 {
-   animation: reason-fade-up 0.6s ease 0.3s 1 normal both;
-}
-
-.reasons-container div:nth-child(1) {
-   animation: reason-fade-up 0.6s ease 0.5s 1 normal both;
-}
-
-.reasons-container div:nth-child(2) {
-   animation: reason-fade-up 0.6s ease 1s 1 normal both;
-}
-
-.reasons-container div:nth-child(3) {
-   animation: reason-fade-up 0.6s ease 1.5s 1 normal both;
+.fade-up {
+   animation-name: fade-up-anim;
+   animation-duration: 0.5s;
+   animation-timing-function: ease;
+   animation-iteration-count: 1;
+   animation-direction: normal;
+   animation-fill-mode: both;
 }
 
 @media screen and (min-width: 768px) {
@@ -263,9 +261,6 @@ html, body {
 .mission-section h2 {
    margin-bottom: var(--margin-s);
 }
-
-.mission-section p {
-}
 /* ========================================== */
 /* ============== GET STARTED =============== */
 /* ========================================== */
@@ -286,6 +281,8 @@ html, body {
    text-align: center;
    font-size: 2.5rem;
    margin-bottom: var(--margin-l);
+
+   opacity: 0%;
 }
 
 .get-started {
@@ -304,11 +301,12 @@ html, body {
    gap: 1rem;
 
    padding: 1rem;
-   /* border-radius: 1rem; */
    box-shadow: 0px 0px 1rem gray;
 
    color: var(--text-950);
    background-color: var(--primary-100);
+
+   opacity: 0%;
 }
 
 .get-started .step-number {
@@ -351,6 +349,64 @@ html, body {
 /* ================================================ */
 /* ================= TESTIMONIALS ================= */
 /* ================================================ */
+@keyframes fade-in-opacity-anim {
+   0% {
+      opacity: 0%;
+   }
+   100% {
+      opacity: 100%;
+   }
+}
+
+@keyframes fade-from-left-anim {
+   0% {
+      opacity: 0%;
+      transform: translateX(-6rem);
+   } 
+   100% {
+      opacity: 100%;
+      transform: translateX(0);
+   }
+}
+
+@keyframes fade-from-right-anim {
+   0% {
+      opacity: 0%;
+      transform: translateX(6rem);
+   } 
+   100% {
+      opacity: 100%;
+      transform: translateX(0);
+   }
+}
+
+.fade-in-opacity {
+   animation-name: fade-in-opacity-anim;
+   animation-duration: 0.5s;
+   animation-timing-function: ease;
+   animation-iteration-count: 1;
+   animation-direction: normal;
+   animation-fill-mode: both;
+}
+
+.fade-from-left {
+   animation-name: fade-from-left-anim;
+   animation-duration: 0.5s;
+   animation-timing-function: ease;
+   animation-iteration-count: 1;
+   animation-direction: normal;
+   animation-fill-mode: both;
+}
+
+.fade-from-right {
+   animation-name: fade-from-right-anim;
+   animation-duration: 0.5s;
+   animation-timing-function: ease;
+   animation-iteration-count: 1;
+   animation-direction: normal;
+   animation-fill-mode: both;
+}
+
 .testimonials {
    display: flex;
    flex-direction: column;
@@ -361,12 +417,13 @@ html, body {
    min-height: 70vh;
 
    background: linear-gradient(
-      /* to right, */
-      110deg, 
-      #1b1b1b, 
-      var(--primary-900)
-   );
+         /* to right, */
+         110deg,
+         #1b1b1b,
+         var(--primary-900));
    color: var(--text-50);
+
+   opacity: 0%;
 }
 
 .testimonials-top {
@@ -380,13 +437,17 @@ html, body {
    text-align: left;
 }
 
-.testimonials-text >h2 {
+.testimonials-text {
+   opacity: 0%;
+}
+
+.testimonials-text>h2 {
    font-weight: bold;
-   font-size: 2.5rem;
+   font-size: 2.8rem;
    margin-bottom: var(--margin-xs);
 }
 
-.testimonials-text >p {
+.testimonials-text>p {
    font-size: large;
    color: var(--text-200);
 }
@@ -396,6 +457,8 @@ html, body {
    align-items: center;
    width: 100%;
    gap: 1rem;
+
+   opacity: 0%;
 }
 
 .testimonials-buttons button {
@@ -433,7 +496,8 @@ html, body {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-end;
-   } 
+   }
+
    .testimonials-buttons {
       justify-content: flex-end;
    }
@@ -450,7 +514,6 @@ html, body {
    height: 20rem;
    padding: 0rem 1.2rem;
    border-radius: 0.8rem;
-   /* overflow: hidden; */
    background: rgba(255, 255, 255, 0.1);
 
    transition: scale 0.5s;
@@ -507,15 +570,11 @@ html, body {
    justify-content: center;
    gap: 1rem;
 }
+
 /* ==================================== */
 /* =============== FAQ ================ */
 /* ==================================== */
 .FAQ-section {
-   /* background: linear-gradient(
-      to right, 
-      var(--primary-700), 
-      var(--primary-950)
-   );  */
    color: var(--text-50);
 
    display: flex;
@@ -524,8 +583,42 @@ html, body {
    align-items: center;
    position: relative;
 
-   padding: 3rem 0rem;
+   padding: 4rem 0rem;
    min-height: 45rem;
+}
+
+.FAQ-section .dropdown {
+   outline: 3px solid var(--text-50);
+   border-radius: 0.6rem;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: center;
+   gap: 1rem;
+
+   text-align: left;
+   overflow: hidden;
+   cursor: pointer;
+
+   transition: height 0.2s ease-in-out, background-color 0.2s, color 0.2s;
+}
+
+.FAQ-section .dropdown:hover {
+   background-color: var(--text-50);
+   color: var(--text-950);
+}
+
+.FAQ-section .dropdown>h2 {
+   font-size: x-large;
+   padding: 1.5rem 1rem;
+}
+
+.FAQ-section .dropdown>p {
+   /* padding-top: 1rem; */
+   padding-bottom: 3rem;
+   padding-left: 2rem;
+   padding-right: 2rem;
 }
 
 #FAQ-canvas {
@@ -535,9 +628,9 @@ html, body {
    z-index: -1;
 }
 
-.FAQ-section >h1 {
+.FAQ-section>h1 {
    text-align: center;
-   font-size: xx-large;
+   font-size: 2.8rem;
    margin-bottom: var(--margin-l);
 }
 
@@ -573,8 +666,8 @@ html, body {
    font-size: large;
 }
 
-.FAQ-section details, 
-.FAQ-section summary, 
+.FAQ-section details,
+.FAQ-section summary,
 .FAQ-section p {
    max-width: 30rem;
 }
@@ -618,6 +711,7 @@ html, body {
       align-items: center;
    }
 }
+
 /* ============================================= */
 /* =============== FOOTER - TOP ================ */
 /* ============================================= */

@@ -23,7 +23,10 @@ function makeCardHeader(rating, numRatings) {
                 </span>
                 <span class="rating-count">(${numRatings})</span>
             </div>
-            <img src="assets/svg/Heart.svg" alt="Heart Icon">
+            <button class="heart-btn">
+                <img class="filled" src="assets/svg/Filled-heart.svg" alt="Heart Icon">
+                <img class="unfilled" src="assets/svg/Heart.svg" alt="Filled Heart Icon">
+            </button>
         </div> 
     `
 }
@@ -104,6 +107,27 @@ function makeCard(carDatum) {
         </button>
     `
 
+    function setHeartStatus(filledHeart, emptyHeart, liked) {
+        filledHeart.style.display = liked ? "block" : "none"
+        emptyHeart.style.display = liked ? "none" : "block"
+
+        if (liked) {
+            filledHeart.classList.add("scale-bounce")
+        }
+        else {
+            filledHeart.classList.remove("scale-bounce")
+        }
+    }
+
+    let isLiked = false
+    const heartBtn = carCard.querySelector(".heart-btn")
+    const filledHeart = heartBtn.querySelector(".filled")
+    const emptyHeart = heartBtn.querySelector(".unfilled")
+    setHeartStatus(filledHeart, emptyHeart, isLiked)
+    heartBtn.onclick = function() {
+        isLiked = !isLiked
+        setHeartStatus(filledHeart, emptyHeart, isLiked)
+    }
     return carCard
 }
 

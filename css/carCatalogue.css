@@ -269,6 +269,36 @@ body {
 /* ============================================= */
 /* =============== CAR HEADER ================== */
 /* ============================================= */
+@keyframes scale-bounce-anim {
+   0% {
+      scale: 0;
+   } 
+   40% {
+      scale: 1.2;
+   }
+   64% {
+      scale: 0.8;
+   }
+   78.4% {
+      scale: 1.1;
+   }
+   87.04% {
+      scale: 0.9;
+   } 
+   92.224% {
+      scale: 1.05;
+   }
+   100% {
+      scale: 1;
+   }
+}
+
+.scale-bounce {
+   animation-name: scale-bounce-anim;
+   animation-duration: 0.333s;
+   animation-fill-mode: forwards;
+}
+
 .car-card .card-header {
    display: flex;
    flex-direction: row;
@@ -278,7 +308,13 @@ body {
    margin-bottom: var(--margin-s);
 }
 
-.card-header>img {
+.card-header .heart-btn {
+   border: none;
+   background: none;
+   cursor: pointer;
+}
+
+.card-header img {
    height: 2rem;
    width: 2rem;
    object-fit: contain;

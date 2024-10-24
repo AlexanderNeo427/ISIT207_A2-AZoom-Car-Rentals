@@ -9,7 +9,7 @@ const database = {
             "bodyStyle": "Hatchback",
             "seats": 5,
             "imageURL": "assets/images/blue-bmw.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 18
         },
         {
             "id": 2,
@@ -20,7 +20,7 @@ const database = {
             "bodyStyle": "SUV",
             "seats": 3,
             "imageURL": "assets/images/yellow-benz.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 93
         },
         {
             "id": 3,
@@ -31,7 +31,7 @@ const database = {
             "bodyStyle": "Coupe",
             "seats": 4,
             "imageURL": "assets/images/white-car.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 60
         },
         {
             "id": 4,
@@ -42,7 +42,7 @@ const database = {
             "bodyStyle": "Sedan",
             "seats": 4,
             "imageURL": "assets/images/black-and-yellow.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 21
         },
         {
             "id": 5,
@@ -53,7 +53,7 @@ const database = {
             "bodyStyle": "Convertible",
             "seats": 4,
             "imageURL": "assets/images/green.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 14
         },
         {
             "id": 6,
@@ -64,7 +64,7 @@ const database = {
             "bodyStyle": "Jeep",
             "seats": 2,
             "imageURL": "assets/images/red-benz.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 42
         },
         {
             "id": 7,
@@ -75,7 +75,7 @@ const database = {
             "bodyStyle": "Sportscar",
             "seats": 5,
             "imageURL": "assets/images/white-car.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 18
         },
         {
             "id": 8,
@@ -86,7 +86,7 @@ const database = {
             "bodyStyle": "Jeep",
             "seats": 5,
             "imageURL": "assets/images/yellow-vintage.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 9
         },
         {
             "id": 9,
@@ -97,7 +97,7 @@ const database = {
             "bodyStyle": "SUV",
             "seats": 2,
             "imageURL": "assets/images/black-supercar.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 54
         },
         {
             "id": 10,
@@ -108,7 +108,7 @@ const database = {
             "bodyStyle": "Jeep",
             "seats": 3,
             "imageURL": "assets/images/blue-bmw.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 96
         },
         {
             "id": 11,
@@ -119,7 +119,7 @@ const database = {
             "bodyStyle": "Hatchback",
             "seats": 5,
             "imageURL": "assets/images/black-maserati.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 33
         },
         {
             "id": 12,
@@ -141,7 +141,7 @@ const database = {
             "bodyStyle": "Sportscar",
             "seats": 4,
             "imageURL": "assets/images/black-and-yellow.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 27
         },
         {
             "id": 14,
@@ -152,7 +152,7 @@ const database = {
             "bodyStyle": "Hatchback",
             "seats": 5,
             "imageURL": "assets/images/red-benz.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 14
         },
         {
             "id": 15,
@@ -163,7 +163,7 @@ const database = {
             "bodyStyle": "Coupe",
             "seats": 4,
             "imageURL": "assets/images/green.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 63
         },
         {
             "id": 16,
@@ -174,7 +174,7 @@ const database = {
             "bodyStyle": "Sedan",
             "seats": 2,
             "imageURL": "assets/images/yellow-vintage.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 51
         },
         {
             "id": 17,
@@ -185,7 +185,7 @@ const database = {
             "bodyStyle": "Hatchback",
             "seats": 5,
             "imageURL": "assets/images/black-supercar.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 34
         },
         {
             "id": 18,
@@ -196,7 +196,7 @@ const database = {
             "bodyStyle": "Sedan",
             "seats": 2,
             "imageURL": "assets/images/black-and-yellow.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 56
         },
         {
             "id": 19,
@@ -218,7 +218,7 @@ const database = {
             "bodyStyle": "SUV",
             "seats": 4,
             "imageURL": "assets/images/green.jpg",
-            "hourlyRate": 20
+            "hourlyRate": 81
         },
     ]
 }
