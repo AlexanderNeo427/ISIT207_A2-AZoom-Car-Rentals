@@ -55,19 +55,19 @@
    <main class="sections-container">
 
       <!---------- HERO CONTAINER ----------->
-      <section class="hero-container">
+      <section id="hero-container" class="hero-container">
          <!-- <img src="./assets/images/Hero.png" alt="Row of cars"> -->
          <div class="hero">
             <h1>Start driving in minutes with AZoom</h1>
             <p><i>Rent a car</a> in minutes from Singapore's largest car rental
                   service with no deposit or membership fees</i></p>
-            <button>Get Started →</button>
+            <a href="#get-started-section" class="get-started-link">Get Started →</a>
          </div>
          <div class="parallax-img"></div>
       </section>
 
       <!---------- WHY AZOOM ------------>
-      <section class="why-azoom">
+      <section id="why-azoom" class="why-azoom">
          <h2>Why AZoom?</h2>
 
          <!--------- REASONS CONTAINER ----------->
@@ -85,20 +85,22 @@
             <div class="reason">
                <img src="assets/svg/Clock.svg" alt="">
                <h3>Rent a car in minutes</h3>
-               <span>With cars across 1,600+ locations, it's possible to find and book a car near you in minutes</span>
+               <span>With cars across 2 locations, it's possible to find and book a car near you in minutes</span>
             </div>
          </div>
       </section>
 
       <!--------- OUR MISSION ---------->
-      <section class="mission-section">
+      <section id="mission-section" class="mission-section">
          <div class="mission-section-bg"></div>
          <h2>Our Mission</h2>
-         <p>We aim to accelerate the transition to sustainable transportation by providing convenient and affordable access to a diverse fleet of EVs. We are committed to reducing carbon emissions and promoting eco-friendly driving solutions for individuals and businesses alike</p>
+         <p>We aim to accelerate the transition to sustainable transportation by providing convenient and affordable
+            access to a diverse fleet of EVs. We are committed to reducing carbon emissions and promoting eco-friendly
+            driving solutions for individuals and businesses alike</p>
       </section>
 
       <!--------- GET STARTED --------->
-      <section class="get-started-section">
+      <section id="get-started-section" class="get-started-section">
          <h2>Getting started with AZoom</h2>
          <div class="get-started">
             <div class="instruction">
@@ -106,27 +108,30 @@
                   <h3>1</h3>
                </div>
                <h4>Pick a car</h4>
-               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae architecto quo reprehenderit ab, minima placeat!</p>
+               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae architecto quo reprehenderit ab,
+                  minima placeat!</p>
             </div>
             <div class="instruction">
                <div class="step-number">
                   <h3>2</h3>
                </div>
                <h4>Fill in your details</h4>
-               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus assumenda culpa minima modi corrupti eligendi ab laudantium alias cumque optio.</p>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus assumenda culpa minima modi
+                  corrupti eligendi ab laudantium alias cumque optio.</p>
             </div>
             <div class="instruction">
                <div class="step-number">
                   <h3>3</h3>
                </div>
                <h4>Drive</h4>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium architecto tempore dolor vitae in consequatur natus voluptatibus.</p>
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium architecto tempore dolor vitae
+                  in consequatur natus voluptatibus.</p>
             </div>
          </div>
       </section>
 
       <!--------- TESTIMONIALS --------->
-      <section class="testimonials">
+      <section id="testimonials" class="testimonials">
          <div class="testimonials-top">
             <div class="testimonials-text">
                <h2>TESTIMONIALS</h2>
@@ -144,15 +149,21 @@
       </section>
 
       <!---------- LOCATIONS ---------->
-      <section class="locations-section">
-         <h2>WHERE ARE WE LOCATED</h2>
+      <section id="locations-section" class="locations-section">
+         <div class="locations-header-container">
+            <div class="locations-header">
+               <h2>WHERE ARE WE LOCATED</h2>
+               <p>We believe that sustainable transportation should be accessible to everyone. That's why we've strategically positioned our rental locations to provide convenient access to electric vehicles for residents throughout Singapore!</p>
+            </div>
+         </div>
          <div class="all-locations">
             <div class="location">
                <h3>Bukit Timah Nature Reserve</h3>
                <iframe class="google-map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56414.64500311654!2d103.78029638833287!3d1.3503962411315074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da10f5981ed73b%3A0x7b421dc2a7c58be!2sBukit%20Timah%20Nature%20Reserve!5e1!3m2!1sen!2ssg!4v1728451824819!5m2!1sen!2ssg"
-                  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  width="600" height="450" style="border: 0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+               </iframe>
             </div>
             <div class="location">
                <h3>Hougang Rivercourt</h3>
@@ -165,30 +176,43 @@
       </section>
 
       <!-------- FREQUENTLY ASKED QUESTIONS (FAQ) -------->
-      <section class="FAQ-section">
+      <section id="FAQ-section" class="FAQ-section">
          <canvas id="FAQ-canvas"></canvas>
          <h1>Frequently Asked Questions</h1>
          <div class="all-dropdowns">
             <div class="dropdown">
                <h2>What types of EVs do you offer</h2>
-               <p>We offer a wide variety of electric cars, from compact city cars to spacious SUVs and luxury sedans. Our selection includes popular models from leading brands like Tesla, BMW, Hyundai, and more. You can browse our car catalog to see the available options and filter by your preferences</p>
+               <p>We offer a wide variety of electric cars, from compact city cars to spacious SUVs and luxury sedans.
+                  Our selection includes popular models from leading brands like Tesla, BMW, Hyundai, and more. You can
+                  browse our car catalog to see the available options and filter by your preferences</p>
             </div>
             <div class="dropdown">
                <h2>How much does it cost to rent an electric car?</h2>
-               <p>Our rental prices vary depending on the car model, rental duration, and any additional services you choose (e.g., insurance, charging equipment). You can view the detailed pricing for each car on our website or in the app. We offer transparent pricing with no hidden fees, and you can easily compare prices to find the best option for your budget</p>
+               <p>Our rental prices vary depending on the car model, rental duration, and any additional services you
+                  choose (e.g., insurance, charging equipment). You can view the detailed pricing for each car on our
+                  website or in the app. We offer transparent pricing with no hidden fees, and you can easily compare
+                  prices to find the best option for your budget</p>
             </div>
             <div class="dropdown">
                <h2>How do I charge the electric car during my rental?</h2>
-               <p>We provide charging options to make it convenient for you to charge the car during your rental. You can use public charging stations, which are widely available in Singapore. We also offer information and support on how to find and use these charging stations. Some of our car models may come with home charging equipment as well</p>
+               <p>We provide charging options to make it convenient for you to charge the car during your rental. You
+                  can use public charging stations, which are widely available in Singapore. We also offer information
+                  and support on how to find and use these charging stations. Some of our car models may come with home
+                  charging equipment as well</p>
             </div>
             <div class="dropdown">
                <h2>Do you offer insurance for electric car rentals?</h2>
-               <p>Yes, we offer various insurance options to protect you during your rental. Our insurance packages cover different levels of protection, including damage to the vehicle, third-party liability, and personal accident insurance. You can choose the insurance option that best suits your needs during the booking process</p>
+               <p>Yes, we offer various insurance options to protect you during your rental. Our insurance packages
+                  cover different levels of protection, including damage to the vehicle, third-party liability, and
+                  personal accident insurance. You can choose the insurance option that best suits your needs during the
+                  booking process</p>
             </div>
             <div class="dropdown">
                <h2>Are there any age restrictions for renting an electric car?</h2>
-               <p>Yes, you must be at least 21 years old and have a valid driver's license to rent an electric car from AZoom. Some car models may have additional age restrictions or require a higher driving experience. You can find the specific requirements for each car on our website or in the app</p>
-            </div> 
+               <p>Yes, you must be at least 21 years old and have a valid driver's license to rent an electric car from
+                  AZoom. Some car models may have additional age restrictions or require a higher driving experience.
+                  You can find the specific requirements for each car on our website or in the app</p>
+            </div>
          </div>
       </section>
 
@@ -209,11 +233,12 @@
             <div class="footer-section footer-middle">
                <div class="footer-object">
                   <h3>QUICK LINKS</h3>
-                  <a href="">Home</a>
-                  <a href="">About Us</a>
-                  <a href="">Services</a>
-                  <a href="">Shop</a>
-                  <a href="">Contact Us</a>
+                  <a href="#hero-container">Home</a>
+                  <a href="#why-azoom">About Us</a>
+                  <a href="#mission-section">Our Mission</a>
+                  <a href="#get-started-section">Get Started</a>
+                  <a href="#locations-section">Locations</a>
+                  <a href="#testimonials">Testimonials</a>
                </div>
                <div class="footer-object">
                   <h3>OFFICE HOURS</h3>
@@ -228,16 +253,16 @@
                      <a href="https://www.facebook.com/">
                         <img src="assets/svg/Facebook.svg" alt="">
                      </a>
-                     <a href="">
+                     <a href="https://www.instagram.com/">
                         <img src="assets/svg/Instagram.svg" alt="">
                      </a>
-                     <a href="">
+                     <a href="https://www.tiktok.com/en/">
                         <img src="assets/svg/TikTok.svg" alt="">
                      </a>
-                     <a href="">
+                     <a href="https://x.com/?lang=en&mx=2">
                         <img src="assets/svg/X.svg" alt="">
                      </a>
-                     <a href="">
+                     <a href="https://x.com/?lang=en&mx=2">
                         <img src="assets/svg/Twitter.svg" alt="">
                      </a>
                   </ul>

@@ -7,6 +7,7 @@
 }
 
 html, body {
+   scroll-behavior: smooth;
    height: 100%;
 }
 
@@ -92,7 +93,10 @@ html, body {
    margin-bottom: var(--margin-xl);
 }
 
-.hero>button {
+.hero .get-started-link {
+   text-align: center;
+   text-decoration: none;
+
    border: none;
    border-radius: 0.5rem;
    padding: 0.9rem 2.2rem;
@@ -104,7 +108,7 @@ html, body {
    transition: background-color 0.2s ease-in-out;
 }
 
-.hero>button:hover {
+.hero .get-started-link:hover {
    cursor: pointer;
    background-color: var(--primary-400);
 }
@@ -599,27 +603,55 @@ html, body {
 .locations-section {
    display: flex;
    flex-direction: column;
-   justify-content: center;
+   justify-content: start;
    align-items: center;
-   min-height: 75vh;
-   
+
+   min-height: 70vh; 
+   background-color: var(--background-100);
+   color: var(--text-950);
+   padding: 3.5rem 0rem;
+
    opacity: 0%;
 }
 
-.locations-section>h2 {
-   font-size: xx-large;
-   padding: 1rem 0rem;
+.locations-header-container {
+   width: 100%;
+   margin-bottom: var(--margin-l);
 
-   color: linear-gradient(to right,
-         red, blue);
+   display: flex;
+   justify-content: start;
+}
+
+.locations-header {
+   width: 80%;
+   max-width: 30rem;
+
+   padding-left: 1.8rem;
+}
+
+.locations-header >h2 {
+   margin-bottom: var(--margin-xs);
+   font-size: xx-large;
+}
+
+.locations-header >p {
+   color: var(--text-800);
+   font-size: medium;
 }
 
 .all-locations {
    display: flex;
-   justify-content: center;
-   gap: 1rem;
+   flex-direction: column;
+   justify-content: start;
+   gap: 2rem;
 }
 
+@media screen and (min-width: 1024px) {
+   .all-locations {
+      flex-direction: row;
+      justify-content: center;
+   }
+}
 /* ==================================== */
 /* =============== FAQ ================ */
 /* ==================================== */
@@ -638,7 +670,7 @@ html, body {
    opacity: 0%;
 }
 
-.FAQ-section >h1 {
+.FAQ-section>h1 {
    font-size: 3rem;
    margin-bottom: var(--margin-l);
 }
@@ -682,7 +714,7 @@ html, body {
    padding: 1.9rem 2.5rem;
 }
 
-.FAQ-section .dropdown >p {
+.FAQ-section .dropdown>p {
    font-size: large;
    padding-bottom: 3rem;
    padding-left: 3rem;
@@ -696,6 +728,7 @@ html, body {
    height: 100%;
    z-index: -1;
 }
+
 /* ============================================= */
 /* ================= FOOTER ==================== */
 /* ============================================= */
