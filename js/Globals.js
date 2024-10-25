@@ -42,6 +42,13 @@ const Utils = {
     },
     easeOutQuart(x) {
         return 1 - Math.pow(1 - x, 4)
+    },
+    getRandomDate(startDate, endDate) {
+        const startTime = startDate.getTime();
+        const endTime = endDate.getTime();
+        const randomTimestamp = startTime + Math.random() * (endTime - startTime);
+
+        return new Date(randomTimestamp);
     }
 }
 

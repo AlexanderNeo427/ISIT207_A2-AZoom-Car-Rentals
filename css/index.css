@@ -259,9 +259,8 @@ html, body {
 
    min-height: 75vh;
    padding-left: 4rem;
-   padding-bottom: 5rem;
-   
-   color: var(--text-100);
+   padding-right: 4rem;
+   padding-bottom: 2.8rem;
    text-align: left;
 }
 
@@ -300,7 +299,8 @@ html, body {
 
 .mission-section h2 {
    margin-bottom: var(--margin-xxs);
-   font-size: 3.5rem;
+   font-size: 3.1rem;
+   color: var(--text-50);
    z-index: 1;
 
    opacity: 0%;
@@ -310,6 +310,7 @@ html, body {
    font-style: italic;
    max-width: 48rem;
    font-size: x-large;
+   color: var(--text-100);
    z-index: 1;
 
    opacity: 0%;
@@ -620,6 +621,12 @@ html, body {
 
    display: flex;
    justify-content: start;
+}
+
+@media screen and (min-width: 1024px) {
+   .locations-header-container {
+      width: 80%;
+   } 
 }
 
 .locations-header {

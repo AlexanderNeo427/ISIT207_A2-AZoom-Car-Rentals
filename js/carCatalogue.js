@@ -265,7 +265,15 @@ function registerInputListeners() {
     })
 }
 
+function setupDatetimeInputConstraints() {
+    document.querySelectorAll(".date-input").forEach(dateInput => {
+        dateInput.min = new Date().toISOString().split('T')[0]
+    })
+}
+
 window.addEventListener('load', function () {
+    setupDatetimeInputConstraints()
+
     registerInputListeners()
     displayFilteredCars()
 })

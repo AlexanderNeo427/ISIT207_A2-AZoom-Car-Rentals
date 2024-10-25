@@ -2,9 +2,11 @@
 
 class InspectionCardGenerator {
     static makePenaltyEntry_HTML() {
+        const inputID = Utils.generateRandomString(8)
+
         const htmlTemplate = `
         <li class="penalty-entry">
-            <select class="damage-selector" name="" id="">
+            <select class="damage-selector" name="" id="" required>
                 <option value=""></option>
                 <option value="">Tire Puncture</option>
                 <option value="">Scratches</option>
@@ -13,13 +15,16 @@ class InspectionCardGenerator {
             </select>
             <div class="cost-input">
                 <img src="assets/svg/Money.svg" alt="">
-                <input type="number" placeholder="">
+                <input 
+                    type="number" placeholder="cost" step="any" min="1" 
+                    pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid amount" required
+                >
             </div>
-            <label class="img-input-label" for="img-input">
+            <label class="img-input-label" for="${inputID}">
                 <img src="assets/svg/Upload.svg" alt="">
-                <span>Upload image</span>
+                <span>Upload image...</span>
             </label>
-            <input class="img-input" type="file" accept="image/*" hidden>
+            <input id="${inputID}" class="img-input" type="file" accept="image/*" hidden>
             <button class="delete-entry-btn">x</button>
         </li>`
 
@@ -47,16 +52,15 @@ class InspectionCardGenerator {
                 </div>
                 <div class="inspection-form-container">
                     <form class="inspection-form">
-                    <div class="add-entry-btn-container">
-                        <button class="add-entry-btn">+ Add Penalty</button>
-                    </div>
-                    <ul class="penalties"></ul>
-                    <div class="penalty-input">
-                        <span><strong>TOTAL: </strong></span>
-                        <button class="clear-inspection-btn">
-                            <img src="assets/svg/Tick.svg" alt="">
-                        </button>
-                    </div>
+                        <div class="add-entry-btn-container">
+                            <button class="add-entry-btn">+ Add Penalty</button>
+                        </div>
+                        <ul class="penalties"></ul>
+                        <div class="penalty-input"> 
+                            <button class="clear-inspection-btn">
+                                <img src="assets/svg/Tick.svg" alt="">
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div> 
@@ -162,12 +166,20 @@ function setupInspectionCardFunctionality(inspectionCard, stateData) {
     // ADD ENTRY BUTTON
     inspectionCard.querySelector(".add-entry-btn").onclick = function (evt) {
         evt.preventDefault()
+
+
         inspectionCard.querySelector(".penalties").appendChild(
             InspectionCardGenerator.makePenaltyEntry_HTML()
         )
 
         // PENALTY ENTRIES
         inspectionCard.querySelectorAll(".penalty-entry").forEach(penaltyEntry => {
+            penaltyEntry.querySelectorAll(".img-input").forEach(imgInput => {
+                imgInput.addEventListener('change', evt => {
+                    const fileName = evt.target.files[0].name
+                    penaltyEntry.querySelector(".img-input-label >span").textContent = fileName
+                }) 
+            })
             penaltyEntry.querySelector(".delete-entry-btn").onclick = function (evt) {
                 evt.preventDefault()
                 penaltyEntry.remove()
@@ -178,17 +190,26 @@ function setupInspectionCardFunctionality(inspectionCard, stateData) {
     // CLEAR INSPECTION BUTTON
     inspectionCard.querySelector(".clear-inspection-btn").onclick = function (evt) {
         evt.preventDefault()
+
+        const form = inspectionCard.querySelector(".inspection-form")
+        if (!form.reportValidity()) {
+            return
+        }
+
+        const costInputs = Array.from(inspectionCard.querySelectorAll(".cost-input input"))
+        const totalAmount = costInputs.reduce((sum, costInput) => sum + parseFloat(costInput.value), 0)
+
         const modal = document.querySelector(".confirmation-modal-container")
         modal.style.display = "block"
 
         modal.querySelector(".modal-bottom p").textContent = `
-            By confirming this action, you will authorize a charge of $${334.32} to the customer's account.
+            By confirming this action, you will authorize a charge of $${totalAmount.toFixed(2)} to the customer's account.
             Are you certain you want to apply this charge?
         `
-        modal.querySelector(".modal-buttons .cancel").onclick = function() {
+        modal.querySelector(".modal-buttons .cancel").onclick = function () {
             modal.style.display = "none"
         }
-        modal.querySelector(".modal-buttons .confirm").onclick = function() {
+        modal.querySelector(".modal-buttons .confirm").onclick = function () {
             modal.style.display = "none"
             fadeAndRemoveInspectionCard(inspectionCard, orderID, stateData)
         }
@@ -280,13 +301,14 @@ function setupInspectionCardFunctions(allInspectionCards) {
 
 function generateInspectionCard(stateData) {
     const cardsPendingInspectionNode = document.querySelector(".cars-pending-inspection")
-
     const carDatum = database.cars[Utils.randInt(0, database.cars.length - 1)]
+    const randomDate = Utils.getRandomDate(new Date(2015, 0, 1), new Date())
+
     const inspectionCard = InspectionCardGenerator.makeInspectionCard_HTML(
         carDatum.imageURL,
         "#" + Utils.generateRandomString(10),
         carDatum.make + " " + carDatum.model,
-        customDateTimeFormat(new Date()),
+        customDateTimeFormat(randomDate),
         "Hougang Rivercourt",
     )
     cardsPendingInspectionNode.appendChild(inspectionCard)
