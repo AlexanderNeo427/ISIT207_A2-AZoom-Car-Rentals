@@ -306,3 +306,19 @@ input[type="email"] {
       max-width: 30rem;
    }
 }
+/* =============================================== */
+/* =============== PAYMENT INFO ================== */
+/* =============================================== */
+.payment-info-cards {
+   display: flex;
+   gap: 1.2rem;
+}
+
+.payment-info-cards >img {
+   height: 2.2rem;
+   opacity: 50%;
+}
+
+.full-opacity {
+   opacity: 100%;
+}

@@ -35,7 +35,6 @@ function setBookingDetails(carDatum) {
     rentalFeeNode.innerHTML = `SGD ${rentalFee.toFixed(2)}`
 
     const addonCost = Utils.randFloat(10, 100)
-    console.log(addonCost)
     bookingOverview.querySelector(".addon-cost").innerHTML = `SGD ${addonCost.toFixed(2)}`
 
     const insuranceCost = Utils.randFloat(10, 100)
@@ -49,11 +48,106 @@ function wireCheckoutFunctionality() {
         document.querySelector(".car-checkout-body .confirmation-btn-small"),
         document.querySelector(".car-checkout-body .confirmation-btn-large")
     ]
+    const inputForms = Array.from(document.querySelectorAll("form"))
     checkoutButtons.forEach(btn => {
         btn.onclick = function() {
+            for (let i = 0; i < inputForms.length; i++) {
+                if (!inputForms[i].reportValidity()) {
+                    return
+                }
+            } 
             window.location.href = "orderConfirmation.html"
         }
     })
+}
+
+function setupInputConstraints() {
+
+    // FIRST NAME/LAST NAME INPUT VALIDATION
+    document.querySelector("#firstname-input").addEventListener('keydown', evt => {
+        const isAlphabet = (/^[A-Za-z]+$/).test(evt.key)
+        if (!isAlphabet && evt.key !== 'Backspace' && evt.key !== 'Delete') {
+            evt.preventDefault()
+        }
+    })
+    document.querySelector("#lastname-input").addEventListener('keydown', evt => {
+        const isAlphabet = (/^[A-Za-z]+$/).test(evt.key)
+        if (!isAlphabet && evt.key !== 'Backspace' && evt.key !== 'Delete') {
+            evt.preventDefault()
+        }
+    })
+
+    // CREDIT CARD VALIDATION
+    const creditCardInput = document.querySelector("#credit-card-input")
+    creditCardInput.addEventListener('keydown', evt => {
+        if (isNaN(evt.key)  && evt.key !== 'Backspace' && evt.key !== 'Delete') {
+            evt.preventDefault()
+            return
+        }
+    })
+    creditCardInput.addEventListener('input', evt => {
+        let cardNumber = evt.target.value.replace(/-/g, ''); 
+        cardNumber = cardNumber.match(/.{1,4}/g)?.join('-') ?? ''; 
+        evt.target.value = cardNumber;
+
+        const cardRegexes = {
+            visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
+            mastercard: /^5[1-5][0-9]{14}$/,
+            amex: /^3[47][0-9]{13}$/,
+        };
+        const trimmedCardNumber = Array.from(evt.target.value)
+                                        .filter(chr => chr !== "-").join('')
+        document.querySelectorAll(".payment-info-cards img").forEach(cardImg => {
+            const cardType = cardImg.dataset.cardType
+            const cardRegex = cardRegexes[cardType] 
+            if (cardRegex && cardRegex.test(trimmedCardNumber)) {
+                cardImg.style.opacity = '100%'
+            }
+            else {
+                cardImg.style.opacity = '50%'
+            }
+        })
+    })
+
+    // CREDIT CARD NAME VALIDATION
+    document.querySelector("#cardholder-name-input").addEventListener('keydown', evt => {
+        const isAlphabet = (/^[A-Za-z]+$/).test(evt.key)
+        if (!isAlphabet && evt.key !== 'Backspace' && evt.key !== 'Delete') {
+            evt.preventDefault()
+        }
+    })
+
+    // EXPIRATION DATE VALIDATION 
+    document.querySelector("#expiration-date-input").addEventListener('input', evt => {
+        let expirationDate = evt.target.value.replace(/\//g, '');
+        if (expirationDate.length > 2) {
+            expirationDate = `${expirationDate.slice(0, 2)}/${expirationDate.slice(2)}`;
+        }
+        evt.target.value = expirationDate;
+    })
+
+    // CVV VALIDATION
+    document.querySelector("#cvv-input").addEventListener('keydown', evt => {
+        if (isNaN(evt.key) && evt.key !== 'Backspace' && evt.key !== 'Delete') {
+            evt.preventDefault()
+            return
+        }
+    })
+
+    document.querySelector("#phone-no-input").addEventListener('keydown', evt => {
+        if (isNaN(evt.key) && evt.key !== 'Backspace' && evt.key !== 'Delete') {
+            evt.preventDefault()
+            return
+        }
+    })
+}
+
+function setupCardVendorRegexes() {
+    const cardRegexes = {
+        visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
+        mastercard: /^5[1-5][0-9]{14}$/,
+        amex: /^3[47][0-9]{13}$/,
+    };
 }
 
 window.addEventListener('load', function () {
@@ -68,6 +162,7 @@ window.addEventListener('load', function () {
         return
     }
 
+    setupInputConstraints()
     setBookingDetails(carDatum)
     wireCheckoutFunctionality()
 })

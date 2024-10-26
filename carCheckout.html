@@ -114,9 +114,7 @@
                      </div>
                   </div>
                </section>
-               <button class="confirmation-btn-large">
-                  Hit the Road
-               </button>
+               <button class="confirmation-btn-large">Hit the Road</button>
             </div>
 
             <!----------- CHECKOUT DATA ------------>
@@ -128,49 +126,47 @@
 
                   <div class="input-label-pair">
                      <label for="first-name">First name</label>
-                     <input type="text" name="first-name">
+                     <input id="firstname-input" type="text" name="first-name" pattern="[a-zA-Z]*" oninvalid="this.setCustomValidity('No numbers allowed')" required>
                   </div>
                   <div class="input-label-pair">
                      <label for="last-name">Last name</label>
-                     <input type="text" name="last-name">
-                  </div>
-                  <div class="input-label-pair">
-                     <label for="email">Email</label>
-                     <input type="email" name="email">
-                  </div>
-                  <div class="input-label-pair">
-                     <label for="phone-no">Phone number</label>
-                     <input type="number" name="phone-no" maxlength="8">
+                     <input id="lastname-input" type="text" name="last-name" pattern="[a-zA-Z]*" oninvalid="this.setCustomValidity('No numbers allowed')"  required>
                   </div>
                </form>
 
                <!------ PAYMENT INFO ------>
                <form class="input-form payment-info">
-                  <h2>Payment Info</h2>
+                  <div style="display: flex; justify-content: space-between;">
+                     <h2>Payment Info</h2>
+                     <div class="payment-info-cards">
+                        <img src="assets/images/icons/AMEX.png" data-card-type="amex">
+                        <img src="assets/images/icons/Mastercard.png" data-card-type="mastercard">
+                        <img src="assets/images/icons/VISA.png" data-card-type="visa">
+                     </div>
+                  </div>
 
                   <!---- CREDIT CARD NO. --->
                   <div class="input-label-pair">
                      <label for="credit-card-number">Card No.</label>
-                     <input name="credit-card-number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}"
-                        autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx" required>
+                     <input id="credit-card-input" name="credit-card-number" type="text" inputmode="numeric" autocomplete="cc-number" maxlength="19" placeholder="XXXX-XXXX-XXXX-XXXX" required>
                   </div>
 
                   <!---- CARDHOLDER NAME ---->
                   <div class="input-label-pair">
                      <label for="credit-card-name">Name on Credit Card</label>
-                     <input type="text" name="credit-card-name" placeholder="Name">
+                     <input id="cardholder-name-input" type="text" name="credit-card-name" placeholder="Name" required>
                   </div>
 
                   <!---- EXPIRATION DATE ----->
                   <div class="input-label-pair">
                      <label for="expiration-date">Expiration Date</label>
-                     <input type="text" name="expiration-date" placeholder="MM/YY" maxlength="4" size="4" />
+                     <input id="expiration-date-input" type="text" name="expiration-date" placeholder="MM/YY" maxlength="5" size="4" required />
                   </div>
 
                   <!---- CVV ---->
                   <div class="input-label-pair">
                      <label for="cvv">CVV</label>
-                     <input type="text" name="cvv" placeholder="123" maxlength="3" size="3" />
+                     <input id="cvv-input" type="text" name="cvv" placeholder="123" maxlength="3" size="3" pattern="^.{3}$" required/>
                   </div>
                </form>
 
@@ -178,19 +174,16 @@
                <form class="input-form contact-info" action="">
                   <h2>Contact Info</h2>
                   <div class="input-label-pair">
-                     <label for="expiration-date">Expiration Date</label>
-                     <input type="text" name="expiration-date" placeholder="MM/YY" maxlength="4" size="4" />
+                     <label for="email">Email</label>
+                     <input type="email" name="email" required>
                   </div>
-
                   <div class="input-label-pair">
-                     <label for="cvv">CVV</label>
-                     <input type="text" name="cvv" placeholder="123" maxlength="3" size="3" />
+                     <label for="phone-no">Phone number</label>
+                     <input id="phone-no-input" type="text" name="phone-no" maxlength="8" pattern="^.{8}$" required>
                   </div>
                </form>
 
-               <button class="confirmation-btn-small">
-                  Hit the Road
-               </button>
+               <button class="confirmation-btn-small">Hit the Road</button>
             </section>
          </div>
       </div>
