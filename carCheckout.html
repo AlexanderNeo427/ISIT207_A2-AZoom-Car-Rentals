@@ -126,11 +126,11 @@
 
                   <div class="input-label-pair">
                      <label for="first-name">First name</label>
-                     <input id="firstname-input" type="text" name="first-name" pattern="[a-zA-Z]*" oninvalid="this.setCustomValidity('No numbers allowed')" required>
+                     <input id="firstname-input" type="text" name="first-name" required>
                   </div>
                   <div class="input-label-pair">
                      <label for="last-name">Last name</label>
-                     <input id="lastname-input" type="text" name="last-name" pattern="[a-zA-Z]*" oninvalid="this.setCustomValidity('No numbers allowed')"  required>
+                     <input id="lastname-input" type="text" name="last-name" required>
                   </div>
                </form>
 
@@ -160,7 +160,7 @@
                   <!---- EXPIRATION DATE ----->
                   <div class="input-label-pair">
                      <label for="expiration-date">Expiration Date</label>
-                     <input id="expiration-date-input" type="text" name="expiration-date" placeholder="MM/YY" maxlength="5" size="4" required />
+                     <input id="expiration-date-input" type="text" name="expiration-date" placeholder="MM/YY" pattern="^.{5}$" maxlength="5" size="4" required />
                   </div>
 
                   <!---- CVV ---->

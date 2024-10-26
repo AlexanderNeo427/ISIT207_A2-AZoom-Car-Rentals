@@ -10,11 +10,22 @@ function setBookingDetails(carDatum) {
     document.querySelector(".car-img").src = carDatum.imageURL
     document.querySelector(".car-make-model").innerHTML = carDatum.make + " " + carDatum.model
 
+    // const diffSeconds = (returnDatetime.getTime() - pickupDatetime.getTime()) / 1000
+    // const rentDuration =
+    //     diffSeconds < SECONDS_PER_DAY ?
+    //         `${Math.floor(diffSeconds / (60 * 60))} rental hour(s)` :
+    //         `${Math.floor(diffSeconds / SECONDS_PER_DAY)} rental days`
     const diffSeconds = (returnDatetime.getTime() - pickupDatetime.getTime()) / 1000
-    const rentDuration =
-        diffSeconds < SECONDS_PER_DAY ?
-            `${Math.floor(diffSeconds / (60 * 60))} rental hour(s)` :
-            `${Math.floor(diffSeconds / SECONDS_PER_DAY)} rental days`
+    const diffDays = returnDatetime.getDate() - pickupDatetime.getDate()
+    let rentDuration = -427
+    if (diffDays <= 1) {
+        const diffHours = Math.floor(diffSeconds / SECONDS_PER_HOUR)
+        rentDuration = `${diffHours} rental hour` + (diffHours > 1 ? 's' : '')
+    }
+    else {
+        rentDuration = `${diffDays} rental day` + (diffDays > 1 ? 's' : '')
+    }
+
     document.querySelector(".rent-duration").innerHTML = rentDuration
 
     const detailNode = document.querySelector(".pickup-return-details")
@@ -140,14 +151,6 @@ function setupInputConstraints() {
             return
         }
     })
-}
-
-function setupCardVendorRegexes() {
-    const cardRegexes = {
-        visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
-        mastercard: /^5[1-5][0-9]{14}$/,
-        amex: /^3[47][0-9]{13}$/,
-    };
 }
 
 window.addEventListener('load', function () {
