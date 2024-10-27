@@ -91,6 +91,7 @@ body {
 
 .contact-us .form-right-container .name-inputs {
    display: flex;
+   width: 100%;
    gap: var(--inputfield-gap);
 }
 

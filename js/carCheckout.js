@@ -123,12 +123,18 @@ function setupInputConstraints() {
     // CREDIT CARD NAME VALIDATION
     document.querySelector("#cardholder-name-input").addEventListener('keydown', evt => {
         const isAlphabet = (/^[A-Za-z]+$/).test(evt.key)
-        if (!isAlphabet && evt.key !== 'Backspace' && evt.key !== 'Delete') {
+        if (!isAlphabet && evt.key !== 'Backspace' && evt.key !== 'Delete' && evt.key !== ' ' && evt.key !== 'Spacebar') {
             evt.preventDefault()
         }
     })
 
     // EXPIRATION DATE VALIDATION 
+    document.querySelector("#expiration-date-input").addEventListener('keydown', evt => {
+        if (isNaN(evt.key) && evt.key !== 'Backspace' && evt.key !== 'Delete') {
+            evt.preventDefault()
+            return
+        } 
+    })
     document.querySelector("#expiration-date-input").addEventListener('input', evt => {
         let expirationDate = evt.target.value.replace(/\//g, '');
         if (expirationDate.length > 2) {
